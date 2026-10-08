@@ -8,7 +8,7 @@ import pytest
 from cursor_sdk import CursorAgentError
 
 from ai_reviewer.ai_pool import AIPool, PoolStartError
-from ai_reviewer.ai_pool import pool as ai_pool
+from ai_reviewer.ai_pool import agent_runner, cursor_bridge
 
 TEXT = "Первый абзац.\nВторой абзац.\n"
 
@@ -58,8 +58,8 @@ def sdk(monkeypatch):
         return SimpleNamespace(id=f"run-{name}", status=behaviors[name](Path(options.local.cwd), name))
 
     monkeypatch.setenv("CURSOR_API_KEY", "test-key")
-    monkeypatch.setattr(ai_pool, "CursorClient", SimpleNamespace(launch_bridge=lambda **kw: contextlib.nullcontext("client")))
-    monkeypatch.setattr(ai_pool, "Agent", SimpleNamespace(prompt=prompt))
+    monkeypatch.setattr(cursor_bridge, "CursorClient", SimpleNamespace(launch_bridge=lambda **kw: contextlib.nullcontext("client")))
+    monkeypatch.setattr(agent_runner, "Agent", SimpleNamespace(prompt=prompt))
     return SimpleNamespace(behaviors=behaviors, calls=calls)
 
 
@@ -152,7 +152,7 @@ def test_execute_start_errors(tmp_path, monkeypatch, case):
     if case == "output is file":
         (tmp_path / "out").write_text("", encoding="utf-8")
     if case == "bridge fails":
-        monkeypatch.setattr(ai_pool, "CursorClient", SimpleNamespace(launch_bridge=fail_bridge))
+        monkeypatch.setattr(cursor_bridge, "CursorClient", SimpleNamespace(launch_bridge=fail_bridge))
     pool = AIPool() if case == "no agents" else make_pool(tmp_path, ["alpha"])
 
     with pytest.raises(PoolStartError):

@@ -24,3 +24,7 @@ class RunDirError(PoolStartError):
 
 class BridgeLaunchError(PoolStartError):
     """The Cursor bridge cannot be launched."""
+
+
+class PropertyDocsError(Exception):
+    """A property docs file cannot be read."""
