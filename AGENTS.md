@@ -22,6 +22,8 @@ Python ≥ 3.12; run from repo root.
 
 - [purpose.md](.agents/docs/purpose.md) — read when touching the API, the per-article file layout, or the `problems/*.json` / `report.json` formats.
 - [onboarding.md](.agents/docs/onboarding.md) — read when wiring a new agent, adding a skill, or changing this agent setup.
+- [python-guide.md](.agents/docs/python-guide.md) — read when writing or changing Python code.
+- [commits.md](.agents/docs/commits.md) — read when writing a commit message.
 
 ## Plans
 
