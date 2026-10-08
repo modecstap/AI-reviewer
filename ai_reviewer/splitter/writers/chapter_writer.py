@@ -3,8 +3,9 @@ import shutil
 import tempfile
 from pathlib import Path
 
-from .chapter import CHAPTERS_FILE, Chapter
-from .errors import OutputPathIsFileError, OutputWriteError
+from ai_reviewer.splitter.entities.chapter import Chapter, CHAPTERS_FILE
+from ai_reviewer.splitter.errors import OutputWriteError
+from ai_reviewer.splitter.writers.errors import OutputPathIsFileError
 
 
 class ChapterWriter:

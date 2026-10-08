@@ -1,6 +1,6 @@
 import re
 
-from .chapter import CHAPTERS_FILE, NO_HEADING
+from ai_reviewer.splitter.entities.chapter import CHAPTERS_FILE, NO_HEADING
 
 
 class ChapterNamer:

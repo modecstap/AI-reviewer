@@ -8,12 +8,12 @@ from docx.opc.exceptions import PackageNotFoundError
 from docx.text.paragraph import Paragraph
 from lxml.etree import _Element as XmlElement
 
-from .block import Block
-from .chapter import NO_HEADING, Chapter
-from .chapter_namer import ChapterNamer
-from .docx_xml import DocxXml
-from .errors import ArticleNotFoundError, ArticleReadError, InvalidArticleError
-from .heading_detector import HeadingDetector
+from ai_reviewer.splitter.parsers.chapter_namer import ChapterNamer
+from ai_reviewer.splitter.parsers.docx_xml import DocxXml
+from ai_reviewer.splitter.parsers.errors import ArticleNotFoundError, InvalidArticleError, ArticleReadError
+from ai_reviewer.splitter.parsers.heading_detector import HeadingDetector
+from ai_reviewer.splitter.entities.block import Block
+from ai_reviewer.splitter.entities.chapter import Chapter, NO_HEADING
 
 
 class ArticleParser:

@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from .article_parser import ArticleParser
-from .chapter_writer import ChapterWriter
+from ai_reviewer.splitter.parsers.article_parser import ArticleParser
+from ai_reviewer.splitter.writers.chapter_writer import ChapterWriter
 
 
 class ArticleSplitter:
