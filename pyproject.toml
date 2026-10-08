@@ -12,7 +12,7 @@ dependencies = ["python-docx>=1.2", "cursor-sdk>=1.0.37"]
 dev = ["pytest>=8"]
 
 [tool.setuptools]
-packages = ["ai_reviewer", "ai_reviewer.splitter"]
+packages = ["ai_reviewer", "ai_reviewer.ai_pool", "ai_reviewer.splitter"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

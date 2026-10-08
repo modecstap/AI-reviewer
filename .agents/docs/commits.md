@@ -37,7 +37,7 @@ Conventional Commits; applies to new commits only, history stays as is.
 ## Scopes
 
 - `splitter` — `ai_reviewer/splitter/`.
-- `pool` — `ai_reviewer/ai_pool.py`.
+- `pool` — `ai_reviewer/ai_pool/`.
 - `properties` — `properties/` instructions and references.
 - `api` — API server.
 - `tests` — `tests/` and test data.

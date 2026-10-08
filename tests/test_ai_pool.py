@@ -7,8 +7,8 @@ from types import SimpleNamespace
 import pytest
 from cursor_sdk import CursorAgentError
 
-from ai_reviewer import ai_pool
 from ai_reviewer.ai_pool import AIPool, PoolStartError
+from ai_reviewer.ai_pool import pool as ai_pool
 
 TEXT = "Первый абзац.\nВторой абзац.\n"
 
@@ -140,7 +140,7 @@ def test_run_dirs_are_numbered_after_max(tmp_path, sdk):
 
 
 def fail_bridge(**kwargs):
-    raise RuntimeError("no bridge")
+    raise CursorAgentError("no bridge")
 
 
 @pytest.mark.parametrize("case", ["no agents", "no key", "blank key", "output is file", "bridge fails"])
@@ -157,6 +157,8 @@ def test_execute_start_errors(tmp_path, monkeypatch, case):
 
     with pytest.raises(PoolStartError):
         pool.execute(TEXT)
+    if case == "bridge fails":
+        assert not (tmp_path / "out" / "1").exists()
 
 
 def test_add_agent_rejects_duplicate_name_and_other_output_dir(tmp_path):
