@@ -7,7 +7,7 @@ Each chapter becomes a folder holding its paragraphs as `1.txt`, `2.txt`, ...;
 CLI: python -m ai_reviewer.splitter <article.docx> <output dir>
 """
 
-from .errors import ArticleReadError, OutputWriteError, SplitError
+from .errors import ArticleReadError, OutputWriteError, RefineError
 from .parsers.article_parser import ArticleParser
 from .article_refiner import ArticleRefiner
 from .entities.chapter import CHAPTERS_FILE, NO_HEADING, Chapter
@@ -23,8 +23,7 @@ __all__ = [
     "ArticleRefiner",
     "ArticleWriter",
     "Chapter",
-    "ChapterWriter",
     "OutputWriteError",
-    "SplitError",
+    "RefineError",
     "SplitterCommandLine",
 ]

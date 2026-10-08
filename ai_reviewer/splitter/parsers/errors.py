@@ -1,7 +1,7 @@
-from ai_reviewer.splitter import SplitError
+from ai_reviewer.splitter.errors import RefineError
 
 
-class ArticleReadError(SplitError):
+class ArticleReadError(RefineError):
     """The article cannot be read."""
 
 
