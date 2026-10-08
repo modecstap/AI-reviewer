@@ -13,8 +13,9 @@ Python ≥ 3.12; run from repo root.
 ## Layout
 
 - `ai_reviewer/` — Python package; `splitter/` turns `article.docx` into `refine/`.
+- `ai_reviewer/ai_pool.py` — `AIPool`: runs one Cursor SDK agent per property into `problems/<N>/`; needs `CURSOR_API_KEY`.
 - `tests/` — pytest tests; `tests/data/` — sample articles.
-- `properties/<property>/instruction.md` — prompt for the review agent of that property; `reference.md` — the property's criteria handbook the instruction relies on. One dir per property; the dir name is the property id used in `problems/<property>.json`.
+- `properties/<property>/instruction.md` — prompt for the review agent of that property; `reference.md` — the property's criteria handbook the instruction relies on. One dir per property; the dir name is the property id used in `problems/<N>/<property>.json`.
 - `.agents/docs/` — agent-facing docs (index below).
 
 ## Docs

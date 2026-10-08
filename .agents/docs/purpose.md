@@ -13,14 +13,19 @@
         - ...
     - ...
 - problems
-    - caution.json
-    - conciseness.json
-    - consistency.json
-    - correctness.json
-    - impersonality.json
-    - literacy.json
-    - objectivity.json
-    - structure.json
+    - 1
+        - article.txt
+        - caution.json
+        - conciseness.json
+        - consistency.json
+        - correctness.json
+        - impersonality.json
+        - literacy.json
+        - objectivity.json
+        - structure.json
+    - 2
+        - ...
+    - ...
 - report.json
 
 article.docx - исходный текст статьи
@@ -28,7 +33,7 @@ refine - папка содержащая подпапки с главами. п�
 - id главы = имя её папки; это `place.chapter` в problems/*.json и `chapter` в report.json.
 - текст до первого заголовка идёт в главу `Без заголовка`.
 - chapters.json - главы в порядке документа: `[{"chapter": string, "title": string | null}]`, где chapter = имя папки, title = текст заголовка (`null` для `Без заголовка`).
-problems - папка содержащая .json файлы с найденными проблемами имеющие общий формат:
+problems - папка с подпапками прогонов ревью. каждый прогон (`AIPool.execute`, `ai_reviewer/ai_pool.py`) создаёт подпапку {N} = максимальный существующий номер + 1 (первая - `1`). в ней `article.txt` - размеченный текст, отданный агентам, и `<property>.json` только успешных агентов. .json файлы с найденными проблемами имеют общий формат:
 [
     {
         place: {
