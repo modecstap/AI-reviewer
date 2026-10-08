@@ -1,33 +1,34 @@
 import argparse
 import sys
 
-from .article_splitter import ArticleSplitter
-from .errors import SplitError
+from .article_refiner import ArticleRefiner
+from .errors import RefineError
 
 
 class SplitterCommandLine:
     """Command-line entry point: `python -m ai_reviewer.splitter`."""
 
-    def __init__(self, splitter: ArticleSplitter | None = None) -> None:
+    def __init__(self, refiner: ArticleRefiner | None = None) -> None:
         """
         Set up the command line.
 
-        :param splitter: article splitter; default one when omitted
+        :param refiner: article refiner; default one when omitted
         """
-        self._splitter = splitter or ArticleSplitter()
+        self._refiner = refiner or ArticleRefiner()
 
     def run(self, arguments: list[str] | None = None) -> int:
         """
-        Split the article named on the command line.
+        Refine the article named on the command line.
 
         :param arguments: command-line arguments; `sys.argv[1:]` when None
 
-        :return: exit code: 0 on success, 1 on a split failure
+        :return: exit code: 0 on success, 1 on a refine failure
         """
         options = self._argument_parser().parse_args(arguments)
         try:
-            self._splitter.split(options.article, options.out_dir)
-        except SplitError as error:
+            article_text = self._splitter.refine(options.article)
+            print(article_text)
+        except RefineError as error:
             print(f"error: {error}", file=sys.stderr)
             return 1
         return 0

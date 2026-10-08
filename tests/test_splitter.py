@@ -7,10 +7,11 @@ from docx import Document
 from docx.oxml import parse_xml
 from docx.oxml.ns import nsdecls
 
-from ai_reviewer.splitter import NO_HEADING, ArticleParser, ArticleSplitter
+from ai_reviewer.splitter import NO_HEADING, ArticleParser, ArticleSplitter, ArticleTextWriter, Chapter
 
 parse_article = ArticleParser().parse
 split_article = ArticleSplitter().split
+article_text = ArticleTextWriter().write
 
 ROOT = Path(__file__).resolve().parent.parent
 ARTICLE = ROOT / "tests" / "data" / "test_article.docx"
@@ -152,3 +153,32 @@ def test_exclusions_and_tracked_changes(tmp_path):
     ))
 
     assert chapters_of(save(doc, tmp_path)) == [(NO_HEADING, ["Формула", "Правка INS"])]
+
+
+def test_article_text_format():
+    chapters = [Chapter("A", "A", ["p1", "p2"]), Chapter("B", "B", ["q1"])]
+
+    assert article_text(chapters) == (
+        "!! chapter: A\n!! paragraph: 1\np1\n\n!! paragraph: 2\np2\n\n!! chapter: B\n!! paragraph: 1\nq1\n"
+    )
+
+
+def test_article_text_name_verbatim_and_empty_chapter():
+    chapters = [
+        Chapter(NO_HEADING, None, ["Г.\xa0А.\xa0Шебанин"]),
+        Chapter("A_B", "A/B", ["a\nb\tc"]),
+        Chapter("Пусто", "Пусто"),
+        Chapter("C", "C", ["d"]),
+    ]
+
+    assert article_text(chapters) == (
+        f"!! chapter: {NO_HEADING}\n!! paragraph: 1\nГ.\xa0А.\xa0Шебанин\n\n"
+        "!! chapter: A_B\n!! paragraph: 1\na\nb\tc\n\n"
+        "!! chapter: Пусто\n\n"
+        "!! chapter: C\n!! paragraph: 1\nd\n"
+    )
+
+
+def test_article_text_edges():
+    assert article_text([]) == ""
+    assert article_text([Chapter("A", "A", ["p"]), Chapter("B", "B")]).endswith("p\n\n!! chapter: B\n")

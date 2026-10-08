@@ -2,15 +2,16 @@
 
 Each chapter becomes a folder holding its paragraphs as `1.txt`, `2.txt`, ...;
 `chapters.json` lists the chapters in document order.
+`ArticleTextWriter` renders the chapters as the single text review agents receive.
 
 CLI: python -m ai_reviewer.splitter <article.docx> <output dir>
 """
 
 from .errors import ArticleReadError, OutputWriteError, SplitError
 from .parsers.article_parser import ArticleParser
-from .article_splitter import ArticleSplitter
+from .article_refiner import ArticleRefiner
 from .entities.chapter import CHAPTERS_FILE, NO_HEADING, Chapter
-from ai_reviewer.splitter.writers.chapter_writer import ChapterWriter
+from ai_reviewer.splitter.writers.article_writer import ArticleWriter
 from .command_line import SplitterCommandLine
 
 
@@ -19,7 +20,8 @@ __all__ = [
     "NO_HEADING",
     "ArticleParser",
     "ArticleReadError",
-    "ArticleSplitter",
+    "ArticleRefiner",
+    "ArticleWriter",
     "Chapter",
     "ChapterWriter",
     "OutputWriteError",

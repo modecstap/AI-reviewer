@@ -1,9 +1,9 @@
-class SplitError(Exception):
+class RefineError(Exception):
     """Base of every expected splitter failure."""
 
 
-class ArticleReadError(SplitError):
+class ArticleReadError(RefineError):
     """The article cannot be read."""
 
-class OutputWriteError(SplitError):
+class OutputWriteError(RefineError):
     """The chapters cannot be written to the output folder."""
