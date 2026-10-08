@@ -5,3 +5,12 @@
 .claude/settings.local.json
 .claude/__pycache__
 CLAUDE.local.md
+
+# Python
+__pycache__/
+.venv/
+*.egg-info/
+.pytest_cache/
+
+# Word
+~$*

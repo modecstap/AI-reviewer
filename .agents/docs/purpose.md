@@ -4,6 +4,7 @@
 формат файловой структуры для каждой статьи:
 - article.docx
 - refine
+    - chapters.json
     - first chapter name
         - 1.txt
         - 2.txt
@@ -23,7 +24,10 @@
 - report.json
 
 article.docx - исходный текст статьи
-refine - папка содержащая подпапки с главами. подпапки содержат {number}.txt файлы где number это номер параграфа.
+refine - папка содержащая подпапки с главами. подпапки содержат {number}.txt файлы где number это номер параграфа. создаётся `ai_reviewer/splitter/`.
+- id главы = имя её папки; это `place.chapter` в problems/*.json и `chapter` в report.json.
+- текст до первого заголовка идёт в главу `Без заголовка`.
+- chapters.json - главы в порядке документа: `[{"chapter": string, "title": string | null}]`, где chapter = имя папки, title = текст заголовка (`null` для `Без заголовка`).
 problems - папка содержащая .json файлы с найденными проблемами имеющие общий формат:
 [
     {
