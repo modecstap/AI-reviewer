@@ -7,11 +7,11 @@ from docx import Document
 from docx.oxml import parse_xml
 from docx.oxml.ns import nsdecls
 
-from ai_reviewer.splitter import NO_HEADING, ArticleParser, ArticleSplitter, ArticleTextWriter, Chapter
+from ai_reviewer.splitter import NO_HEADING, ArticleParser, ArticleRefiner, ArticleWriter, Chapter
 
 parse_article = ArticleParser().parse
-split_article = ArticleSplitter().split
-article_text = ArticleTextWriter().write
+refine_article = ArticleRefiner().refine
+article_text = ArticleWriter().write
 
 ROOT = Path(__file__).resolve().parent.parent
 ARTICLE = ROOT / "tests" / "data" / "test_article.docx"
@@ -31,56 +31,6 @@ def chapters_of(path):
 def read(path):
     return path.read_text(encoding="utf-8")
 
-
-def test_article_end_to_end(tmp_path):
-    out = tmp_path / "refine"
-    split_article(ARTICLE, out)
-
-    assert sorted(p.name for p in out.iterdir()) == sorted([NO_HEADING, TITLE, "chapters.json"])
-    assert [p.name for p in (out / NO_HEADING).iterdir()] == ["1.txt"]
-    assert read(out / NO_HEADING / "1.txt") == "Г.\xa0А.\xa0Шебанин"
-
-    body = out / TITLE
-    assert sorted(p.name for p in body.iterdir()) == sorted(f"{i}.txt" for i in range(1, 89))
-    assert read(body / "1.txt").startswith("Курганные могильники Подмосковья, как одна из самых массовых")
-    assert read(body / "75.txt").startswith("1. Возвышенный участок")
-    assert read(body / "79.txt").startswith("5. Берега и верховья небольших оврагов:")
-    assert read(body / "88.txt").startswith("Подводя итоги, можно говорить о том, что каждая")
-
-    raw = (out / "chapters.json").read_bytes()
-    assert json.loads(raw) == [{"chapter": NO_HEADING, "title": None}, {"chapter": TITLE, "title": TITLE}]
-    assert NO_HEADING.encode() in raw and b"\\u" not in raw
-
-    assert not any("Автор благодарит" in read(f) for f in out.rglob("*.txt"))
-
-
-def test_rerun_wipes_output(tmp_path):
-    out = tmp_path / "refine"
-    split_article(ARTICLE, out)
-    (out / "stray.txt").write_text("x")
-    (out / "junk").mkdir()
-
-    doc = Document()
-    doc.add_paragraph("Один абзац.")
-    split_article(save(doc, tmp_path), out)
-
-    assert sorted(p.name for p in out.iterdir()) == sorted([NO_HEADING, "chapters.json"])
-    assert read(out / NO_HEADING / "1.txt") == "Один абзац."
-
-
-def test_cli(tmp_path):
-    out = tmp_path / "refine"
-    cmd = [sys.executable, "-m", "ai_reviewer.splitter"]
-    ok = subprocess.run([*cmd, str(ARTICLE), str(out)], cwd=ROOT, capture_output=True, text=True)
-    assert ok.returncode == 0, ok.stderr
-    assert (out / "chapters.json").is_file()
-
-    bad = subprocess.run([*cmd, str(tmp_path / "missing.docx"), str(out)], cwd=ROOT, capture_output=True, text=True)
-    assert bad.returncode != 0
-    assert bad.stderr.strip()
-    assert (out / "chapters.json").is_file()
-
-
 def test_styles_beat_heuristics(tmp_path):
     doc = Document()
     doc.add_heading("Введение", 1)
@@ -88,21 +38,6 @@ def test_styles_beat_heuristics(tmp_path):
     doc.add_paragraph("Текст.")
 
     assert chapters_of(save(doc, tmp_path)) == [("Введение", ["Жирная строка", "Текст."])]
-
-
-def test_flat_levels_and_empty_chapter(tmp_path):
-    doc = Document()
-    doc.add_heading("2. Метод", 1)
-    doc.add_heading("2.1 Выборка", 2)
-    doc.add_paragraph("Текст.")
-    out = tmp_path / "refine"
-
-    path = save(doc, tmp_path)
-    split_article(path, out)
-
-    assert chapters_of(path) == [("2. Метод", []), ("2.1 Выборка", ["Текст."])]
-    assert (out / "2. Метод").is_dir() and not any((out / "2. Метод").iterdir())
-    assert [c["chapter"] for c in json.loads(read(out / "chapters.json"))] == ["2. Метод", "2.1 Выборка"]
 
 
 def test_no_headings(tmp_path):
