@@ -1,0 +1,233 @@
+/* Fonts */
+
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/FiraSans-Regular.ttf);
+}
+@font-face {
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url(fonts/FiraSans-Italic.ttf);
+}
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url(fonts/FiraSans-Light.ttf);
+}
+@font-face {
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-weight: 300;
+  src: url(fonts/FiraSans-LightItalic.ttf);
+}
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url(fonts/FiraSans-Bold.ttf);
+}
+
+
+/* Page rules: margin boxes cannot see the variables of .ai-reviewer-report. */
+
+@page {
+  color: #393939;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 300;
+  margin: 2cm;
+  size: A4;
+  @top-left {
+    background: #fbc847;
+    content: counter(page);
+    height: 1cm;
+    text-align: center;
+    width: 1cm;
+  }
+  @top-center {
+    background: #fbc847;
+    content: '';
+    display: block;
+    height: .05cm;
+    opacity: .5;
+    width: 100%;
+  }
+  @top-right {
+    content: string(heading);
+    font-size: 9pt;
+    height: 1cm;
+    vertical-align: middle;
+    width: 100%;
+  }
+}
+
+@page :first {
+  @top-left { background: none; content: none }
+  @top-center { content: none }
+  @top-right { content: none }
+}
+
+@page :blank {
+  @top-left { background: none; content: none }
+  @top-center { content: none }
+  @top-right { content: none }
+}
+
+
+/* Root */
+
+.ai-reviewer-report {
+  --black: #393939;
+  --orange: #fbc847;
+  color: var(--black);
+  font-family: "Fira Sans", sans-serif;
+  font-size: 11pt;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.ai-reviewer-report h2,
+.ai-reviewer-report h3,
+.ai-reviewer-report h4 {
+  color: black;
+  font-weight: 400;
+}
+.ai-reviewer-report h3 {
+  font-size: 15pt;
+  font-weight: 300;
+}
+.ai-reviewer-report h4 {
+  font-size: 13pt;
+}
+
+
+/* Title page */
+
+.ai-reviewer-report .title .company {
+  font-size: 15pt;
+  font-weight: 700;
+  margin: 0;
+}
+
+.ai-reviewer-report .title h1 {
+  color: var(--orange);
+  font-size: 38pt;
+  margin: 5cm 0 0;
+}
+
+.ai-reviewer-report .title .created {
+  margin: 0 0 3cm;
+}
+
+.ai-reviewer-report .title .label {
+  font-weight: 400;
+}
+
+.ai-reviewer-report .summary h3 {
+  margin: 2em 0 1em;
+}
+.ai-reviewer-report .summary h3::before {
+  background: var(--orange);
+  content: '';
+  display: block;
+  height: .08cm;
+  margin-bottom: .25cm;
+  width: 2cm;
+}
+
+.ai-reviewer-report .summary ul {
+  list-style: none;
+  padding-left: 0;
+}
+.ai-reviewer-report .summary li {
+  border-top: .25pt solid #c1c1c1;
+  margin: .25cm 0;
+  padding-top: .25cm;
+}
+.ai-reviewer-report .summary li::before {
+  color: var(--orange);
+  content: '• ';
+  font-size: 40pt;
+  line-height: 16pt;
+  vertical-align: bottom;
+}
+.ai-reviewer-report .summary .count {
+  color: var(--orange);
+  float: right;
+  font-weight: 700;
+}
+
+
+/* Claim pages */
+
+.ai-reviewer-report .chapter {
+  break-before: page;
+}
+
+.ai-reviewer-report .chapter h2 {
+  color: black;
+  font-size: 28pt;
+  font-weight: 400;
+  margin-top: 0;
+  string-set: heading content();
+}
+
+.ai-reviewer-report .chapter-caption,
+.ai-reviewer-report .paragraph-caption,
+.ai-reviewer-report .claim .label {
+  border-left: .1cm solid var(--orange);
+  font-size: 9pt;
+  font-weight: 400;
+  margin: 0 0 .1cm;
+  padding-left: .2cm;
+}
+
+.ai-reviewer-report .paragraph {
+  column-gap: 1cm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1cm;
+}
+
+.ai-reviewer-report .paragraph-text .text {
+  margin: 0;
+  text-align: justify;
+  white-space: pre-wrap;
+}
+
+.ai-reviewer-report .claim {
+  border-top: .25pt solid #c1c1c1;
+  margin-bottom: .5cm;
+  padding-top: .25cm;
+}
+
+.ai-reviewer-report .claim h4 {
+  margin: 0 0 .25cm;
+}
+
+.ai-reviewer-report .claim .ordinal {
+  background: var(--orange);
+  display: inline-block;
+  font-size: 9pt;
+  margin-left: .2cm;
+  min-width: .6cm;
+  text-align: center;
+}
+
+.ai-reviewer-report .claim .problem {
+  margin: 0 0 .25cm;
+}
+
+.ai-reviewer-report .claim .types,
+.ai-reviewer-report .claim .corrections {
+  margin: 0 0 .25cm;
+  padding-left: .5cm;
+}
+
+.ai-reviewer-report .claim .quote {
+  font-style: italic;
+  margin: 0 0 .25cm .3cm;
+}

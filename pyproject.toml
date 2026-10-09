@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "ai-reviewer"
 version = "0.1.0"
 requires-python = ">=3.12"
-dependencies = ["python-docx>=1.2", "cursor-sdk>=1.0.37"]
+dependencies = ["python-docx>=1.2", "cursor-sdk>=1.0.37", "weasyprint>=70"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
@@ -18,8 +18,12 @@ packages = [
     "ai_reviewer.ai_pool.agent",
     "ai_reviewer.ai_pool.cursor",
     "ai_reviewer.report",
+    "ai_reviewer.report.printer",
     "ai_reviewer.splitter",
 ]
+
+[tool.setuptools.package-data]
+"ai_reviewer.report.printer" = ["report.css", "fonts/*.ttf", "fonts/OFL.txt"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
