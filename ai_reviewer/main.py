@@ -3,6 +3,7 @@ from pathlib import Path
 from cursor_sdk import ModelParameterValue, ModelSelection
 
 from ai_reviewer.ai_pool import AIPool, AgentDefinition
+from ai_reviewer.printed_report_writer import PrintedReportWriter
 from ai_reviewer.report import ReportWriter
 from ai_reviewer.splitter import ArticleRefiner
 
@@ -66,4 +67,5 @@ if __name__ == "__main__":
 
     result = ai_pool.execute(refiner.refine(article_path))
     ReportWriter().write(result.run_dir)
+    PrintedReportWriter().write(result.run_dir)
 
