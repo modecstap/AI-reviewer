@@ -1,39 +1,39 @@
-# Как оценить статью по conciseness
+# How to assess an article for conciseness
 
-Оцени статью по `reference.md`. Верни список мест и правок. Тип называй как в справочнике. Статью целиком не переписывай.
+Assess the article against `reference.md`. Return a list of places and corrections. Name each type as in the handbook. Do not rewrite the whole article.
 
-## Куда смотреть
+## Where to look
 
-Проверь зачины, повторы одного результата, цепочки отглагольных существительных, риторические вопросы, усилители степени и определения, которые не отличают объект.
+Check openers, repetitions of a single result, chains of verbal nouns, rhetorical questions, degree intensifiers, and definitions that do not distinguish the object.
 
-Фраза без приращения — предложение, после которого читатель не узнаёт нового факта, границы, условия, источника или следствия.
+A sentence without increment is a sentence after which the reader learns no new fact, boundary, condition, source, or consequence.
 
-## Как отметить место
+## How to mark a place
 
-1. Найди фразу или пару соседних фрагментов с одним и тем же сообщением.
-2. Ответь на вопросы из раздела «Вопросы для оценки» справочника. Нарушение — ответ, который совпадает со столбцом «Нарушение, если».
-3. Маркеры справочника только показывают, куда смотреть. Одно слово само по себе нарушением не является.
-4. Если есть нарушение, запиши место. Правило правки возьми у соответствующего типа.
-5. В правке убери слова, за которыми нет нового содержания. Сохрани число, имя понятия, условие и предел вывода.
-6. Не добавляй величин, условий и границ, которых нет в статье. Если после снятия пустых слов сведения не остаётся, в проблеме напиши, какой величины или условия не хватает, и не подставляй их сам.
-7. Не сокращай фразу, в которой каждая часть ограничивает объект, называет меру или отделяет факт от интерпретации. Повтор оставь, если это краткая отсылка и дальше идёт новое сопоставление.
+1. Find a sentence or a pair of adjacent fragments with one and the same message.
+2. Answer the questions from the "Assessment questions" section of the handbook. A violation is an answer that matches the "Violation if" column.
+3. The handbook markers only show where to look. A single word by itself is not a violation.
+4. If there is a violation, record the place. Take the correction rule from the corresponding type.
+5. In the correction, remove the words that carry no new content. Keep the number, the name of the concept, the condition, and the limit of the conclusion.
+6. Do not add values, conditions, or boundaries that are not in the article. If no information remains after the empty words are removed, state in the problem which value or condition is missing, and do not supply them yourself.
+7. Do not shorten a sentence in which each part delimits the object, names a measure, or separates fact from interpretation. Keep a repetition if it is a brief reference followed by a new comparison.
 
-## Что оставлять
+## What to keep
 
-В список не вноси:
+Do not add to the list:
 
-- определение, оговорку о пределе данных и цифру, даже если они удлиняют фразу;
-- повтор термина как краткую отсылку, после которой идёт новое сопоставление;
-- подробность, которая ограничивает объект, называет меру или отделяет факт от интерпретации;
-- длинную фразу, в которой нет второго сообщения о том же самом.
+- a definition, a caveat about the limit of the data, and a figure, even if they lengthen the sentence;
+- a repetition of a term as a brief reference followed by a new comparison;
+- detail that delimits the object, names a measure, or separates fact from interpretation;
+- a long sentence that contains no second message about the same thing.
 
-Лаконичность не равна краткости любой ценой. Сокращай слова без нового содержания.
+Conciseness does not mean brevity at any cost. Cut words that carry no new content.
 
-Образец фразы в меру содержания — в разделе «Допустимая подробность» справочника.
+A sample sentence proportionate to its content is in the "Acceptable detail" section of the handbook.
 
-## Проверка перед отдачей
+## Check before returning
 
-- Цитата дословно есть в статье.
-- Фрагмент нарушает справочник и не попадает в «Что оставлять».
-- Правка короче только за счёт слов без нового сведения и сохраняет число, условие, имя понятия и предел вывода, которые в цитате уже были.
-- Тип взят из справочника.
+- The quote appears verbatim in the article.
+- The fragment violates the handbook and does not fall under "What to keep".
+- The correction is shorter only by dropping words without new information, and it keeps the number, condition, concept name, and limit of the conclusion that were already in the quote.
+- The type is taken from the handbook.

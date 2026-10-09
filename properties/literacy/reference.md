@@ -1,177 +1,190 @@
-# Языковая нормативность
+# Language norm compliance
 
-Справочник критерия. Порядок оценки — в `Инструкция. Оценка языковой нормативности.md`.
+Criterion handbook. Assessment procedure: see `instruction.md`.
 
-Образцы правок ниже показывают нормативный вариант при том же составе сведений. Смысл, силу вывода и термины оцениваемой статьи в правке не меняй.
+The sample corrections below show the standard variant with the same set of information. In a correction, do not change the meaning, the strength of the conclusion, or the terms of the article under review.
 
-## Определение
+## Definition
 
-**Языковая нормативность** — соблюдение грамматики, синтаксиса, орфографии, пунктуации и лексической сочетаемости литературного языка. Согласование, управление, паронимы, деепричастные обороты и однородные члены не создают второго, ошибочного прочтения. Предложение делится, когда его длина отрывает связанные слова друг от друга; само по себе наличие точных уточнений норму не нарушает.
+**Language norm compliance** is adherence to the grammar, syntax, spelling, punctuation, and lexical collocation of the standard literary language. Agreement, government, paronyms, adverbial participle clauses, and homogeneous members do not create a second, erroneous reading. A sentence is split when its length tears related words apart from each other; the presence of precise qualifications by itself does not violate the norm.
 
-Нормативность устраняет помехи, из-за которых читатель не может однозначно восстановить смысл. Сама по себе она текст научным не делает.
+Norm compliance removes the obstacles that prevent the reader from unambiguously recovering the meaning. By itself, it does not make a text academic.
 
-## Вопросы для оценки
+## Assessment questions
 
-| Признак | Вопрос | Нарушение, если |
+| Feature | Question | Violation if |
 | --- | --- | --- |
-| Согласование | Совпадают ли число и род сказуемого с подлежащим? | нет |
-| Управление | Стоит ли после предлога и глагола требуемый падеж? | нет |
-| Сочетаемость | Соединяются ли слова в принятой литературной паре? | нет |
-| Паронимы | Не подменено ли слово близким по звучанию? | да |
-| Оборот | Относится ли деепричастие или причастие к тому субъекту, с которым оно согласовано? | нет |
-| Однородность | Зависят ли члены ряда от одного слова и отвечают ли на один вопрос? | нет |
-| Пунктуация | Видны ли границы определений, вводных слов и отдельных сообщений? | нет |
-| Обозримость | Можно ли с первого чтения связать подлежащее со сказуемым? | нет |
+| Agreement | Do the number and gender of the predicate match the subject? | no |
+| Government | Does the required case follow the preposition or verb? | no |
+| Collocation | Are the words joined in an accepted standard literary pairing? | no |
+| Paronyms | Has the word been replaced by a similar-sounding one? | yes |
+| Participial clause | Does the adverbial participle or participle refer to the subject it agrees with? | no |
+| Homogeneity | Do the members of the series depend on one word and answer one question? | no |
+| Punctuation | Are the boundaries of attributive modifiers, parenthetical words, and separate statements visible? | no |
+| Parsability | Can the subject be linked to the predicate on the first reading? | no |
 
-## Типы нарушений
+## Violation types
 
-### 1. Сбой согласования
+### 1. Agreement failure
 
-Признаки: согласование.
+Features: agreement.
 
-Ошибка: число или род сказуемого не совпадают с подлежащим. При слове «большинство» с зависимым существительным в родительном падеже, когда речь идёт о совокупности как о целом, в строгой литературной норме сказуемое стоит в единственном числе среднего рода.
+Error: the number or gender of the predicate does not match the subject. With the word "большинство" ("majority") followed by a dependent noun in the genitive case, when the group is referred to as a whole, the strict standard literary norm puts the predicate in the neuter singular.
 
-Не по норме:
+Non-standard:
 
 > Большинство респондентов отметил рост числа исправлений.
+> *(Gloss: "The majority of respondents noted an increase in the number of corrections.")*
 
-Правка:
+Correction:
 
 > Большинство респондентов отметило рост числа исправлений.
+> *(Gloss: "The majority of respondents noted an increase in the number of corrections.")*
 
-Правило: согласуй сказуемое с подлежащим. Смысл фразы не меняй.
+Rule: make the predicate agree with the subject. Do not change the meaning of the sentence.
 
-### 2. Неверное управление
+### 2. Incorrect government
 
-Признаки: управление.
+Features: government.
 
-Ошибка: после предлога или глагола стоит не тот падеж. Предлог «согласно» требует дательного падежа.
+Error: the wrong case follows a preposition or verb. The preposition "согласно" ("according to") requires the dative case.
 
-Не по норме:
+Non-standard:
 
 > Согласно полученных данных, доля ошибок снизилась.
+> *(Gloss: "According to the obtained data, the share of errors decreased.")*
 
-Правка:
+Correction:
 
 > Согласно полученным данным, доля ошибок снизилась.
+> *(Gloss: "According to the obtained data, the share of errors decreased.")*
 
-Правило: приведи управление к норме. Содержание фразы не меняй.
+Rule: bring the government into line with the norm. Do not change the content of the sentence.
 
-### 3. Нарушение лексической сочетаемости
+### 3. Lexical collocation violation
 
-Признаки: сочетаемость.
+Features: collocation.
 
-Ошибка: слово соединено с дополнением, с которым в литературном языке не употребляется. Значение имеют, роль играют.
+Error: a word is combined with a complement it is not used with in the standard literary language. Значение имеют ("significance is had"), роль играют ("a role is played").
 
-Не по норме:
+Non-standard:
 
 > Выбранный критерий играет большое значение для интерпретации результатов.
+> *(Gloss: "The chosen criterion plays great significance for the interpretation of the results.")*
 
-Правка:
+Correction:
 
 > Выбранный критерий имеет большое значение для интерпретации результатов.
+> *(Gloss: "The chosen criterion has great significance for the interpretation of the results.")*
 
-Правило: замени глагол на сочетающийся. Если по соседнему тексту автору нужна была «роль», корректно: «играет существенную роль». Состав сведения не меняй.
+Rule: replace the verb with one that collocates. If the neighbouring text shows that the author needed "роль" ("role"), the correct form is "играет существенную роль" ("plays a significant role"). Do not change the set of information.
 
-### 4. Пароним меняет действие
+### 4. Paronym changes the action
 
-Признаки: паронимы.
+Features: paronyms.
 
-Ошибка: близкое по звучанию слово называет другое действие. «Предоставить» значит «отдать в пользование, снабдить». «Представить» значит «показать, предъявить».
+Error: a similar-sounding word names a different action. "Предоставить" ("provide") means "give for use, supply". "Представить" ("present") means "show, produce for inspection".
 
-Не по норме:
+Non-standard:
 
 > Автор предоставил результаты сравнения в таблице 2.
+> *(Gloss: "The author provided the comparison results in Table 2.")*
 
-Правка:
+Correction:
 
 > Автор представил результаты сравнения в таблице 2.
+> *(Gloss: "The author presented the comparison results in Table 2.")*
 
-Правило: выбери пароним по действию, которое задаёт соседний текст. Если по тексту одинаково возможны «показать» и «отдать в пользование», в проблеме напиши оба чтения и не закрепляй одно без опоры.
+Rule: choose the paronym by the action that the neighbouring text sets. If the text equally allows "show" and "give for use", write both readings in the problem and do not fix one of them without support.
 
-### 5. Деепричастный оборот с чужим субъектом
+### 5. Adverbial participle clause with a mismatched subject
 
-Признаки: оборот.
+Features: participial clause.
 
-Ошибка: деепричастие требует, чтобы то же лицо было подлежащим основной части. В основной части подлежащее другое.
+Error: the adverbial participle (деепричастие) requires the same person to be the subject of the main clause. The main clause has a different subject (a dangling participle).
 
-Не по норме:
+Non-standard:
 
 > Анализируя ответы двух групп, был выявлен рост числа правок.
+> *(Gloss: "Analysing the responses of the two groups, an increase in the number of corrections was revealed.")*
 
-Правка:
+Correction:
 
 > Анализ ответов двух групп выявил рост числа правок.
+> *(Gloss: "The analysis of the responses of the two groups revealed an increase in the number of corrections.")*
 
-Правило: вырази действие и его носителя без ложного субъекта. Допустимо и так: «При анализе ответов двух групп выявлен рост числа правок». Носителя, которого статья не называет, не выдумывай.
+Rule: express the action and its agent without a false subject. This is also acceptable: "При анализе ответов двух групп выявлен рост числа правок" ("In the analysis of the responses of the two groups, an increase in the number of corrections was revealed"). Do not invent an agent that the article does not name.
 
-### 6. Сбой однородных членов
+### 6. Broken series of homogeneous members
 
-Признаки: однородность.
+Features: homogeneity.
 
-Ошибка: у ряда нет общего слова и общего вопроса. Один глагол относится не ко всем членам.
+Error: the series has no common head word and no common question. One verb does not apply to all members.
 
-Не по норме:
+Non-standard:
 
-> Метод позволяет снизить число ошибок, точность формулировок и в короткий срок.
+> The method makes it possible to reduce the number of errors, the precision of wording, and in a short time.
 
-Правка:
+Correction:
 
-> Метод позволяет снизить число ошибок, повысить точность формулировок и сократить срок проверки.
+> The method makes it possible to reduce the number of errors, improve the precision of wording, and shorten the review time.
 
-Правило: дай каждому члену тот глагол, который восстанавливает общий вопрос, не добавляя нового утверждения. Если намерение одного из членов по тексту не восстановить, в проблеме напиши, какой член выпадает из ряда.
+Rule: give each member the verb that restores the common question, without adding a new claim. If the intent of one of the members cannot be recovered from the text, write in the problem which member falls out of the series.
 
-### 7. Пунктуация меняет границу мысли
+### 7. Punctuation changes the boundary of a thought
 
-Признаки: пунктуация.
+Features: punctuation.
 
-Ошибка: пропущенные границы не дают увидеть, какое определение к какому слову относится и где начинается следующее сообщение.
+Error: missing boundaries prevent the reader from seeing which attributive modifier refers to which word and where the next statement begins.
 
-Не по норме:
+Non-standard:
 
 > Студенты которые использовали чек-лист исправили ошибки остальные ограничились правкой заголовка.
+> *(Gloss: "Students who used the checklist corrected the errors the others limited themselves to editing the title.")*
 
-Правка:
+Correction:
 
 > Студенты, которые использовали чек-лист, исправили ошибки. Остальные ограничились правкой заголовка.
+> *(Gloss: "The students who used the checklist corrected the errors. The others limited themselves to editing the title.")*
 
-Правило: выдели определительное предложение и разведи разные сообщения. Смысл не меняй. Запятую, которая не меняет границу мысли, в список не вноси.
+Rule: set off the attributive clause and separate distinct statements. Do not change the meaning. Do not add to the list a comma that does not change the boundary of a thought.
 
-### 8. Неоправданно перегруженное предложение
+### 8. Unjustifiably overloaded sentence
 
-Признаки: обозримость.
+Features: parsability.
 
-Ошибка: подлежащее отделено от сказуемого длинным рядом разнородных уточнений, и фразу приходится разбирать дважды. Длина сама по себе ошибкой не является.
+Error: the subject is separated from the predicate by a long series of heterogeneous qualifications, and the sentence has to be parsed twice. Length by itself is not an error.
 
-Не по норме:
+Non-standard:
 
-> Полученные в ходе проведённого в течение одного семестра на материале двух академических групп с разным опытом письменных заданий данные, которые были собраны после того, как участники выполнили черновик и получили замечания разного типа, показывают снижение ошибок.
+> The data obtained in the course of work conducted over one semester on the material of two academic groups with different experience of written assignments, which were collected after the participants had completed a draft and received comments of different types, show a reduction in errors.
 
-Правка:
+Correction:
 
-> Данные собраны в течение одного семестра в двух академических группах. Группы различались опытом письменных заданий. После черновика и замечаний доля ошибок снизилась.
+> The data were collected over one semester in two academic groups. The groups differed in their experience of written assignments. After the draft and the comments, the share of errors decreased.
 
-Правило: разложи сведения по обозримым предложениям. Условия наблюдения сохрани. Новых условий не добавляй.
+Rule: distribute the information across easily parsed sentences. Keep the conditions of observation. Do not add new conditions.
 
-## Допустимая фраза
+## Acceptable sentence
 
-Длинное предложение нормативно, если у него ясны подлежащее, сказуемое и границы оборотов. Дели фразу, в которой читатель теряет связь слов. Такой фрагмент в список не вноси.
+A long sentence is standard if its subject, predicate, and clause boundaries are clear. Split a sentence in which the reader loses the connection between words. Do not add such a fragment to the list.
 
-Нарушение нормы:
+Norm violation:
 
-> Деепричастие относится не к тому субъекту, падеж после предлога выбран по аналогии, однородный ряд не имеет общего слова.
+> The adverbial participle refers to the wrong subject, the case after the preposition is chosen by analogy, the homogeneous series has no common word.
 
-Нормативно:
+Standard:
 
 > Согласно полученным данным, в двух группах, выполнивших черновик, доля ошибок снизилась.
+> *(Gloss: "According to the obtained data, in the two groups that completed the draft, the share of errors decreased.")*
 
-## Маркеры
+## Markers
 
-Смотри на эти слова в первую очередь. Само по себе слово нарушением не является: решают вопросы и тип.
+Check these words first. A word by itself is not a violation: the questions and the type decide.
 
-- Управление: согласно, благодаря, вопреки с родительным падежом вместо дательного.
-- Сочетаемость: играть значение, оказать значение, иметь роль.
-- Паронимы: предоставить вместо представить — если имелось в виду «показать».
-- Чужой субъект деепричастия: анализируя, рассматривая, используя при сказуемом без того же деятеля.
-- Скрытая граница: определительное «который» без запятых, два сообщения без точки или союза.
-- Обычно оставляй: длинную фразу с ясным подлежащим и сказуемым, «согласно полученным данным», причастный оборот с понятной границей.
+- Government: согласно ("according to"), благодаря ("thanks to"), вопреки ("contrary to") with the genitive case instead of the dative.
+- Collocation: играть значение ("play significance"), оказать значение ("exert significance"), иметь роль ("have a role").
+- Paronyms: предоставить ("provide") instead of представить ("present") — if "show" was meant.
+- Mismatched subject of an adverbial participle: анализируя ("analysing"), рассматривая ("considering"), используя ("using") with a predicate that lacks the same agent.
+- Hidden boundary: an attributive "который" ("which, who") without commas, two statements without a full stop or a conjunction.
+- Usually keep: a long sentence with a clear subject and predicate, "согласно полученным данным" ("according to the obtained data"), a participial clause with a clear boundary.

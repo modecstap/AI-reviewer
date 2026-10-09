@@ -1,51 +1,51 @@
-# Как оценить статью по correctness
+# How to assess an article for correctness
 
-Оцени статью по `reference.md`. Верни список мест и правок. Тип называй как в справочнике. Статью целиком не переписывай.
+Assess the article against `reference.md`. Return a list of places and corrections. Name each type as in the handbook. Do not rewrite the whole article.
 
-## Куда смотреть
+## Where to look
 
-Проверь:
+Check:
 
-- специальные слова, названия методов и шкал;
-- первое существенное употребление узкого или неоднозначного термина;
-- синонимы и имена одного объекта в задаче, методе, результатах и выводах;
-- оценки степени и слова объёма («ряд», «некоторые», «значительно»);
-- «очевидно» и местоимения «это», «данный», «указанный».
+- specialized words, names of methods and scales;
+- the first substantive use of a narrow or ambiguous term;
+- synonyms and names of one object in the objective, method, results, and conclusions;
+- evaluations of degree and scope words ("a number of", "some", "significantly");
+- "obviously" and the pronouns "this", "the given", "the said".
 
-Термин в зоне риска — слово, которое в этой статье называет метод, конструкт, выборку, шкалу или процедуру. Точная формулировка называет предмет, меру, условие, период или источник, которые можно проверить.
+An at-risk term is a word that, in this article, names a method, construct, sample, scale, or procedure. Precise wording names a subject, measure, condition, period, or source that can be verified.
 
-## Как отметить место
+## How to mark a place
 
-1. Найди термин в зоне риска или формулировку, по которой нельзя установить предмет, меру или объём.
-2. Ответь на вопросы из раздела «Вопросы для оценки» справочника. Нарушение — ответ, который совпадает со столбцом «Нарушение, если».
-3. Маркеры справочника только показывают, куда смотреть. Одно слово само по себе нарушением не является.
-4. Если есть нарушение, запиши место. Правило правки возьми у соответствующего типа.
-5. В правке верни слову то значение, которое уже различимо по тексту статьи. Нужный термин сохрани. Бытовое слово замени термином, который статья уже использует для того же понятия. Редкое слово без отдельного понятия сними. Одному объекту оставь одно имя от задачи до выводов.
-6. Оценку степени замени величиной, критерием или сравнением, которые уже есть в статье. Объём раскрой теми источниками, периодами и объектами, которые статья уже назвала.
-7. Не добавляй отраслевой термин, которого в статье нет и который из текста не следует. Не добавляй процентов, порогов, периодов и авторов, которых нет в статье. Если значение двояко, а автор его не зафиксировал, в правке зафиксируй его словами, которые статья уже использует, либо в проблеме напиши, какое значение нужно определить. Если меры нет, оценку сними и в проблеме напиши, какой величины не хватает.
-8. Общепринятый для аудитории издания термин заново не расшифровывай в каждом абзаце. Узкий термин поясни один раз, если дальнейший вывод на нём держится, а издание не узкоспециальное по этой процедуре. Степень пояснения бери из жанра, если жанр известен.
-9. «Значительно» оставляй, если рядом есть и величина различия, и основание этого слова. Статистическую значимость и размер различия не смешивай в одном слове.
+1. Find an at-risk term or a wording from which the subject, measure, or scope cannot be established.
+2. Answer the questions from the "Assessment questions" section of the handbook. A violation is an answer that matches the "Violation if" column.
+3. The handbook markers only show where to look. A single word by itself is not a violation.
+4. If there is a violation, record the place. Take the correction rule from the corresponding type.
+5. In the correction, restore to the word the meaning that is already distinguishable from the text of the article. Keep the needed term. Replace an everyday word with the term that the article already uses for the same concept. Remove a rare word that carries no distinct concept. Leave one object one name from the objective to the conclusions.
+6. Replace an evaluation of degree with a quantity, criterion, or comparison that is already in the article. Specify the scope with the sources, periods, and objects that the article has already named.
+7. Do not add a field-specific term that is not in the article and does not follow from the text. Do not add percentages, thresholds, periods, or authors that are not in the article. If the meaning is ambiguous and the author has not fixed it, fix it in the correction with words that the article already uses, or write in the problem which meaning needs to be defined. If there is no measure, remove the evaluation and write in the problem which quantity is missing.
+8. Do not re-explain a term generally accepted by the publication's audience in every paragraph. Explain a narrow term once if the subsequent conclusion rests on it and the publication is not specialized in this procedure. Take the degree of explanation from the genre, if the genre is known.
+9. Keep "significantly" if it is accompanied by both the magnitude of the difference and the basis for this word. Do not mix statistical significance and the size of a difference in one word.
 
-## Что оставлять
+## What to keep
 
-В список не вноси:
+Do not add to the list:
 
-- термин в принятом значении, устойчиво названный одним именем;
-- короткий или общепринятый термин, значение которого в статье уже зафиксировано, без повторного определения в каждом абзаце;
-- узкий термин, рядом с которым один раз названа его функция в этой работе;
-- бытовое слово там, где отдельного специального понятия нет;
-- оценку степени, рядом с которой есть величина, критерий или основание сравнения;
-- местоимение с одним ясным антецедентом;
-- одно и то же имя объекта в задаче, методе, результатах и выводах.
+- a term in its accepted meaning, consistently called by one name;
+- a short or generally accepted term whose meaning is already fixed in the article, without a repeated definition in every paragraph;
+- a narrow term next to which its function in this work is named once;
+- an everyday word where there is no distinct specialized concept;
+- an evaluation of degree accompanied by a quantity, criterion, or basis of comparison;
+- a pronoun with one clear antecedent;
+- the same name of an object in the objective, method, results, and conclusions.
 
-Точность не требует всех оговорок в каждом предложении.
+Precision does not require all qualifications in every sentence.
 
-Образцы уместного термина и проверяемой формулировки — в разделе «Допустимое употребление» справочника.
+Samples of an appropriate term and a verifiable wording are in the "Acceptable usage" section of the handbook.
 
-## Проверка перед отдачей
+## Check before returning
 
-- Цитата дословно есть в статье.
-- Фрагмент нарушает справочник и не попадает в «Что оставлять».
-- Правка сохраняет понятие, которое текст уже различает, и не подставляет термин, которого статья не даёт.
-- Правка делает утверждение проверяемым за счёт сведений, которые в статье уже есть, и не добавляет новых.
-- Тип взят из справочника.
+- The quote appears verbatim in the article.
+- The fragment violates the handbook and does not fall under "What to keep".
+- The correction preserves the concept that the text already distinguishes and does not insert a term that the article does not provide.
+- The correction makes the claim verifiable with information already in the article and adds nothing new.
+- The type is taken from the handbook.

@@ -1,40 +1,40 @@
-# Как оценить статью по caution
+# How to assess an article for caution
 
-Оцени статью по `reference.md`. Верни список мест и правок. Тип называй как в справочнике. Статью целиком не переписывай.
+Assess the article against `reference.md`. Return a list of places and corrections. Name each type as in the handbook. Do not rewrite the whole article.
 
-## Куда смотреть
+## Where to look
 
-Проверь аннотацию, результаты, обсуждение, выводы и практические рекомендации. Сверь статус аннотации и заключения со статусом раздела результатов.
+Check the abstract, results, discussion, conclusions and practical recommendations. Compare the status of the abstract and the conclusion with the status of the results section.
 
-Вывод — предложение, которое сообщает итог, причину, обобщение, прогноз или рекомендацию.
+A conclusion is a sentence that reports an outcome, a cause, a generalization, a prediction or a recommendation.
 
-## Как отметить место
+## How to mark a place
 
-1. Найди вывод.
-2. Ответь на вопросы из раздела «Вопросы для оценки» справочника. Нарушение — ответ, который совпадает со столбцом «Нарушение, если».
-3. Маркеры справочника только показывают, куда смотреть. Одно слово само по себе нарушением не является.
-4. Если есть нарушение, запиши место. Правило правки возьми у соответствующего типа.
-5. В правке сохрани установленный факт. Остальному поставь статус по данным этой статьи: факт, интерпретация или гипотеза. Сохрани совокупность, условие и те альтернативы, которые исследование не закрыло.
-6. Не добавляй измерений, альтернатив и ограничений, которых нет в статье. Если другие объяснения в тексте не закрыты, одну причину не выбирай. Если измеримой замены нет, ослабь только неподтверждённый статус и в проблеме укажи, какого сведения не хватает.
-7. Глагол ставь по силе основания. «Зафиксировано», «составило», «различалось» — при наблюдении. «Свидетельствует», «позволяет заключить» — при обоснованном выводе. «Можно предположить», «вероятно» — при гипотезе. Аннотация не сильнее заключения. Заключение не сильнее результатов. Уже показанный результат не ослабляй до «ничего определённого сказать нельзя».
+1. Find a conclusion.
+2. Answer the questions from the "Assessment questions" section of the handbook. A violation is an answer that matches the "Violation if" column.
+3. The handbook's markers only show where to look. A single word by itself is not a violation.
+4. If there is a violation, record the place. Take the correction rule from the corresponding type.
+5. In the correction, keep the established fact. Give everything else a status according to the data of this article: fact, interpretation or hypothesis. Keep the population, the condition and those alternatives that the study has not ruled out.
+6. Do not add measurements, alternatives or limitations that are not in the article. If other explanations are not ruled out in the text, do not choose a single cause. If there is no measurable replacement, weaken only the unsupported status and, in the problem, state what information is missing.
+7. Choose the verb by the strength of the grounds. "Was recorded", "amounted to", "differed" — for an observation. "Indicates", "allows us to conclude" — for a justified inference. "It can be hypothesized", "probably" — for a hypothesis. The abstract is not stronger than the conclusion. The conclusion is not stronger than the results. Do not weaken a result already shown to "nothing definite can be said".
 
-## Что оставлять
+## What to keep
 
-В список не вноси:
+Do not add to the list:
 
-- наблюдение или подсчёт, названные как факт;
-- интерпретацию, отделённую от факта и не более сильную, чем данные;
-- гипотезу с маркером предположения;
-- рекомендацию той же силы, что и результат, с названными группой, материалом и условием;
-- вывод, который не слабее уже показанного в статье.
+- an observation or a count stated as a fact;
+- an interpretation separated from the fact and no stronger than the data;
+- a hypothesis with a marker of assumption;
+- a recommendation of the same strength as the result, with the group, the material and the condition named;
+- a conclusion that is not weaker than what the article has already shown.
 
-Осторожность не требует ослаблять то, что исследование прямо показало. Ослабляй только часть, которая выходит за данные.
+Caution does not require weakening what the study has directly shown. Weaken only the part that goes beyond the data.
 
-Образец вывода в меру данных — в разделе «Допустимый вывод» справочника.
+A sample conclusion that matches the data is in the "Acceptable conclusion" section of the handbook.
 
-## Проверка перед отдачей
+## Check before returning
 
-- Цитата дословно есть в статье.
-- Фрагмент нарушает справочник и не попадает в «Что оставлять».
-- Правка сохраняет установленный факт, сужает только неподтверждённый статус и не добавляет сведений, которых нет в статье.
-- Тип взят из справочника.
+- The quote appears verbatim in the article.
+- The fragment violates the handbook and does not fall under "What to keep".
+- The correction keeps the established fact, narrows only the unsupported status and adds no information that is not in the article.
+- The type is taken from the handbook.

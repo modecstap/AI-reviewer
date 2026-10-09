@@ -1,190 +1,190 @@
-# Научная объективность
+# Scientific objectivity
 
-Справочник критерия. Порядок оценки — в `Инструкция. Оценка научной объективности.md`.
+Criterion handbook. Assessment procedure: see `instruction.md`.
 
-Образцы правок ниже показывают нужную силу формулировки. Числа, сравнения и ограничения в правке оцениваемой статьи бери только из неё.
+The sample corrections below show the required strength of wording. Take numbers, comparisons and limitations in a correction only from the article under review.
 
-## Определение
+## Definition
 
-**Научная объективность** — соответствие содержания статьи принципам нейтрального и доказательного изложения научной информации. Автор основывает утверждения и выводы на результатах исследования и релевантных научных источниках, избегает эмоционально окрашенной лексики, необоснованных обобщений и категоричных суждений. Интерпретации и предположения отделяются от установленных фактов, а сила выводов соответствует полученным данным, методам исследования и его ограничениям.
+**Scientific objectivity** is the conformity of the article's content to the principles of neutral and evidence-based presentation of scientific information. The author bases claims and conclusions on the research results and relevant scientific sources, and avoids emotionally charged vocabulary, unfounded generalizations and categorical judgments. Interpretations and assumptions are separated from established facts, and the strength of conclusions matches the data obtained, the research methods and the study's limitations.
 
-Автор может интерпретировать результаты, сравнивать подходы и формулировать выводы. Такие утверждения обоснованы и не выходят за пределы имеющихся данных.
+The author may interpret results, compare approaches and formulate conclusions. Such claims are substantiated and do not go beyond the available data.
 
-## Вопросы для оценки
+## Assessment questions
 
-| Признак | Вопрос | Нарушение, если |
+| Feature | Question | Violation if |
 | --- | --- | --- |
-| Нейтральность | Использует ли автор нейтральную научную лексику? | нет |
-| Категоричность | Не делает ли автор более сильных выводов, чем позволяют данные? | да |
-| Обоснованность | Подкреплены ли ключевые утверждения результатами (включая статистические данные и экспериментальные наблюдения) или научными источниками? | нет |
-| Обобщение | Не распространяются ли результаты ограниченного исследования на слишком широкую совокупность? | да |
-| Интерпретация | Отделены ли установленные факты от предположений и интерпретаций? | нет |
-| Оценочность | Нет ли эмоциональных или субъективных оценок? | да |
-| Причинность | Не выдаётся ли корреляция за причинно-следственную связь? | да |
-| Ограничения | Учитывает ли автор ограничения исследования при формулировании выводов? | нет |
+| Neutrality | Does the author use neutral scientific vocabulary? | no |
+| Categoricalness | Does the author draw stronger conclusions than the data allow? | yes |
+| Substantiation | Are key claims supported by results (including statistical data and experimental observations) or by scientific sources? | no |
+| Generalization | Are the results of a limited study extended to an overly broad population? | yes |
+| Interpretation | Are established facts separated from assumptions and interpretations? | no |
+| Evaluativeness | Are there emotional or subjective evaluations? | yes |
+| Causality | Is correlation presented as a cause-and-effect relationship? | yes |
+| Limitations | Does the author take the study's limitations into account when formulating conclusions? | no |
 
-Универсальный вывод по ограниченной выборке или единичному эксперименту нарушает признаки «Обобщение» и «Ограничения».
+A universal conclusion drawn from a limited sample or a single experiment violates the features "Generalization" and "Limitations".
 
-## Типы нарушений
+## Violation types
 
-### 1. Эмоционально окрашенная оценка
+### 1. Emotionally charged evaluation
 
-Признаки: нейтральность, оценочность.
+Features: neutrality, evaluativeness.
 
-Ошибка: эмоциональное слово и слишком широкий охват. «Потрясающую» — оценка без меры. «Все существующие подходы» требует сравнения со всеми релевантными подходами.
+Error: an emotional word and an overly broad scope. "Stunning" is an evaluation without a measure. "All existing approaches" requires a comparison with all relevant approaches.
 
-Необъективно:
+Non-objective:
 
-> Полученные результаты демонстрируют потрясающую эффективность нового метода, который значительно превосходит все существующие подходы.
+> The results obtained demonstrate the stunning effectiveness of the new method, which significantly outperforms all existing approaches.
 
-Правка:
+Correction:
 
-> Полученные результаты свидетельствуют о высокой эффективности нового метода в условиях проведённого исследования. По ряду рассматриваемых показателей метод продемонстрировал более высокие значения по сравнению с использованными в исследовании альтернативными подходами.
+> The results obtained indicate the high effectiveness of the new method under the conditions of the study conducted. On a number of the indicators considered, the method showed higher values compared with the alternative approaches used in the study.
 
-Правило: укажи, в каком контексте видно преимущество и с чем именно его сравнивали.
+Rule: state in what context the advantage is seen and what exactly it was compared with.
 
-### 2. Категоричное утверждение без достаточных оснований
+### 2. Categorical claim without sufficient grounds
 
-Признаки: категоричность, обобщение.
+Features: categoricalness, generalization.
 
-Ошибка: чрезмерное обобщение. Найденная связь не означает эффект для всей названной совокупности.
+Error: overgeneralization. A relationship that was found does not mean an effect for the entire population named.
 
-Необъективно:
+Non-objective:
 
-> Данное исследование доказывает, что использование цифровых технологий повышает успеваемость всех студентов.
+> This study proves that the use of digital technologies improves the academic performance of all students.
 
-Правка:
+Correction:
 
-> Результаты исследования свидетельствуют о повышении показателей успеваемости у участников, использовавших цифровые технологии в рамках рассматриваемой образовательной программы.
+> The results of the study indicate an improvement in academic performance indicators among participants who used digital technologies within the educational program under consideration.
 
-Если данные позволяют говорить только о связи, а не о причине:
+If the data allow speaking only of an association, not of a cause:
 
-> В исследуемой выборке использование цифровых технологий было связано с более высокими показателями успеваемости.
+> In the sample studied, the use of digital technologies was associated with higher academic performance indicators.
 
-Правило: сузь совокупность и силу утверждения до того, что исследование поддерживает. Связь и причину разделяй.
+Rule: narrow the population and the strength of the claim to what the study supports. Keep association and cause separate.
 
-### 3. Подмена научного вывода личным мнением
+### 3. Personal opinion substituted for a scientific conclusion
 
-Признаки: оценочность, обоснованность.
+Features: evaluativeness, substantiation.
 
-Ошибка: личное мнение служит основанием практической рекомендации. «Мы считаем» само по себе ошибкой не является.
+Error: a personal opinion serves as the basis for a practical recommendation. "We believe" by itself is not an error.
 
-Необъективно:
+Non-objective:
 
-> Мы считаем, что предложенный подход является наиболее эффективным и должен использоваться в образовательных учреждениях.
+> We believe that the proposed approach is the most effective and should be used in educational institutions.
 
-Правка:
+Correction:
 
-> Полученные результаты указывают на потенциальную эффективность предложенного подхода в образовательном контексте. Его применение может быть рекомендовано при наличии условий, соответствующих параметрам проведённого исследования.
+> The results obtained point to the potential effectiveness of the proposed approach in an educational context. Its application may be recommended where conditions match the parameters of the study conducted.
 
-Правило: привяжи рекомендацию к результатам и к условиям, совпадающим с параметрами исследования.
+Rule: tie the recommendation to the results and to conditions that match the study's parameters.
 
-### 4. Преувеличение значимости результатов
+### 4. Exaggeration of the significance of results
 
-Признаки: категоричность.
+Features: categoricalness.
 
-Ошибка: значимый результат одного исследования редко позволяет утверждать, что он полностью меняет представления о сложном явлении.
+Error: a significant result of a single study rarely allows claiming that it completely changes the understanding of a complex phenomenon.
 
-Необъективно:
+Non-objective:
 
-> Это открытие полностью меняет представления о механизме формирования памяти.
+> This discovery completely changes the understanding of the mechanism of memory formation.
 
-Правка:
+Correction:
 
-> Полученные результаты дополняют существующие представления о механизмах формирования памяти и указывают на необходимость дальнейшего изучения выявленного механизма.
+> The results obtained complement the existing understanding of the mechanisms of memory formation and point to the need for further study of the identified mechanism.
 
-Правило: сохрани значимость результата и не расширяй её до смены представлений обо всём явлении.
+Rule: preserve the significance of the result and do not extend it to a change in the understanding of the whole phenomenon.
 
-### 5. Оценочные характеристики вместо аргументации
+### 5. Evaluative characteristics instead of argumentation
 
-Признаки: оценочность, обоснованность.
+Features: evaluativeness, substantiation.
 
-Ошибка: «простой», «удобной» и «превосходной» не называют критерий оценки.
+Error: "simple", "convenient" and "excellent" do not name an evaluation criterion.
 
-Необъективно:
+Non-objective:
 
-> Предложенная модель является простой, удобной и превосходной альтернативой традиционному подходу.
+> The proposed model is a simple, convenient and excellent alternative to the traditional approach.
 
-Правка:
+Correction:
 
-> По сравнению с традиционным подходом предложенная модель требует меньшего количества вычислительных операций и демонстрирует сопоставимую точность при анализе исследуемого набора данных.
+> Compared with the traditional approach, the proposed model requires fewer computational operations and shows comparable accuracy in analyzing the dataset under study.
 
-Правило: замени оценку измеримыми характеристиками. Меру, которой в статье нет, не добавляй.
+Rule: replace the evaluation with measurable characteristics. Do not add a measure that is not in the article.
 
-### 6. Категоричное отрицание альтернативных подходов
+### 6. Categorical rejection of alternative approaches
 
-Признаки: категоричность, обобщение, ограничения.
+Features: categoricalness, generalization, limitations.
 
-Ошибка: формулировка объявляет метод негодным вообще. Исследование может показывать его ограничение только в определённых условиях.
+Error: the wording declares the method unfit in general. The study may show its limitation only under certain conditions.
 
-Необъективно:
+Non-objective:
 
-> Традиционный метод является неэффективным и больше не подходит для решения данной задачи.
+> The traditional method is ineffective and is no longer suitable for solving this problem.
 
-Правка:
+Correction:
 
-> В условиях проведённого исследования традиционный метод продемонстрировал более низкую эффективность по сравнению с предложенным подходом.
+> Under the conditions of the study conducted, the traditional method showed lower effectiveness compared with the proposed approach.
 
-Правило: сообщи, какой результат метод показал в этом исследовании.
+Rule: report what result the method showed in this study.
 
-### 7. Интерпретация корреляции как причинности
+### 7. Interpretation of correlation as causation
 
-Признаки: причинность.
+Features: causality.
 
-Ошибка: корреляционное исследование само по себе не устанавливает причинно-следственную связь.
+Error: a correlational study by itself does not establish a cause-and-effect relationship.
 
-Необъективно:
+Non-objective:
 
-> Полученные данные доказывают, что увеличение времени использования социальных сетей приводит к снижению академической успеваемости.
+> The data obtained prove that an increase in the time spent using social networks leads to a decline in academic performance.
 
-Правка, если показана связь:
+Correction, if an association is shown:
 
-> Результаты исследования выявили статистически значимую связь между увеличением времени использования социальных сетей и снижением показателей академической успеваемости.
+> The results of the study revealed a statistically significant association between an increase in the time spent using social networks and a decline in academic performance indicators.
 
-Правка, если автор допускает возможную причину:
+Correction, if the author allows for a possible cause:
 
-> Выявленная связь может указывать на потенциальное влияние продолжительности использования социальных сетей на академическую успеваемость, однако для установления причинно-следственной связи необходимы дополнительные исследования.
+> The association identified may point to a potential influence of the duration of social network use on academic performance; however, additional research is needed to establish a cause-and-effect relationship.
 
-Правило: при корреляционном дизайне пиши о связи. Причинный язык допустим, только если дизайн устанавливает причину. Иначе оставь предположение и укажи, что нужны дополнительные исследования.
+Rule: with a correlational design, write about an association. Causal language is acceptable only if the design establishes a cause. Otherwise, keep it as an assumption and state that additional research is needed.
 
-### 8. Предположение как установленный факт
+### 8. Assumption presented as established fact
 
-Признаки: интерпретация, категоричность.
+Features: interpretation, categoricalness.
 
-Ошибка: «очевидно» создаёт вид доказанности. Доказательство должно быть представлено в исследовании.
+Error: "obviously" creates an appearance of proof. The proof must be presented in the study.
 
-Необъективно:
+Non-objective:
 
-> Очевидно, что именно недостаток сна является основной причиной снижения концентрации внимания у студентов.
+> Obviously, it is precisely lack of sleep that is the main cause of reduced attention concentration in students.
 
-Правка, если дизайн причину не установил:
+Correction, if the design has not established a cause:
 
-> Полученные результаты позволяют предположить, что недостаток сна может быть связан со снижением концентрации внимания у студентов.
+> The results obtained suggest that lack of sleep may be associated with reduced attention concentration in students.
 
-Правка, если дизайн установил влияние:
+Correction, if the design has established an influence:
 
-> Результаты исследования свидетельствуют о том, что недостаточная продолжительность сна может оказывать негативное влияние на концентрацию внимания.
+> The results of the study indicate that insufficient sleep duration may have a negative influence on attention concentration.
 
-Правило: «очевидно» не заменяет доказательство. Модальность ставь по дизайну: предположение, связь или установленное влияние.
+Rule: "obviously" does not replace proof. Set the modality according to the design: assumption, association or established influence.
 
-## Допустимый вывод
+## Acceptable conclusion
 
-Интерпретация результатов — нормальная и необходимая часть статьи. Авторская позиция допустима, если она выражена в научной форме и привязана к результатам и условиям исследования. Такой фрагмент в список не вноси.
+Interpretation of results is a normal and necessary part of an article. The author's position is acceptable if it is expressed in scientific form and tied to the results and conditions of the study. Do not add such a fragment to the list.
 
-Субъективно:
+Subjective:
 
-> Мы уверены, что полученные результаты доказывают эффективность метода.
+> We are confident that the results obtained prove the effectiveness of the method.
 
-Объективно:
+Objective:
 
-> Полученные результаты свидетельствуют об эффективности метода в условиях проведённого исследования.
+> The results obtained indicate the effectiveness of the method under the conditions of the study conducted.
 
-## Маркеры
+## Markers
 
-Смотри на эти слова в первую очередь. Само по себе слово нарушением не является: решают вопросы и тип.
+Check these words first. A word by itself is not a violation: the questions and the type decide.
 
-- Эмоциональная и оценочная лексика: потрясающий, ужасный, очевидно выдающийся, катастрофический, гениальный, превосходный, простой, удобный.
-- Категоричность и чрезмерный охват: все, полностью меняет, наиболее, должен использоваться, неэффективен, больше не подходит, очевидно, именно, основная причина, доказывает.
-- Мнение вместо основания: мы считаем, мы уверены. Нарушение — только если мнение заменяет результат или обосновывает рекомендацию.
-- Причинный язык при неясном дизайне: приводит к, является причиной, доказывает, что.
-- Обычно оставляй: полученные данные свидетельствуют, результаты позволяют предположить, в исследуемой выборке наблюдалось, в условиях проведённого исследования, было связано с.
+- Emotional and evaluative vocabulary: stunning, terrible, obviously outstanding, catastrophic, brilliant, excellent, simple, convenient.
+- Categoricalness and excessive scope: all, completely changes, the most, should be used, is ineffective, is no longer suitable, obviously, precisely, the main cause, proves.
+- Opinion instead of grounds: we believe, we are confident. It is a violation only if the opinion replaces a result or justifies a recommendation.
+- Causal language with an unclear design: leads to, is the cause of, proves that.
+- Usually keep: the data obtained indicate, the results suggest, in the sample studied ... was observed, under the conditions of the study conducted, was associated with.

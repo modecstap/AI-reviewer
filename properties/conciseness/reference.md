@@ -1,178 +1,178 @@
-# Лаконичность и информативность
+# Conciseness and informativeness
 
-Справочник критерия. Порядок оценки — в `Инструкция. Оценка лаконичности и информативности.md`.
+Criterion handbook. Assessment procedure: see `instruction.md`.
 
-Образцы правок ниже показывают, какие слова уходят и какие сведения остаются. Числа, условия и пределы в правке оцениваемой статьи бери только из неё.
+The sample corrections below show which words go and which information stays. In a correction to the article under review, take numbers, conditions, and limits only from that article.
 
-## Определение
+## Definition
 
-**Лаконичность и информативность** — максимальная содержательность при минимуме избыточности. В тексте не остаётся повторов, канцелярских цепочек, риторических вопросов и фраз без нового сведения. Сокращение не устраняет величину, условие, имя понятия и предел вывода: эти элементы составляют содержание, а не словесный избыток.
+**Conciseness and informativeness** is maximum substance with minimum redundancy. The text retains no repetitions, officialese chains, rhetorical questions, or sentences without new information. Shortening does not remove a value, a condition, the name of a concept, or the limit of a conclusion: these elements make up the content, not verbal excess.
 
-## Вопросы для оценки
+## Assessment questions
 
-| Признак | Вопрос | Нарушение, если |
+| Feature | Question | Violation if |
 | --- | --- | --- |
-| Приращение | Сообщает ли фраза новый факт, границу, условие или источник? | нет |
-| Повтор | Не пересказан ли тот же результат без нового сопоставления? | да |
-| Канцелярит | Нельзя ли заменить цепочку отглагольных существительных одним действием? | да |
-| Зачин | Есть ли у «следует отметить», «в настоящее время», «как известно» отдельное сведение? | нет |
-| Вопрос | Не заменяет ли риторический вопрос готовое утверждение? | да |
-| Усилитель | Не стоит ли оценка степени там, где нужна величина? | да |
-| Определение | Отличает ли определение объект от других? | нет |
-| Сокращение | Сохранены ли в краткой фразе число, условие и предел вывода? | нет |
+| Increment | Does the sentence convey a new fact, boundary, condition, or source? | no |
+| Repetition | Is the same result restated without a new comparison? | yes |
+| Officialese | Can the chain of verbal nouns be replaced with a single action? | yes |
+| Opener | Do "it should be noted", "at present", "as is known" carry separate information? | no |
+| Question | Does a rhetorical question replace a ready statement? | yes |
+| Intensifier | Is there an assessment of degree where a value is needed? | yes |
+| Definition | Does the definition distinguish the object from others? | no |
+| Shortening | Are the number, condition, and limit of the conclusion preserved in the short sentence? | no |
 
-## Типы нарушений
+## Violation types
 
-### 1. Пустой зачин
+### 1. Empty opener
 
-Признаки: зачин, приращение.
+Features: opener, increment.
 
-Ошибка: вводные рамки не сообщают ни времени измерения, ни особого статуса факта. Сведение одно.
+Error: the introductory frames convey neither the time of measurement nor any special status of the fact. There is only one piece of information.
 
-Избыточно:
+Redundant:
 
-> Следует отметить, что в настоящее время необходимо подчеркнуть тот факт, что доля ошибок снизилась.
+> It should be noted that at present it is necessary to emphasize the fact that the proportion of errors has decreased.
 
-Правка:
+Correction:
 
-> Доля фактических ошибок снизилась с 18 % до 11 %.
+> The proportion of factual errors decreased from 18% to 11%.
 
-Правило: зачин сними. Величины, которые уже есть в статье, сохрани. Величину, которой нет, не добавляй.
+Rule: remove the opener. Keep the values that are already in the article. Do not add a value that is not there.
 
-### 2. Канцелярская цепочка
+### 2. Officialese chain
 
-Признаки: канцелярит.
+Features: officialese.
 
-Ошибка: ряд отглагольных существительных описывает одно действие несколькими шагами и не называет, какой именно анализ выполнен.
+Error: a series of verbal nouns describes one action in several steps and does not name which analysis exactly was performed.
 
-Избыточно:
+Redundant:
 
-> Было осуществлено проведение анализа полученных в процессе исследования данных.
+> The carrying out of an analysis of the data obtained in the course of the research was performed.
 
-Правка:
+Correction:
 
-> Ответы двух групп сравнили по доле фактических ошибок.
+> The answers of the two groups were compared by the proportion of factual errors.
 
-Правило: назови действие, объект и показатель словами, которые статья уже даёт. Если показателя в тексте нет, сними только канцелярскую оболочку и в проблеме напиши, какой анализ не назван.
+Rule: name the action, the object, and the measure using words the article already provides. If the text has no measure, remove only the officialese shell and in the problem state which analysis is not named.
 
-### 3. Риторический вопрос
+### 3. Rhetorical question
 
-Признаки: вопрос, приращение.
+Features: question, increment.
 
-Ошибка: вопрос не открывает альтернативу и сразу закрывается оценкой. Оценочные слова не добавляют проверяемого содержания.
+Error: the question opens no alternative and is immediately closed by an assessment. The evaluative words add no verifiable content.
 
-Избыточно:
+Redundant:
 
-> Можно ли считать такой результат важным? Безусловно, можно, ведь он показывает пользу метода.
+> Can such a result be considered important? Undoubtedly it can, since it shows the benefit of the method.
 
-Правка:
+Correction:
 
-> Различие относится к доле фактических ошибок в одном семинарском задании.
+> The difference concerns the proportion of factual errors in a single seminar assignment.
 
-Правило: оставь утверждение и границу результата. Оценку важности сними. Величину, уже приведённую выше, не повторяй, если нового сопоставления нет.
+Rule: keep the statement and the boundary of the result. Remove the assessment of importance. Do not repeat a value already given above if there is no new comparison.
 
-### 4. Тройной пересказ одного результата
+### 4. Triple restatement of one result
 
-Признаки: повтор, усилитель.
+Features: repetition, intensifier.
 
-Ошибка: несколько предложений сообщают одно наблюдение. Добавляется только неопределённая степень.
+Error: several sentences report one observation. Only an indefinite degree is added.
 
-Избыточно:
+Redundant:
 
-> Доля ошибок снизилась. Снижение доли ошибок оказалось заметным. Таким образом, можно видеть, что ошибки стали встречаться реже.
+> The proportion of errors decreased. The decrease in the proportion of errors was noticeable. Thus, one can see that errors became less frequent.
 
-Правка:
+Correction:
 
-> Доля фактических ошибок снизилась с 18 % до 11 %.
+> The proportion of factual errors decreased from 18% to 11%.
 
-Правило: один результат сообщи один раз. Величину сохрани, если она в статье есть.
+Rule: report one result once. Keep the value if the article has it.
 
-### 5. Повтор абзаца другими словами
+### 5. Paragraph repeated in other words
 
-Признаки: повтор.
+Features: repetition.
 
-Ошибка: следующий абзац снова описывает те же величины и не продвигает аргументацию. Отсылка «ещё раз» не является новым основанием.
+Error: the next paragraph again describes the same values and does not advance the argument. The reference "once again" is not a new basis.
 
-Избыточно:
+Redundant:
 
-> В предыдущем абзаце уже сказано, что в группе с чек-листом исправлено 64 % замечаний, а в группе без него — 41 %. Следующий абзац снова описывает эти две доли и заканчивается фразой «это ещё раз подтверждает сказанное выше».
+> The previous paragraph has already stated that 64% of the comments were addressed in the checklist group and 41% in the group without it. The next paragraph again describes these two proportions and ends with the sentence "this once again confirms what was said above".
 
-Правка:
+Correction:
 
-> После сообщения о 64 % и 41 % следующий абзац использует эти доли один раз: «Различие в 23 процентных пункта относится только к замечаниям по фактическим ошибкам».
+> After the report of 64% and 41%, the next paragraph uses these proportions once: "The difference of 23 percentage points applies only to comments on factual errors".
 
-Правило: повтор замени новой границей уже названного различия, если эта граница в статье есть. Если новой границы нет, второй пересказ убери и в проблеме напиши, что абзац не добавляет сведения.
+Rule: replace the repetition with a new boundary of the already stated difference, if the article contains this boundary. If there is no new boundary, remove the second restatement and in the problem state that the paragraph adds no information.
 
-### 6. Пустое усиление
+### 6. Empty intensification
 
-Признаки: усилитель.
+Features: intensifier.
 
-Ошибка: усилители стоят при слове, которое не называет критерия. Нельзя узнать, что именно оценено и относительно чего.
+Error: the intensifiers modify a word that names no criterion. One cannot tell what exactly was assessed and relative to what.
 
-Избыточно:
+Redundant:
 
-> Полученный результат является крайне, весьма и достаточно показательным.
+> The obtained result is extremely, highly, and quite indicative.
 
-Правка:
+Correction:
 
-> В экспериментальной группе осталось 11 % фактических ошибок против 18 % в контрольной.
+> In the experimental group, 11% of factual errors remained versus 18% in the control group.
 
-Правило: замени усилители величинами, которые статья уже сообщает. Если величин нет, усилители сними и в проблеме напиши, какой меры не хватает.
+Rule: replace the intensifiers with values the article already reports. If there are no values, remove the intensifiers and in the problem state which measure is missing.
 
-### 7. Избыточное определение известного шага
+### 7. Redundant definition of a known step
 
-Признаки: определение.
+Features: definition.
 
-Ошибка: определение не отличает объект ни от какого другого. Номер или имя уже задают отсылку.
+Error: the definition does not distinguish the object from any other. The number or name already provides the reference.
 
-Избыточно:
+Redundant:
 
-> Под таблицей 2 мы понимаем таблицу с номером 2, расположенную в тексте статьи и содержащую те данные, которые в неё помещены.
+> By Table 2 we mean the table numbered 2, located in the text of the article and containing the data that have been placed in it.
 
-Правка:
+Correction:
 
-> В таблице 2 приведена доля ошибок по двум способам проверки.
+> Table 2 gives the proportion of errors for the two checking methods.
 
-Правило: сразу сообщи содержание объекта. Содержание, которого статья не называет, не выдумывай: тогда убери только круговое определение.
+Rule: state the content of the object directly. Do not invent content that the article does not name: in that case remove only the circular definition.
 
-### 8. Сокращение, которое уничтожает сведение
+### 8. Shortening that destroys information
 
-Признаки: сокращение.
+Features: shortening.
 
-Ошибка: из фразы убраны условие, величина или оговорка, без которых наблюдение нельзя проверить.
+Error: the condition, value, or caveat without which the observation cannot be verified has been removed from the sentence.
 
-Избыточно:
+Redundant:
 
-> Из фразы «На одном семинаре доля фактических ошибок при чек-листе составила 11 %, без чек-листа — 18 %; другие типы ошибок не считались» оставлено только: «Ошибок стало меньше».
+> Of the sentence "At one seminar, the proportion of factual errors was 11% with the checklist and 18% without it; other types of errors were not counted", only this is left: "There were fewer errors".
 
-Правка:
+Correction:
 
-> На одном семинаре чек-лист дал 11 % фактических ошибок против 18 % без него. Другие типы ошибок не считались.
+> At one seminar, the checklist yielded 11% factual errors versus 18% without it. Other types of errors were not counted.
 
-Правило: верни условие, величины и границу подсчёта, которые в статье ещё можно найти. Если их уже нет нигде в тексте, не выдумывай числа: в проблеме напиши, каких сведений не хватает, чтобы проверить краткий вывод.
+Rule: restore the condition, values, and counting boundary that can still be found in the article. If they are no longer anywhere in the text, do not invent numbers: in the problem state what information is missing to verify the short conclusion.
 
-## Допустимая подробность
+## Acceptable detail
 
-Информативный текст может быть подробным. Подробность оправдана, когда каждая добавленная часть ограничивает объект, называет меру или отделяет факт от интерпретации. Такой фрагмент в список не вноси.
+Informative text may be detailed. Detail is justified when each added part delimits the object, names a measure, or separates fact from interpretation. Do not add such a fragment to the list.
 
-Избыточно:
+Redundant:
 
-> Следует отметить тот факт, что ошибок стало меньше.
+> One should note the fact that there were fewer errors.
 
-Недостаточно:
+Insufficient:
 
-> Ошибок стало меньше.
+> There were fewer errors.
 
-В меру содержания:
+Proportionate to content:
 
-> Доля фактических ошибок снизилась с 18 % до 11 %.
+> The proportion of factual errors decreased from 18% to 11%.
 
-## Маркеры
+## Markers
 
-Смотри на эти слова в первую очередь. Само по себе слово нарушением не является: решают вопросы и тип.
+Check these words first. A word by itself is not a violation: the questions and the type decide.
 
-- Пустой зачин: следует отметить, необходимо подчеркнуть, тот факт, что, в настоящее время, как известно, не секрет, можно видеть.
-- Канцелярит: осуществление проведения, аналитическое рассмотрение, в процессе исследования — если действие так и не названо.
-- Пустая степень: крайне, весьма, достаточно, заметный, важный, безусловно — если нет величины или критерия.
-- Пустой повтор: ещё раз подтверждает, таким образом при том же наблюдении.
-- Обычно оставляй: число, условие, имя понятия, предел подсчёта, краткую отсылку перед новым сопоставлением.
+- Empty opener: it should be noted, it is necessary to emphasize, the fact that, at present, as is known, it is no secret, one can see.
+- Officialese: carrying out the conducting of, analytical consideration, in the course of the research — if the action is never named.
+- Empty degree: extremely, highly, quite, noticeable, important, undoubtedly — if there is no value or criterion.
+- Empty repetition: once again confirms, thus with the same observation.
+- Usually keep: a number, a condition, the name of a concept, the counting limit, a brief reference before a new comparison.

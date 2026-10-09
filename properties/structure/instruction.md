@@ -1,37 +1,37 @@
-# Как оценить статью по structure
+# How to assess an article for structure
 
-Оцени статью по `reference.md`. Верни список мест и правок. Тип называй как в справочнике. Статью целиком не переписывай.
+Assess the article against `reference.md`. Return a list of places and corrections. Name each type as in the handbook. Do not rewrite the whole article.
 
-## Куда смотреть
+## Where to look
 
-Проверь введение, постановку задачи, обзор, описание материала и метода, результаты, обсуждение и выводы.
+Check the introduction, the statement of the task, the review, the description of the material and method, the results, the discussion, and the conclusions.
 
-Функция важнее заголовка. Введение готовит задачу. Задача даёт вопрос, по которому можно сверить итог. Основная часть отделяет чужое от своего. Результаты отвечают на задачу. Обсуждение их интерпретирует. Выводы закрывают заявленное.
+Function matters more than the heading. The introduction prepares the task. The task gives a question against which the outcome can be checked. The main body separates others' work from the author's own. The results answer the task. The discussion interprets them. The conclusions close what was stated.
 
-## Как отметить место
+## How to mark a place
 
-1. Найди фрагмент, который выполняет не свою функцию или оставляет нужную функцию невыполненной.
-2. Ответь на вопросы из раздела «Вопросы для оценки» справочника. Нарушение — ответ, который совпадает со столбцом «Нарушение, если».
-3. Маркеры справочника только показывают, куда смотреть. Одно слово само по себе нарушением не является.
-4. Если есть нарушение, запиши место. Правило правки возьми у соответствующего типа.
-5. В правке верни фрагмент к функции того места, где он стоит. Анонс во введении не получает статуса доказательства. Результат отвечает на задачу. Обсуждение сопоставляет, а не копирует все цифры. Вывод не вводит новый материал.
-6. Не добавляй цели, гипотезы, процедуры и данных, которых нет в статье. Если задачи нет, в проблеме напиши, что нет вопроса, по которому можно сверить композицию, и не подставляй чужую задачу.
-7. Если материал стоит не в том разделе, в правке дай формулировку, которая годится для текущего места, а в проблеме напиши, в какой функции должен оказаться перенесённый фрагмент.
+1. Find a fragment that performs a function not its own or leaves a required function unperformed.
+2. Answer the questions from the "Assessment questions" section of the handbook. A violation is an answer that matches the "Violation if" column.
+3. The handbook's markers only show where to look. A single word by itself is not a violation.
+4. If there is a violation, record the place. Take the correction rule from the corresponding type.
+5. In the correction, return the fragment to the function of the place where it stands. An announcement in the introduction does not get the status of proof. A result answers the task. The discussion compares rather than copies all the figures. A conclusion introduces no new material.
+6. Do not add aims, hypotheses, procedures, or data that are not in the article. If there is no task, write in the problem that there is no question against which the composition can be checked, and do not substitute someone else's task.
+7. If material stands in the wrong section, give in the correction a wording that suits the current place, and write in the problem which function the relocated fragment should end up in.
 
-## Что оставлять
+## What to keep
 
-В список не вноси:
+Do not add to the list:
 
-- другие заголовки, если функция выполнена;
-- результаты, объединённые с обсуждением, гипотезу в конце введения и отдельный раздел ограничений, если так устроено издание и функция выполнена;
-- краткий анонс направления работы во введении без статуса доказательства и без практического предписания;
-- вывод, который закрывает уже поставленный вопрос и не вводит новых данных.
+- different headings, if the function is performed;
+- results combined with the discussion, a hypothesis at the end of the introduction, and a separate limitations section, if the journal is structured that way and the function is performed;
+- a brief announcement of the direction of the work in the introduction without the status of proof and without a practical prescription;
+- a conclusion that closes an already posed question and introduces no new data.
 
-Образец сохранённых функций — в разделе «Допустимая композиция» справочника.
+A sample of preserved functions is in the "Acceptable composition" section of the handbook.
 
-## Проверка перед отдачей
+## Check before returning
 
-- Цитата дословно есть в статье.
-- Фрагмент нарушает справочник и не попадает в «Что оставлять».
-- Правка возвращает фрагмент к его функции и не добавляет задачи или данных, которых нет в статье.
-- Тип взят из справочника.
+- The quote appears verbatim in the article.
+- The fragment violates the handbook and does not fall under "What to keep".
+- The correction returns the fragment to its function and adds no task or data that are not in the article.
+- The type is taken from the handbook.

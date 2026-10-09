@@ -1,176 +1,176 @@
-# Безличность и сдержанность изложения
+# Impersonality and restraint of presentation
 
-Справочник критерия. Порядок оценки — в `Инструкция. Оценка безличности и сдержанности изложения.md`.
+Criterion handbook. Assessment procedure: see `instruction.md`.
 
-Образцы правок ниже показывают нужный центр фразы. Числа и сравнения в правке оцениваемой статьи бери только из неё.
+The sample corrections below show the required focus of the sentence. In a correction for the article under review, take numbers and comparisons only from that article.
 
-## Определение
+## Definition
 
-**Безличность и сдержанность изложения** — такой способ построения фразы, при котором в центре находятся материал, процедура, анализ и результат. Исследовательский статус высказывания передаётся формулировками «результаты свидетельствуют», «анализ показывает», «можно предположить». Местоимение «мы» допустимо для обозначения выполненных действий, если это соответствует требованиям издания, и не заменяет результат личной оценкой, разговорным усилением или обращением к читателю.
+**Impersonality and restraint of presentation** is a way of constructing a sentence in which the material, procedure, analysis, and result are at the focus. The research status of a statement is conveyed by wordings such as "the results indicate", "the analysis shows", "it can be assumed". The pronoun "we" is acceptable for denoting completed actions, if this meets the publication's requirements, and does not replace the result with a personal assessment, colloquial intensification, or an appeal to the reader.
 
-## Вопросы для оценки
+## Assessment questions
 
-| Признак | Вопрос | Нарушение, если |
+| Feature | Question | Violation if |
 | --- | --- | --- |
-| Центр фразы | Названы ли данные, анализ или процедура, а не уверенность автора? | нет |
-| Модус | Видно ли, установлено положение, следует из анализа или только предполагается? | нет |
-| «Мы» | Обозначает ли «мы» действие исследователя, допустимое для издания? | нет |
-| Лексика | Нет ли разговорных, восклицательных и эмоционально усилительных слов? | да |
-| Читатель | Нет ли требования согласиться или апелляции к «каждому»? | да |
-| Полемика | Относится ли несогласие к тезису, методу или данным другой работы? | нет |
-| Ход работы | Не подменяет ли реакция автора сообщение о результате? | да |
-| Вклад | Описан ли результат через материал и границу, а не через аттестацию автора? | нет |
+| Sentence focus | Are the data, analysis, or procedure named, rather than the author's conviction? | no |
+| Modality | Is it clear whether a claim is established, follows from the analysis, or is only assumed? | no |
+| "We" | Does "we" denote a researcher's action that is acceptable for the publication? | no |
+| Vocabulary | Are there any colloquial, exclamatory, or emotionally intensifying words? | yes |
+| Reader | Is there a demand to agree or an appeal to "everyone"? | yes |
+| Polemic | Does the disagreement concern a thesis, method, or data of another work? | no |
+| Course of work | Does the author's reaction replace the report of the result? | yes |
+| Contribution | Is the result described through the material and its limits, rather than through the author's self-attestation? | no |
 
-## Типы нарушений
+## Violation types
 
-### 1. Личная уверенность вместо результата
+### 1. Personal conviction instead of a result
 
-Признаки: центр фразы, модус.
+Features: sentence focus, modality.
 
-Ошибка: центром фразы стала убеждённость автора. Нет ни отсылки к данным, ни признака, по которому объект стал лучше.
+Error: the author's conviction has become the focus of the sentence. There is neither a reference to data nor an indicator by which the object became better.
 
-Несдержанно:
+Unrestrained:
 
-> Я убеждён, что предложенный чек-лист заметно улучшает студенческие работы.
+> I am convinced that the proposed checklist noticeably improves students' papers.
 
-Правка:
+Correction:
 
-> В работах, проверенных по чек-листу, доля неисправленных фактических ошибок была ниже, чем в работах с только итоговым комментарием.
+> In papers checked against the checklist, the proportion of uncorrected factual errors was lower than in papers with only a final comment.
 
-Правило: поставь в центр сравнение или наблюдение, которое статья уже сообщает. Если признака в тексте нет, уверенность сними и в проблеме напиши, какого сведения не хватает.
+Rule: put at the focus a comparison or observation that the article already reports. If there is no indicator in the text, remove the conviction and in the problem state what information is missing.
 
-### 2. Разговорная оценка
+### 2. Colloquial evaluation
 
-Признаки: лексика.
+Features: vocabulary.
 
-Ошибка: разговорная формула передаёт впечатление и не называет наблюдаемый признак.
+Error: a colloquial formula conveys an impression and does not name an observable indicator.
 
-Несдержанно:
+Unrestrained:
 
-> По-моему, получился просто очень удачный инструмент, и студентам он явно зашёл.
+> In my opinion, it turned out to be just a very successful tool, and it was clearly a hit with the students.
 
-Правка:
+Correction:
 
-> По итогам занятия чек-лист позволил отметить фактические ошибки до сдачи итогового текста. 24 из 30 студентов исправили хотя бы одну такую пометку.
+> Following the class session, the checklist made it possible to flag factual errors before the final text was submitted. 24 of the 30 students corrected at least one such flag.
 
-Правило: замени впечатление действием и подсчётом, которые уже есть в статье. Число, которого нет, не добавляй.
+Rule: replace the impression with the action and count that are already in the article. Do not add a number that is not there.
 
-### 3. «Мы» как носитель мнения
+### 3. "We" as the bearer of opinion
 
-Признаки: «мы», читатель.
+Features: "we", reader.
 
-Ошибка: «мы считаем» делает основанием мнение, а обращение к читателю требует согласия.
+Error: "we believe" makes an opinion the basis, and the appeal to the reader demands agreement.
 
-Несдержанно:
+Unrestrained:
 
-> Мы считаем этот подход лучшим и хотим, чтобы читатель наконец это признал.
+> We consider this approach the best and want the reader to finally acknowledge it.
 
-Правка:
+Correction:
 
-> В условиях данного курса подход дал более низкую долю фактических ошибок, чем итоговый комментарий. Вопрос о его переносе на другие курсы остаётся открытым.
+> Under the conditions of this course, the approach yielded a lower proportion of factual errors than the final comment. The question of transferring it to other courses remains open.
 
-Правило: сними «мы» там, где оно не называет исследовательское действие. Призыв к читателю убери. Рекомендацию оставь только в пределе уже названного результата.
+Rule: remove "we" where it does not name a research action. Remove the appeal to the reader. Keep a recommendation only within the bounds of the result already stated.
 
-### 4. Допустимое и избыточное «мы» в одном фрагменте
+### 4. Acceptable and excessive "we" in one passage
 
-Признаки: «мы», центр фразы.
+Features: "we", sentence focus.
 
-Ошибка: одно «мы» называет действие, другое заменяет результат убеждением.
+Error: one "we" names an action, the other replaces the result with a conviction.
 
-Несдержанно:
+Unrestrained:
 
-> Мы провели опрос 30 студентов. Мы глубоко убеждены, что их ответы доказывают нашу правоту.
+> We conducted a survey of 30 students. We are deeply convinced that their answers prove that we are right.
 
-Правка:
+Correction:
 
-> Мы провели опрос 30 студентов. Ответы показывают, как участники оценили полезность чек-листа; они не являются самостоятельным доказательством снижения числа ошибок.
+> We conducted a survey of 30 students. The answers show how the participants rated the usefulness of the checklist; they are not independent proof of a reduction in the number of errors.
 
-Правило: действие автора сохрани. Убеждение замени статусом тех данных, которые статья уже описывает.
+Rule: keep the author's action. Replace the conviction with the status of the data that the article already describes.
 
-### 5. Эмоциональная полемика
+### 5. Emotional polemic
 
-Признаки: полемика, лексика.
+Features: polemic, vocabulary.
 
-Ошибка: оценка людей, досада и заранее объявленная очевидность стоят вместо тезиса, метода или данных другой работы.
+Error: an assessment of people, annoyance, and obviousness declared in advance stand in place of a thesis, method, or data of another work.
 
-Несдержанно:
+Unrestrained:
 
-> К сожалению, предыдущие исследователи так и не сумели понять очевидную пользу пошаговой проверки.
+> Unfortunately, previous researchers never managed to understand the obvious benefit of step-by-step checking.
 
-Правка:
+Correction:
 
-> В работах Иванова (2016) и Орловой (2018) пошаговая проверка не сравнивалась с итоговым комментарием по доле фактических ошибок. Настоящее исследование восполняет именно это сопоставление.
+> In the works of Ivanov (2016) and Orlova (2018), step-by-step checking was not compared with the final comment in terms of the proportion of factual errors. The present study supplies precisely this comparison.
 
-Правило: перенеси несогласие на предмет, метод или данные. Работы и пробел, которых статья не называет, не добавляй: тогда сними оценку людей и в проблеме напиши, какой предмет полемики в тексте не назван.
+Rule: shift the disagreement to the subject, method, or data. Do not add works or a gap that the article does not name: in that case, remove the assessment of people and in the problem state which subject of the polemic is not named in the text.
 
-### 6. Риторическое обращение
+### 6. Rhetorical appeal
 
-Признаки: читатель, лексика.
+Features: reader, vocabulary.
 
-Ошибка: согласие аудитории, восклицание и оценочный эпитет стоят вместо результата.
+Error: the audience's agreement, an exclamation, and an evaluative epithet stand in place of the result.
 
-Несдержанно:
+Unrestrained:
 
-> Каждый преподаватель согласится: нельзя и дальше игнорировать столь блестящую методику!
+> Every teacher will agree: such a brilliant method can no longer be ignored!
 
-Правка:
+Correction:
 
-> Рассмотренная методика связана с меньшим числом неисправленных фактических ошибок в одном учебном курсе. Решение о её использовании в других курсах зависит от того, совпадают ли тип задания и состав ошибок.
+> The method considered is associated with a smaller number of uncorrected factual errors in one academic course. The decision to use it in other courses depends on whether the assignment type and the composition of errors match.
 
-Правило: ограничь утверждение материалом статьи. Побудительную интонацию и апелляцию к «каждому» сними.
+Rule: limit the claim to the article's material. Remove the hortatory intonation and the appeal to "everyone".
 
-### 7. Разговорный рассказ о ходе работы
+### 7. Colloquial account of the course of work
 
-Признаки: ход работы, лексика.
+Features: course of work, vocabulary.
 
-Ошибка: ожидание и удивление автора не добавляют сведения о данных.
+Error: the author's expectation and surprise add no information about the data.
 
-Несдержанно:
+Unrestrained:
 
-> Честно говоря, мы сами не ожидали такого эффекта и были приятно удивлены цифрами.
+> To be honest, we ourselves did not expect such an effect and were pleasantly surprised by the figures.
 
-Правка:
+Correction:
 
-> Доля фактических ошибок снизилась с 18 % до 11 %. Исходное ожидание авторов относительно величины различия в статье отдельно не проверялось.
+> The proportion of factual errors decreased from 18% to 11%. The authors' initial expectation regarding the size of the difference was not separately tested in the article.
 
-Правило: оставь величину, которую статья уже сообщает. Личную реакцию исключи. Если величины рядом нет, реакцию убери и в проблеме напиши, какое число не названо.
+Rule: keep the magnitude that the article already reports. Exclude the personal reaction. If there is no magnitude nearby, remove the reaction and in the problem state which number is not given.
 
-### 8. Самопрезентация вместо описания вклада
+### 8. Self-presentation instead of a description of the contribution
 
-Признаки: вклад.
+Features: contribution.
 
-Ошибка: непроверяемая аттестация автора и превосходная оценка собственного вклада. Формула «автор этих строк» сама по себе лишь стилистически тяжеловесна; нарушение — в непроверяемом первенстве и в заявлении о решении без предмета.
+Error: an unverifiable self-attestation of the author and a superlative assessment of one's own contribution. The formula "the author of these lines" by itself is merely stylistically heavy; the violation lies in unverifiable priority and in a claim of a solution without a subject.
 
-Несдержанно:
+Unrestrained:
 
-> Автор этих строк впервые в науке сумел решить проблему обратной связи.
+> The author of these lines has, for the first time in science, managed to solve the problem of feedback.
 
-Правка:
+Correction:
 
-> В работе сопоставлены пошаговый чек-лист и итоговый комментарий на материале одного курса. Сопоставление ограничено фактическими ошибками и не исчерпывает проблему обратной связи.
+> The paper compares a step-by-step checklist and a final comment on the material of one course. The comparison is limited to factual errors and does not exhaust the problem of feedback.
 
-Правило: опиши вклад через материал и границу. Аттестацию автора сними. Границу, которой статья не задаёт, не выдумывай: тогда сними только первенство и в проблеме напиши, какой материал в тексте не назван.
+Rule: describe the contribution through the material and its limits. Remove the author's self-attestation. Do not invent a limit that the article does not set: in that case, remove only the claim of priority and in the problem state which material is not named in the text.
 
-## Допустимое «мы»
+## Acceptable "we"
 
-Сдержанность не требует прятать того, кто провёл наблюдение. Граница проходит между действием и оценкой. Такой фрагмент в список не вноси.
+Restraint does not require hiding the person who made the observation. The boundary lies between action and assessment. Do not add such a passage to the list.
 
-Допустимо:
+Acceptable:
 
-> Мы исключили из подсчёта работы, сданные после срока.
+> We excluded papers submitted after the deadline from the count.
 
-Несдержанно:
+Unrestrained:
 
-> Мы уверены, что оставшиеся работы блестяще подтверждают метод.
+> We are sure that the remaining papers brilliantly confirm the method.
 
-Если издание требует безличной конструкции, действие передаётся так: «Из подсчёта исключены работы, сданные после срока». Меняется грамматика, не статус фразы.
+If the publication requires an impersonal construction, the action is conveyed as follows: "Papers submitted after the deadline were excluded from the count." The grammar changes, not the status of the sentence.
 
-## Маркеры
+## Markers
 
-Смотри на эти слова в первую очередь. Само по себе слово нарушением не является: решают вопросы и тип.
+Check these words first. A word by itself is not a violation: the questions and the type decide.
 
-- Уверенность вместо результата: я убеждён, мы уверены, мы считаем, по-моему, нашу правоту.
-- Разговорная оценка: просто очень, явно зашёл, честно говоря, приятно удивлены, блестящий, к сожалению.
-- Давление на читателя: каждый согласится, нельзя и дальше, хотим, чтобы читатель, восклицание.
-- Аттестация автора: впервые в науке, сумел решить, автор этих строк — если рядом нет материала и границы.
-- Обычно оставляй: мы провели, мы исключили, мы ограничили, мы кодировали, анализ показывает, можно предположить, полученные результаты свидетельствуют.
+- Conviction instead of a result: I am convinced, we are sure, we believe, in my opinion, that we are right.
+- Colloquial evaluation: just very, clearly a hit, to be honest, pleasantly surprised, brilliant, unfortunately.
+- Pressure on the reader: everyone will agree, can no longer, want the reader to, exclamation.
+- Self-attestation of the author: for the first time in science, managed to solve, the author of these lines — if there is no material and limit nearby.
+- Usually keep: we conducted, we excluded, we limited, we coded, the analysis shows, it can be assumed, the results obtained indicate.

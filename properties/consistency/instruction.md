@@ -1,37 +1,37 @@
-# Как оценить статью по consistency
+# How to assess an article for consistency
 
-Оцени статью по `reference.md`. Верни список мест и правок. Тип называй как в справочнике. Статью целиком не переписывай.
+Assess the article against `reference.md`. Return a list of places and corrections. Name each type as in the handbook. Do not rewrite the whole article.
 
-## Куда смотреть
+## Where to look
 
-Проверь порядок проблемы, обзора, аргументации, метода, результатов и выводов. Проверь соседние тезисы, соответствие результатов поставленному вопросу и то, не появляется ли в заключении новый сюжет.
+Check the order of the problem, the review, the argumentation, the method, the results, and the conclusions. Check adjacent claims, whether the results match the question posed, and whether a new topic appears in the conclusion.
 
-Утверждение в цепи — тезис, который должен следовать из предыдущего, отвечать на заявленную задачу или подготавливать вывод.
+A statement in the chain is a claim that must follow from the previous one, answer the stated task, or prepare a conclusion.
 
-## Как отметить место
+## How to mark a place
 
-1. Найди место, где следующий шаг не восстанавливается из предыдущего.
-2. Ответь на вопросы из раздела «Вопросы для оценки» справочника. Нарушение — ответ, который совпадает со столбцом «Нарушение, если».
-3. Маркеры справочника только показывают, куда смотреть. Одно слово само по себе нарушением не является.
-4. Если есть нарушение, запиши место. Правило правки возьми у соответствующего типа.
-5. В правке восстанови связь словами, которые уже есть в статье: на какой вопрос отвечает результат, почему из этой посылки названный вывод не следует, где части расходятся.
-6. Не добавляй новой аргументации, измерений и причин. Если звена в статье нет, сними вывод, который на нём держится, и в проблеме напиши, какого звена не хватает.
-7. Жанр может менять порядок разделов. Нарушение есть, когда ход мысли нельзя проследить, а не когда состав заголовков отличается от схемы «проблема, обзор, метод, результаты, выводы». Если тезис стоит не на своём месте, в правке дай формулировку для места, где он должен быть, а в проблеме напиши, откуда его убрать.
+1. Find a place where the next step cannot be reconstructed from the previous one.
+2. Answer the questions from the "Assessment questions" section of the handbook. A violation is an answer that matches the "Violation if" column.
+3. The handbook's markers only show where to look. A single word by itself is not a violation.
+4. If there is a violation, record the place. Take the correction rule from the corresponding type.
+5. In the correction, restore the connection using words already in the article: which question the result answers, why the stated conclusion does not follow from this premise, where the parts diverge.
+6. Do not add new argumentation, measurements, or causes. If the link is not in the article, remove the conclusion that rests on it, and in the problem write which link is missing.
+7. Genre may change the order of sections. A violation exists when the line of reasoning cannot be traced, not when the set of headings differs from the scheme "problem, review, method, results, conclusions". If a claim is not in its proper place, give in the correction the wording for the place where it should be, and in the problem write where to remove it from.
 
-## Что оставлять
+## What to keep
 
-В список не вноси:
+Do not add to the list:
 
-- другой порядок разделов, если видно, какой вопрос решается сейчас и как шаг связан с предыдущим;
-- обзорную композицию, отличную от отчёта об эксперименте, если цепь прослеживается;
-- расхождение результатов, которое названо и разобрано;
-- вывод, который основная часть уже подготовила.
+- a different order of sections, if it is clear which question is being addressed at that point and how the step is connected to the previous one;
+- a review composition that differs from an experiment report, if the chain can be traced;
+- a discrepancy in results that is named and discussed;
+- a conclusion that the main body has already prepared.
 
-Образец прослеживаемого шага — в разделе «Допустимый ход» справочника.
+A sample of a traceable step is in the "Acceptable progression" section of the handbook.
 
-## Проверка перед отдачей
+## Check before returning
 
-- Цитата дословно есть в статье.
-- Фрагмент нарушает справочник и не попадает в «Что оставлять».
-- Правка восстанавливает связь из уже имеющихся в статье положений и не добавляет нового сюжета.
-- Тип взят из справочника.
+- The quote appears verbatim in the article.
+- The fragment violates the handbook and does not fall under "What to keep".
+- The correction restores the connection from propositions already in the article and does not add a new topic.
+- The type is taken from the handbook.

@@ -1,39 +1,39 @@
-# Как оценить статью по impersonality
+# How to assess an article for impersonality
 
-Оцени статью по `reference.md`. Верни список мест и правок. Тип называй как в справочнике. Статью целиком не переписывай.
+Assess the article against `reference.md`. Return a list of places and corrections. Name each type as in the handbook. Do not rewrite the whole article.
 
-## Куда смотреть
+## Where to look
 
-Проверь утверждения, выводы, полемику, описание хода работы и описание вклада автора.
+Check claims, conclusions, polemic, the description of the course of work, and the description of the author's contribution.
 
-Фраза в зоне риска — предложение, в котором смысловым центром становятся «я», «мы», уверенность, разговорная оценка, восклицание, обращение к читателю или характеристика личности исследователя.
+A sentence at risk is a sentence whose semantic focus becomes "I", "we", conviction, a colloquial evaluation, an exclamation, an appeal to the reader, or a characterization of the researcher's personality.
 
-## Как отметить место
+## How to mark a place
 
-1. Найди такую фразу.
-2. Ответь на вопросы из раздела «Вопросы для оценки» справочника. Нарушение — ответ, который совпадает со столбцом «Нарушение, если».
-3. Маркеры справочника только показывают, куда смотреть. Одно слово само по себе нарушением не является.
-4. Если есть нарушение, запиши место. Правило правки возьми у соответствующего типа.
-5. В правке поставь в центр результат, процедуру, материал или границу вклада. Сними разговорную оценку, восклицание, требование согласия и аттестацию автора. Исследовательское действие, которое местоимение уже называет, сохрани.
-6. Не добавляй чисел, сравнений и признаков, которых нет в статье. Если за оценкой нет наблюдаемого признака, оценку убери и в проблеме укажи, какого сведения не хватает.
-7. «Мы» для выполненного действия оставляй, если по тексту нельзя видеть запрет издания. Оценку при том же «мы» убирай. Если издание прямо требует безличной конструкции и это сказано в статье или в задании на ревью, меняй грамматику, но не статус фразы.
+1. Find such a sentence.
+2. Answer the questions from the "Assessment questions" section of the handbook. A violation is an answer that matches the "Violation if" column.
+3. The handbook's markers only show where to look. A single word by itself is not a violation.
+4. If there is a violation, record the place. Take the correction rule from the corresponding type.
+5. In the correction, put at the focus the result, procedure, material, or limits of the contribution. Remove colloquial evaluation, exclamation, demands for agreement, and the author's self-attestation. Keep the research action that the pronoun already names.
+6. Do not add numbers, comparisons, or indicators that are not in the article. If there is no observable indicator behind an assessment, remove the assessment and in the problem state what information is missing.
+7. Keep "we" for a completed action if no prohibition by the publication can be seen from the text. Remove an assessment attached to the same "we". If the publication explicitly requires an impersonal construction and this is stated in the article or in the review assignment, change the grammar but not the status of the sentence.
 
-## Что оставлять
+## What to keep
 
-В список не вноси:
+Do not add to the list:
 
-- «мы отобрали», «мы исключили», «мы кодировали», «мы провели» и другие «мы», которые называют действие исследователя;
-- то же действие в безличной или страдательной форме, если меняется только грамматика;
-- несогласие, отнесённое к тезису, методу или данным другой работы;
-- описание вклада через материал и границу результата.
+- "we selected", "we excluded", "we coded", "we conducted", and other instances of "we" that name a researcher's action;
+- the same action in an impersonal or passive form, if only the grammar changes;
+- disagreement directed at a thesis, method, or data of another work;
+- a description of the contribution through the material and the limits of the result.
 
-«Я» и «мы» сами по себе не нарушение. Нарушение есть, когда местоимение называет оценку, убеждение или требование согласия вместо результата.
+"I" and "we" by themselves are not a violation. There is a violation when the pronoun names an assessment, a conviction, or a demand for agreement instead of a result.
 
-Образец допустимой фразы — в разделе «Допустимое „мы“» справочника.
+A sample acceptable sentence is in the "Acceptable 'we'" section of the handbook.
 
-## Проверка перед отдачей
+## Check before returning
 
-- Цитата дословно есть в статье.
-- Фрагмент нарушает справочник и не попадает в «Что оставлять».
-- Правка сохраняет названное действие и уже сообщённый результат, снимает только оценку, эмоцию и обращение и не добавляет сведений, которых нет в статье.
-- Тип взят из справочника.
+- The quote is present verbatim in the article.
+- The fragment violates the handbook and does not fall under "What to keep".
+- The correction keeps the named action and the already reported result, removes only the assessment, emotion, and appeal, and adds no information that is not in the article.
+- The type is taken from the handbook.

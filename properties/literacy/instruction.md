@@ -1,37 +1,37 @@
-# Как оценить статью по literacy
+# How to assess an article for literacy
 
-Оцени статью по `reference.md`. Верни список мест и правок. Тип называй как в справочнике. Статью целиком не переписывай.
+Assess the article against `reference.md`. Return a list of places and corrections. Name each type as in the handbook. Do not rewrite the whole article.
 
-## Куда смотреть
+## Where to look
 
-Проверь согласование, управление, лексическую сочетаемость, паронимы, деепричастные и причастные обороты, однородные члены, пунктуацию и предложения, в которых подлежащее оторвано от сказуемого.
+Check agreement, government, lexical collocation, paronyms, adverbial participle and participle clauses, homogeneous members, punctuation, and sentences in which the subject is torn away from the predicate.
 
-Норма здесь — грамматика, синтаксис, орфография, пунктуация и сочетаемость литературного языка. Длина фразы сама по себе ошибкой не является.
+The norm here is the grammar, syntax, spelling, punctuation, and collocation of the standard literary language. Sentence length by itself is not an error.
 
-## Как отметить место
+## How to mark a place
 
-1. Найди место, где норма даёт второе, ошибочное чтение или мешает связать слова.
-2. Ответь на вопросы из раздела «Вопросы для оценки» справочника. Нарушение — ответ, который совпадает со столбцом «Нарушение, если».
-3. Маркеры справочника только показывают, куда смотреть. Одно слово само по себе нарушением не является.
-4. Если есть нарушение, запиши место. Правило правки возьми у соответствующего типа.
-5. В правке исправь норму и сохрани смысл, силу вывода и состав сведений.
-6. Не меняй термин, показатель и статус утверждения ради гладкости. Если нормативны два варианта, выбери тот, который сохраняет намерение фразы по соседнему тексту. Если намерение двояко, в проблеме напиши оба чтения.
-7. Длинное предложение дели только тогда, когда читатель теряет связь подлежащего со сказуемым или границу оборота. Фразу с ясными связями слов не дели.
+1. Find a place where the norm gives a second, erroneous reading or prevents linking the words.
+2. Answer the questions in the handbook section "Assessment questions". A violation is an answer that matches the "Violation if" column.
+3. The handbook markers only show where to look. A single word by itself is not a violation.
+4. If there is a violation, record the place. Take the correction rule from the corresponding type.
+5. In the correction, fix the norm and keep the meaning, the strength of the conclusion, and the set of information.
+6. Do not change a term, an indicator, or the status of a claim for the sake of smoothness. If two variants are standard, choose the one that keeps the intent of the sentence according to the neighbouring text. If the intent is ambiguous, write both readings in the problem.
+7. Split a long sentence only when the reader loses the link between the subject and the predicate or the boundary of a clause. Do not split a sentence with clear links between words.
 
-## Что оставлять
+## What to keep
 
-В список не вноси:
+Do not add to the list:
 
-- длинное предложение, у которого ясны подлежащее, сказуемое и границы оборотов;
-- точное уточнение, которое не рвёт связь слов;
-- термин и имя собственное в принятом написании;
-- стилистически тяжёлую, но грамматически однозначную фразу.
+- a long sentence whose subject, predicate, and clause boundaries are clear;
+- a precise qualification that does not break the link between words;
+- a term or proper name in its accepted spelling;
+- a stylistically heavy but grammatically unambiguous sentence.
 
-Образец нормативной фразы — в разделе «Допустимая фраза» справочника.
+A sample standard sentence is in the handbook section "Acceptable sentence".
 
-## Проверка перед отдачей
+## Check before returning
 
-- Цитата дословно есть в статье.
-- Фрагмент нарушает справочник и не попадает в «Что оставлять».
-- Правка устраняет помеху смысла и не меняет состав сведений.
-- Тип взят из справочника.
+- The quote appears verbatim in the article.
+- The fragment violates the handbook and does not fall under "What to keep".
+- The correction removes the obstacle to meaning and does not change the set of information.
+- The type is taken from the handbook.

@@ -1,179 +1,179 @@
-# Доказательность и осторожность выводов
+# Evidential support and caution of conclusions
 
-Справочник критерия. Порядок оценки — в `Инструкция. Оценка доказательности и осторожности выводов.md`.
+Criterion handbook. Assessment procedure: see `instruction.md`.
 
-Образцы правок ниже показывают нужный статус формулировки. Числа, альтернативы и ограничения в правке оцениваемой статьи бери только из неё.
+The sample corrections below show the required status of the wording. Take numbers, alternatives and limitations for a correction of the article under review only from that article.
 
-## Определение
+## Definition
 
-**Доказательность и осторожность выводов** — соответствие итоговых формулировок пределам полученных данных. Установленный факт, интерпретация и гипотеза различаются выбором глагола и степенью уверенности. Вывод сохраняет совокупность, условия и альтернативные объяснения, которые исследование не закрыло; практическая рекомендация и краткая аннотация не получают более сильного статуса, чем раздел результатов.
+**Evidential support and caution of conclusions** — the correspondence of final statements to the limits of the data obtained. An established fact, an interpretation and a hypothesis are distinguished by the choice of verb and the degree of certainty. A conclusion preserves the population, the conditions and the alternative explanations that the study has not ruled out; a practical recommendation and a brief abstract do not receive a stronger status than the results section.
 
-Сила итоговой формулировки совпадает с силой основания. Что прямо показано, то сообщается как результат. Что из данных только выводится, то остаётся интерпретацией. Что данными лишь допускается, то остаётся гипотезой.
+The strength of the final statement matches the strength of its grounds. What is directly shown is reported as a result. What is only inferred from the data remains an interpretation. What the data merely permit remains a hypothesis.
 
-## Вопросы для оценки
+## Assessment questions
 
-| Признак | Вопрос | Нарушение, если |
+| Feature | Question | Violation if |
 | --- | --- | --- |
-| Статус | Различаются ли факт, интерпретация и гипотеза? | нет |
-| Глагол | Соответствует ли «доказано», «позволяет заключить» или «можно предположить» силе основания? | нет |
-| Совокупность | Названы ли группа, материал и условие, дальше которых вывод не идёт? | нет |
-| Альтернатива | Не выбрана ли одна причина там, где данные совместимы с несколькими? | да |
-| Рекомендация | Не сильнее ли практическое следствие самого результата? | да |
-| Квантор | Нет ли «всегда», «никогда» и «все» без основания на такие случаи? | да |
-| Прогноз | Не включено ли в итог будущее следствие, которое не измерялось? | да |
-| Согласованность | Сохраняют ли аннотация и заключение тот статус, который задан результатами? | нет |
+| Status | Are fact, interpretation and hypothesis distinguished? | no |
+| Verb | Does "proven", "allows us to conclude" or "it can be hypothesized" match the strength of the grounds? | no |
+| Population | Are the group, the material and the condition named, beyond which the conclusion does not go? | no |
+| Alternative | Is a single cause chosen where the data are compatible with several? | yes |
+| Recommendation | Is the practical implication stronger than the result itself? | yes |
+| Quantifier | Are there "always", "never" and "all" without grounds covering such cases? | yes |
+| Prediction | Does the conclusion include a future consequence that was not measured? | yes |
+| Consistency | Do the abstract and the conclusion keep the status set by the results? | no |
 
-## Типы нарушений
+## Violation types
 
-### 1. Гипотеза в форме установленного факта
+### 1. Hypothesis stated as established fact
 
-Признаки: статус, глагол.
+Features: status, verb.
 
-Ошибка: глагол «доказывает» и новый конструкт стоят на наблюдении другого показателя. Переход от одного к другому остаётся гипотезой, если второй конструкт не измерялся.
+Error: the verb "proves" and a new construct rest on an observation of a different indicator. The step from one to the other remains a hypothesis if the second construct was not measured.
 
-Нарушение:
+Violation:
 
-> Снижение доли ошибок доказывает, что студенты стали лучше понимать фактический материал.
+> The decrease in the share of errors proves that students have come to understand the factual material better.
 
-Правка:
+Correction:
 
-> Доля фактических ошибок снизилась с 18 % до 11 %. Можно предположить, что это снижение связано с более точным пониманием материала, однако само понимание в работе не измерялось.
+> The share of factual errors decreased from 18% to 11%. It can be hypothesized that this decrease is related to a more accurate understanding of the material; however, understanding itself was not measured in the study.
 
-Правило: факт и гипотезу разведи. Глагол доказательства оставь только у того, что исследование установило. Конструкт, которого в статье нет, гипотезой не называй как измеренный; в проблеме укажи, что измерения не было.
+Rule: separate fact and hypothesis. Keep a verb of proof only for what the study established. In the hypothesis, do not refer to a construct that is absent from the article as if it were measured; in the problem, state that there was no measurement.
 
-### 2. Вывод шире данных
+### 2. Conclusion broader than the data
 
-Признаки: совокупность.
+Features: population.
 
-Ошибка: единичный материал становится основанием всеобщего правила.
+Error: a single piece of material becomes the basis for a universal rule.
 
-Нарушение:
+Violation:
 
-> Проведённый на одном семинаре подсчёт показывает, что чек-лист улучшает письменные работы студентов университетов.
+> A count carried out at one seminar shows that the checklist improves the written work of university students.
 
-Правка:
+Correction:
 
-> На одном семинаре работы с чек-листом содержали меньше неисправленных фактических ошибок, чем работы без него. Полученные данные позволяют заключить это только для данного задания и данной группы.
+> At one seminar, papers written with the checklist contained fewer uncorrected factual errors than papers written without it. The data obtained allow us to conclude this only for this task and this group.
 
-Правило: сохрани в выводе группу, материал и условие, которые статья уже назвала.
+Rule: keep in the conclusion the group, the material and the condition that the article has already named.
 
-### 3. Пилот назван доказательством
+### 3. Pilot presented as proof
 
-Признаки: глагол, статус.
+Features: verb, status.
 
-Ошибка: пилот показывает осуществимость процедуры и предварительное направление. Он не занимает места завершённого доказательства эффективности.
+Error: a pilot shows the feasibility of a procedure and a preliminary direction. It does not take the place of a completed proof of effectiveness.
 
-Нарушение:
+Violation:
 
-> Пилотное занятие с двенадцатью участниками доказало эффективность метода.
+> A pilot session with twelve participants proved the effectiveness of the method.
 
-Правка:
+Correction:
 
-> Пилотное занятие с двенадцатью участниками показало, что процедуру проверки по чек-листу можно провести в отведённое время. Предварительные данные совместимы с предположением о снижении фактических ошибок, но для вывода об эффективности нужна основная проверка.
+> A pilot session with twelve participants showed that the checklist-based checking procedure can be carried out within the allotted time. The preliminary data are compatible with the assumption that factual errors decrease, but a conclusion about effectiveness requires the main test.
 
-Правило: сообщи то, что этот дизайн способен установить. Эффективность оставь предметом дальнейшей проверки, если основная проверка в статье не проведена. Уже показанную осуществимость не стирай.
+Rule: report what this design is able to establish. Leave effectiveness as a subject for further testing if the main test has not been conducted in the article. Do not erase feasibility that has already been shown.
 
-### 4. Одно объяснение при нескольких возможных
+### 4. Single explanation where several are possible
 
-Признаки: альтернатива.
+Features: alternative.
 
-Ошибка: итоговые цифры объявлены единственной причиной, хотя данные совместимы с другими объяснениями, которые дизайн не закрыл.
+Error: the final figures are declared the only cause, although the data are compatible with other explanations that the design has not ruled out.
 
-Нарушение:
+Violation:
 
-> Поскольку в экспериментальной группе ошибок было меньше, причиной улучшения является именно чек-лист.
+> Since there were fewer errors in the experimental group, the cause of the improvement is precisely the checklist.
 
-Правка:
+Correction:
 
-> В экспериментальной группе доля ошибок была ниже. Это различие совместимо с влиянием чек-листа, но также может быть связано с различиями в исходной подготовке и во времени на правку, которые в работе отдельно не выровнены. Выделить одну причину по этим данным нельзя.
+> The share of errors was lower in the experimental group. This difference is compatible with an effect of the checklist, but it may also be related to differences in initial preparation and in the time available for revision, which were not separately balanced in the study. A single cause cannot be singled out from these data.
 
-Правило: оставь альтернативы, которые статья сама показывает как не выровненные. Альтернативу, которой в тексте нет, не добавляй. Если дизайн одну причину уже выделил, причинную формулировку оставляй.
+Rule: keep the alternatives that the article itself shows as not balanced. Do not add an alternative that is not in the text. If the design has already singled out one cause, keep the causal wording.
 
-### 5. Рекомендация сильнее результата
+### 5. Recommendation stronger than the result
 
-Признаки: рекомендация.
+Features: recommendation.
 
-Ошибка: модальность «должны» и широкий адресат сильнее результата, в том числе устойчивого положительного результата на одном типе случаев.
+Error: the modality "must" and a broad addressee are stronger than the result, including a stable positive result on one type of case.
 
-Нарушение:
+Violation:
 
-> Университеты должны заменить итоговую проверку курсовых работ данным чек-листом.
+> Universities must replace the final assessment of term papers with this checklist.
 
-Правка:
+Correction:
 
-> Полученные данные позволяют заключить, что на сходных коротких работах чек-лист может дополнять итоговый комментарий при проверке фактических ошибок. Оснований требовать замены всей процедуры проверки курсовых работ эти данные не дают.
+> The data obtained allow us to conclude that, on similar short papers, the checklist can supplement the final comment when checking for factual errors. These data provide no grounds for requiring the replacement of the entire term-paper assessment procedure.
 
-Правило: дай рекомендации тот же предел, что и результату. Обязанность внедрить метод оставь только тогда, когда статья такой обязанности уже соответствует силой данных.
+Rule: give the recommendation the same limit as the result. Keep an obligation to adopt the method only when the article already matches such an obligation by the strength of its data.
 
-### 6. Факт, интерпретация и гипотеза в одной незаметной связке
+### 6. Fact, interpretation and hypothesis in one unmarked chain
 
-Признаки: статус, прогноз.
+Features: status, prediction.
 
-Ошибка: наблюдение, объяснение и прогноз стоят как одна цепь без смены статуса.
+Error: an observation, an explanation and a prediction stand as one chain without a change of status.
 
-Нарушение:
+Violation:
 
-> Ошибки снизились на 7 пунктов, что означает рост самостоятельности и, следовательно, будущую академическую успешность участников.
+> Errors decreased by 7 points, which means growth in independence and, consequently, the future academic success of the participants.
 
-Правка:
+Correction:
 
-> Доля фактических ошибок снизилась на 7 процентных пунктов. Эту разницу можно интерпретировать как изменение точности правки по чек-листу. Связь с самостоятельностью и с последующей академической успешностью остаётся гипотезой: ни то ни другое в исследовании не измерялось.
+> The share of factual errors decreased by 7 percentage points. This difference can be interpreted as a change in the accuracy of checklist-based revision. The link to independence and to subsequent academic success remains a hypothesis: neither was measured in the study.
 
-Правило: разведи статусы. Прогноз оставь гипотезой, если будущее следствие не измерялось. Интерпретацию, для которой в статье нет даже названного признака, не усиливай до факта.
+Rule: separate the statuses. Leave a prediction as a hypothesis if the future consequence was not measured. Do not strengthen into a fact an interpretation for which the article does not even name a feature.
 
-### 7. Универсальный квантор в заключении
+### 7. Universal quantifier in the conclusion
 
-Признаки: квантор, совокупность.
+Features: quantifier, population.
 
-Ошибка: «всегда», «никогда» и «все» превращают ограниченное наблюдение в правило без исключений.
+Error: "always", "never" and "all" turn a limited observation into a rule without exceptions.
 
-Нарушение:
+Violation:
 
-> Метод всегда снижает число фактических ошибок и никогда не увеличивает время проверки.
+> The method always reduces the number of factual errors and never increases checking time.
 
-Правка:
+Correction:
 
-> В двух рассмотренных заданиях метод сопровождался меньшим числом неисправленных фактических ошибок. Время проверки в одном из заданий выросло. Вероятно, то же направление различий сохранится на сходных заданиях, но универсального правила эти наблюдения не устанавливают.
+> In the two tasks examined, the method was accompanied by fewer uncorrected factual errors. Checking time increased in one of the tasks. The same direction of differences will probably hold on similar tasks, but these observations do not establish a universal rule.
 
-Правило: замени квантор числом наблюдений, которое статья уже содержит. Направление за пределами этих наблюдений оставь гипотезой. Противоречащее наблюдение, которое в статье есть, не замалчивай.
+Rule: replace the quantifier with the number of observations that the article already contains. Leave the direction beyond these observations as a hypothesis. Do not conceal a contradicting observation that is present in the article.
 
-### 8. Аннотация усиливает вывод
+### 8. Abstract strengthens the conclusion
 
-Признаки: согласованность, глагол.
+Features: consistency, verb.
 
-Ошибка: аннотация сообщает как доказанное то, что результаты или заключение переводят в предположение, либо заключение сильнее раздела результатов.
+Error: the abstract reports as proven what the results or the conclusion present as an assumption, or the conclusion is stronger than the results section.
 
-Нарушение:
+Violation:
 
-> В заключении указано: «Различие не достигло уровня значимости; можно предположить преимущество метода». В аннотации сказано: «Доказано преимущество метода».
+> The conclusion states: "The difference did not reach the level of significance; an advantage of the method can be hypothesized." The abstract says: "An advantage of the method has been proven."
 
-Правка:
+Correction:
 
-> В аннотации, как и в заключении: «Различие не достигло уровня значимости. Полученные данные позволяют лишь предположить преимущество метода и требуют повторной проверки».
+> In the abstract, as in the conclusion: "The difference did not reach the level of significance. The data obtained only allow us to hypothesize an advantage of the method and require repeated testing."
 
-Правило: краткий жанр аннотации сохраняет тот эпистемический статус, который задан результатами. В списке мест цитируй усиленный фрагмент. Правка приводит его к статусу более осторожного места той же статьи.
+Rule: the brief genre of the abstract keeps the epistemic status set by the results. In the list of places, quote the strengthened fragment. The correction brings it to the status of the more cautious place in the same article.
 
-## Допустимый вывод
+## Acceptable conclusion
 
-Осторожная формулировка всё ещё является выводом. Ослабляй только ту часть, которая выходит за данные. Такой фрагмент в список не вноси.
+A cautious statement is still a conclusion. Weaken only the part that goes beyond the data. Do not add such a fragment to the list.
 
-Сильнее данных:
+Stronger than the data:
 
-> Пилот доказал, что метод всегда эффективен.
+> The pilot proved that the method is always effective.
 
-Слабее данных, чем нужно:
+Weaker than the data warrant:
 
-> Ничего определённого сказать нельзя.
+> Nothing definite can be said.
 
-В меру данных, если процедура уже показала, что проверка укладывается в занятие:
+Matching the data, if the procedure has already shown that the check fits within a session:
 
-> Пилот показал осуществимость процедуры. Предположение об эффективности подлежит основной проверке.
+> The pilot showed the feasibility of the procedure. The assumption of effectiveness is subject to the main test.
 
-## Маркеры
+## Markers
 
-Смотри на эти слова в первую очередь. Само по себе слово нарушением не является: решают вопросы и тип.
+Check these words first. A word by itself is not a violation: the questions and the type decide.
 
-- Слишком сильный глагол: доказывает, доказало, означает, является причиной, именно, следовательно при прогнозе.
-- Слишком широкий охват: всегда, никогда, все, должны, университеты, студенты университетов.
-- Смена статуса к более сильному: аннотация против заключения, заключение против незначимого различия.
-- Обычно оставляй: можно предположить, позволяет заключить, только для данного задания и данной группы, совместимо с, остаётся гипотезой, не измерялось.
+- Too strong a verb: proves, proved, means, is the cause, precisely, consequently in a prediction.
+- Too broad a scope: always, never, all, must, universities, university students.
+- Shift of status to a stronger one: abstract versus conclusion, conclusion versus a non-significant difference.
+- Usually keep: it can be hypothesized, allows us to conclude, only for this task and this group, compatible with, remains a hypothesis, was not measured.
