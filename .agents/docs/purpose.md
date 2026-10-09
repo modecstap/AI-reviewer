@@ -15,25 +15,25 @@
 - problems
     - 1
         - article.txt
-        - caution.json
-        - conciseness.json
-        - consistency.json
-        - correctness.json
-        - impersonality.json
-        - literacy.json
-        - objectivity.json
-        - structure.json
+        - Caution.json
+        - Conciseness.json
+        - Consistency.json
+        - Correctness.json
+        - Impersonality.json
+        - Literacy.json
+        - Objectivity.json
+        - Structure.json
+        - report.json
     - 2
         - ...
     - ...
-- report.json
 
 article.docx - исходный текст статьи
 refine - папка содержащая подпапки с главами. подпапки содержат {number}.txt файлы где number это номер параграфа. создаётся `ai_reviewer/splitter/`.
 - id главы = имя её папки; это `place.chapter` в problems/*.json и `chapter` в report.json.
 - текст до первого заголовка идёт в главу `Без заголовка`.
 - chapters.json - главы в порядке документа: `[{"chapter": string, "title": string | null}]`, где chapter = имя папки, title = текст заголовка (`null` для `Без заголовка`).
-problems - папка с подпапками прогонов ревью. каждый прогон (`AIPool.execute`, `ai_reviewer/ai_pool/`) создаёт подпапку {N} = максимальный существующий номер + 1 (первая - `1`). в ней `article.txt` - размеченный текст, отданный агентам, и `<property>.json` только успешных агентов. .json файлы с найденными проблемами имеют общий формат:
+problems - папка с подпапками прогонов ревью. каждый прогон (`AIPool.execute`, `ai_reviewer/ai_pool/`) создаёт подпапку {N} = максимальный существующий номер + 1 (первая - `1`). в ней `article.txt` - размеченный текст, отданный агентам, и `<property>.json` только успешных агентов, где `<property>` - `AgentDefinition.name` (например `Caution`). после сборки отчёта в ней же лежит `report.json`. .json файлы с найденными проблемами имеют общий формат:
 [
     {
         place: {
@@ -44,7 +44,7 @@ problems - папка с подпапками прогонов ревью. ка�
         types: [
             {
                 number: num,
-                description: string
+                name: string
             },
             ...
         ],
@@ -56,29 +56,27 @@ problems - папка с подпапками прогонов ревью. ка�
     },
 ]
 
-report.json - итоговый документ в формате
+report.json - итоговый документ прогона в `problems/<N>/`. собирается `ai_reviewer/report/` из `article.txt` и файлов свойств этой папки в формате
 [
     {
         "chapter": string,
-        "number": num,
-        "problems": [
+        "claims": [
             {
-                "scope": string,
-                "quote": string,
-                "types": [
-                    {
-                        "number": num,
-                        "description": string
-                    }
-                ],
-                "problem": string,
-                "corrections": [
-                    string,
+                "paragraph": num,
+                "<property>": [
+                    {quote: string, types: [{number: num, name: string}, ...], problem: string, corrections: [string, ...]},
                     ...
-                ]
+                ],
+                ...
             },
             ...
-        ],
+        ]
     },
     ...
 ]
+- претензия - все поля исходного элемента файла свойства, кроме `place`.
+- ключ свойства, параграф и глава без претензий не пишутся; нет претензий - файл равен `[]`.
+- главы идут в порядке `article.txt`, параграфы - по возрастанию, ключи свойств - по алфавиту, претензии свойства - в порядке его файла.
+- одинаковые цитаты разных свойств не сливаются.
+- претензии с неверным `place` (нет главы или параграфа в `article.txt`) и битые файлы свойств пропускаются с warning.
+- UTF-8, кириллица хранится как есть.
