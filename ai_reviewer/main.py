@@ -3,6 +3,7 @@ from pathlib import Path
 from cursor_sdk import ModelParameterValue, ModelSelection
 
 from ai_reviewer.ai_pool import AIPool, AgentDefinition
+from ai_reviewer.report import ReportWriter
 from ai_reviewer.splitter import ArticleRefiner
 
 if __name__ == "__main__":
@@ -63,5 +64,6 @@ if __name__ == "__main__":
     for description in descriptions:
         ai_pool.add_agent(description, output_dir)
 
-    ai_pool.execute(refiner.refine(article_path))
+    result = ai_pool.execute(refiner.refine(article_path))
+    ReportWriter().write(result.run_dir)
 
