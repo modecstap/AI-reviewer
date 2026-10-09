@@ -24,6 +24,8 @@ Python ≥ 3.12; run from repo root.
 - [onboarding.md](.agents/docs/onboarding.md) — read when wiring a new agent, adding a skill, or changing this agent setup.
 - [python-guide.md](.agents/docs/python-guide.md) — read when writing or changing Python code.
 - [commits.md](.agents/docs/commits.md) — read when writing a commit message.
+- [Structure reference](.agents/docs/heuristics/structure-reference.md) — required shape of modules, files, names, and module dependencies
+- [Structure how-to](.agents/docs/heuristics/structure-howto.md) — read when adding a file or module, naming, adding a dependency, or extracting shared code
 
 ## Plans
 
