@@ -7,7 +7,7 @@ from ai_reviewer.ai_pool import ARTICLE_FILE
 
 from .builder import ReportBuilder
 from .errors import ReportWriteError, RunDirReadError
-from .outline import OutlineReader
+from .marked_article import MarkedArticleReader
 from .property_claims import PropertyClaimsReader
 
 logger = logging.getLogger(__name__)
@@ -20,18 +20,19 @@ class ReportWriter:
 
     def __init__(
         self,
-        outline_reader: OutlineReader | None = None,
+        article_reader: MarkedArticleReader | None = None,
         claims_reader: PropertyClaimsReader | None = None,
         builder: ReportBuilder | None = None,
     ) -> None:
         """
         Set up the writer.
 
-        :param outline_reader: article outline reader; default one when omitted
+        :param article_reader: marked-up article reader; default one when
+            omitted
         :param claims_reader: property files reader; default one when omitted
         :param builder: report builder; default one when omitted
         """
-        self._outline_reader = outline_reader or OutlineReader()
+        self._article_reader = article_reader or MarkedArticleReader()
         self._claims_reader = claims_reader or PropertyClaimsReader()
         self._builder = builder or ReportBuilder()
 
@@ -49,9 +50,9 @@ class ReportWriter:
         """
         if not run_dir.is_dir():
             raise RunDirReadError(f"run dir not found: {run_dir}")
-        outline = self._outline_reader.read(run_dir / ARTICLE_FILE)
+        article = self._article_reader.read(run_dir / ARTICLE_FILE)
         claims = self._claims_reader.read(self._property_files(run_dir))
-        report = self._builder.build(outline, claims)
+        report = self._builder.build(article, claims)
         path = run_dir / REPORT_FILE
         self._save(path, report)
         return path
