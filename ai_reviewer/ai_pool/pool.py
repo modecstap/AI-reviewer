@@ -2,6 +2,8 @@ from concurrent.futures import ThreadPoolExecutor
 from functools import partial
 from pathlib import Path
 
+from cursor_sdk import ModelSelection
+
 from .agent import (
     AgentDefinition,
     AgentRegistry,
@@ -20,7 +22,7 @@ class AIPool:
 
     def __init__(
         self,
-        model: str = "composer-2.5",
+        model: ModelSelection,
         registry: AgentRegistry | None = None,
         run_dirs: RunDirs | None = None,
         factory: CursorAgentFactory | None = None,

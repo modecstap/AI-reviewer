@@ -2,7 +2,7 @@ import os
 import uuid
 from pathlib import Path
 
-from cursor_sdk import AgentOptions, LocalAgentOptions
+from cursor_sdk import AgentOptions, LocalAgentOptions, ModelSelection
 
 from ..errors import MissingApiKeyError
 
@@ -10,7 +10,7 @@ from ..errors import MissingApiKeyError
 class CursorAgentFactory:
     """Reads the Cursor API key and builds the options of new agents."""
 
-    def __init__(self, model: str) -> None:
+    def __init__(self, model: ModelSelection) -> None:
         """
         Set up the factory.
 
