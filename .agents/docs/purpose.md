@@ -24,6 +24,9 @@
         - Objectivity.json
         - Structure.json
         - report.json
+        - report.html
+        - report.css
+        - report.pdf
     - 2
         - ...
     - ...
@@ -80,3 +83,5 @@ report.json - итоговый документ прогона в `problems/<N>/
 - одинаковые цитаты разных свойств не сливаются.
 - претензии с неверным `place` (нет главы или параграфа в `article.txt`) и битые файлы свойств пропускаются с warning.
 - UTF-8, кириллица хранится как есть.
+
+report.html, report.css, report.pdf - печатная версия report.json. пишет `PrintedReportWriter` (`ai_reviewer/printed_report_writer.py`) через `ai_reviewer/report/printer/`. report.html - HTML-фрагмент, report.css - его стили (шрифты указаны как `fonts/…` относительно CSS), report.pdf - PDF, собранный WeasyPrint из этих HTML и CSS. титульная страница: VSRT, AI-Reviewer, дата создания и число претензий (всего и по свойствам). дальше каждая глава с новой страницы: слева текст параграфа, справа его претензии.
