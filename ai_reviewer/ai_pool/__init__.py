@@ -16,8 +16,10 @@ from .errors import (
 )
 from .pool import AIPool
 from .result import PoolResult
+from .run_dirs import ARTICLE_FILE
 
 __all__ = [
+    "ARTICLE_FILE",
     "AIPool",
     "AgentStatus",
     "AgentDefinition",

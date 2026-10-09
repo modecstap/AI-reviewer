@@ -11,13 +11,19 @@ from .errors import ArticleReadError, OutputWriteError, RefineError
 from .parsers.article_parser import ArticleParser
 from .article_refiner import ArticleRefiner
 from .entities.chapter import CHAPTERS_FILE, NO_HEADING, Chapter
-from ai_reviewer.splitter.writers.article_writer import ArticleWriter
+from ai_reviewer.splitter.writers.article_writer import (
+    ArticleWriter,
+    CHAPTER_MARKER,
+    PARAGRAPH_MARKER,
+)
 from .command_line import SplitterCommandLine
 
 
 __all__ = [
     "CHAPTERS_FILE",
+    "CHAPTER_MARKER",
     "NO_HEADING",
+    "PARAGRAPH_MARKER",
     "ArticleParser",
     "ArticleReadError",
     "ArticleRefiner",

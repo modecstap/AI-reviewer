@@ -17,6 +17,7 @@ packages = [
     "ai_reviewer.ai_pool",
     "ai_reviewer.ai_pool.agent",
     "ai_reviewer.ai_pool.cursor",
+    "ai_reviewer.report",
     "ai_reviewer.splitter",
 ]
 

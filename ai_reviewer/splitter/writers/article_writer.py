@@ -1,5 +1,8 @@
 from ai_reviewer.splitter.entities.chapter import Chapter
 
+CHAPTER_MARKER = "!! chapter: "
+PARAGRAPH_MARKER = "!! paragraph: "
+
 
 class ArticleWriter:
     """Renders chapters as the single text review agents receive."""
@@ -26,9 +29,9 @@ class ArticleWriter:
         :return: the chapter block without trailing newline
         """
         paragraphs = "\n\n".join(
-            f"!! paragraph: {number}\n{text}"
+            f"{PARAGRAPH_MARKER}{number}\n{text}"
             for number, text in enumerate(chapter.paragraphs, start=1)
         )
         return "\n".join(
-            filter(None, [f"!! chapter: {chapter.name}", paragraphs])
+            filter(None, [f"{CHAPTER_MARKER}{chapter.name}", paragraphs])
         )
