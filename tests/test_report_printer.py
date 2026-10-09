@@ -12,6 +12,11 @@ from ai_reviewer.report import (
     ReportPrinter,
     RunDirReadError,
 )
+from ai_reviewer.report.printer.claim_pages import ClaimPagesRenderer
+from ai_reviewer.report.printer.entities import Claim, PrintedChapter, PrintedParagraph
+from ai_reviewer.report.printer.labels import RUSSIAN_LABELS
+from ai_reviewer.report.printer.page_breaks import ParagraphPageBreaks
+from ai_reviewer.report.printer.pdf import PdfRenderer
 from ai_reviewer.report.printer.printer import STYLESHEET
 from ai_reviewer.report.printer.title_page import TitlePageRenderer
 from ai_reviewer.splitter import NO_HEADING, ArticleWriter, Chapter
@@ -104,6 +109,33 @@ def test_pdf(tmp_path):
     html = printer.html(make_sample_run_dir(tmp_path))
 
     assert printer.pdf(html, printer.css()).startswith(b"%PDF-")
+
+
+def make_chapter(name, sizes):
+    return PrintedChapter(name, [PrintedParagraph(
+        n, "\n".join(f"line {n}.{i}" for i in range(lines)),
+        {"Caution": [Claim(quote="q", problem=f"problem {n}.{i} " * 6) for i in range(claims)]},
+    ) for n, (lines, claims) in enumerate(sizes, start=1)])
+
+
+def test_paragraph_page_breaks():
+    chapters = [make_chapter("A", [(10, 1), (20, 1), (30, 1), (3, 15), (80, 1)]), make_chapter("B", [(80, 1)])]
+    html = '<div class="ai-reviewer-report">' + ClaimPagesRenderer().render(chapters, RUSSIAN_LABELS) + "</div>"
+    anchors = {}
+    for index, page in enumerate(PdfRenderer().document(html, printer.css()).pages):
+        for name, box in page.anchors.items():
+            anchors.setdefault(name, (index, box[1]))
+
+    def start(chapter, position):
+        return anchors[ParagraphPageBreaks.block_id(chapter, position)]
+
+    def end_page(chapter, position):
+        return anchors[ParagraphPageBreaks.text_end_id(chapter, position)][0]
+
+    assert start(1, 3)[0] == end_page(1, 2) + 1 == end_page(1, 3)
+    assert start(1, 4)[0] == end_page(1, 3)
+    assert start(1, 5)[1] == start(1, 3)[1] and end_page(1, 5) > start(1, 5)[0]
+    assert start(2, 1)[1] > start(1, 3)[1] and end_page(2, 1) > start(2, 1)[0]
 
 
 class StubPrinter:

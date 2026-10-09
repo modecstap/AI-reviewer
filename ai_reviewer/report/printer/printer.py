@@ -80,7 +80,8 @@ class ReportPrinter:
 
     def pdf(self, html: str, css: str) -> bytes:
         """
-        Render the PDF from exactly the given HTML and CSS.
+        Render the PDF from the given HTML and CSS plus computed paragraph
+        page breaks.
 
         :param html: HTML fragment from ``html``
         :param css: stylesheet from ``css``

@@ -1,6 +1,12 @@
+from collections.abc import Callable
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from .errors import PdfRenderError
+from .page_breaks import ParagraphPageBreaks
+
+if TYPE_CHECKING:
+    from weasyprint import Document
 
 BASE_URL = str(Path(__file__).with_name("report.css"))
 PANGO_HINT = (
@@ -13,9 +19,21 @@ PANGO_HINT = (
 class PdfRenderer:
     """Renders the printed report as a PDF with WeasyPrint."""
 
+    def __init__(self, page_breaks: ParagraphPageBreaks | None = None) -> None:
+        """
+        Set up the renderer.
+
+        :param page_breaks: paragraph page break chooser; default one when
+            omitted
+        """
+        self._page_breaks = page_breaks or ParagraphPageBreaks()
+
     def render(self, html: str, css: str) -> bytes:
         """
         Render the HTML fragment styled by the stylesheet as a PDF.
+
+        A paragraph block whose caption and text do not fit in the rest of
+        the page starts on a new page.
 
         :param html: HTML fragment of the report
         :param css: stylesheet of the report; ``url(fonts/...)`` resolves
@@ -25,6 +43,25 @@ class PdfRenderer:
             the PDF cannot be rendered
 
         :return: PDF document bytes
+        """
+        document = self.document(html, css)
+        try:
+            return document.write_pdf()
+        except OSError as error:
+            raise PdfRenderError(f"cannot render the PDF: {error}") from error
+
+    def document(self, html: str, css: str) -> "Document":
+        """
+        Lay out the HTML fragment with the paragraph page breaks it needs.
+
+        :param html: HTML fragment of the report
+        :param css: stylesheet of the report; ``url(fonts/...)`` resolves
+            against the package directory
+
+        :raises PdfRenderError: when WeasyPrint or Pango cannot be loaded, or
+            the document cannot be laid out
+
+        :return: the laid-out WeasyPrint document
         """
         try:
             # WeasyPrint loads the native Pango libraries at import time.
@@ -37,11 +74,29 @@ class PdfRenderer:
             ) from error
         font_config = FontConfiguration()
         try:
-            stylesheet = CSS(
-                string=css, base_url=BASE_URL, font_config=font_config
-            )
-            return HTML(string=html, base_url=BASE_URL).write_pdf(
-                stylesheets=[stylesheet], font_config=font_config
-            )
+            main = CSS(string=css, base_url=BASE_URL, font_config=font_config)
+            source = HTML(string=html, base_url=BASE_URL)
+            return self._lay_out(lambda breaks: source.render(
+                stylesheets=[main, CSS(string=breaks, font_config=font_config)],
+                font_config=font_config,
+            ))
         except OSError as error:
             raise PdfRenderError(f"cannot render the PDF: {error}") from error
+
+    def _lay_out(self, render: Callable[[str], "Document"]) -> "Document":
+        """
+        Render again with more page breaks until no paragraph block must move.
+
+        :param render: renders the document with the given extra CSS
+
+        :return: the document where no more paragraph block must move
+        """
+        moved: set[str] = set()
+        while True:
+            document = render(self._page_breaks.stylesheet(moved))
+            moves = self._page_breaks.next_moves(
+                [page.anchors for page in document.pages], moved
+            )
+            if not moves:
+                return document
+            moved |= moves
