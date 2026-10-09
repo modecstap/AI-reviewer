@@ -4,7 +4,7 @@ from pathlib import Path
 
 from cursor_sdk import CursorAgentError, CursorClient
 
-from .errors import BridgeLaunchError
+from ..errors import BridgeLaunchError
 
 
 class CursorBridge:

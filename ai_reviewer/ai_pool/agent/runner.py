@@ -3,11 +3,14 @@ from pathlib import Path
 
 from cursor_sdk import Agent, CursorAgentError
 
-from .agent_output_validator import AgentOutputValidator
-from .cursor_agent_factory import CursorAgentFactory
-from .entities import AgentDefinition, AgentRunContext, AgentStatus
-from .errors import PropertyDocsError
-from .prompt_builder import PromptBuilder
+from ..cursor import CursorAgentFactory
+from ..errors import PropertyDocsError
+from ..run_dirs import OUTPUT_FILE
+from .context import AgentRunContext
+from .definition import AgentDefinition
+from .output_validator import AgentOutputValidator
+from .prompt import PromptBuilder
+from .status import AgentStatus
 
 logger = logging.getLogger(__name__)
 
@@ -45,7 +48,7 @@ class AgentRunner:
 
         :return: ok status, or failed status with the reason
         """
-        output = context.run_dir / f"{agent.name}.json"
+        output = context.run_dir / OUTPUT_FILE.format(name=agent.name)
         reason = self._prompt_agent(agent, context)
         if reason is None:
             reason = self._validator.check(output)

@@ -1,8 +1,24 @@
 from pathlib import Path
 
-from .entities import AgentDefinition
-from .errors import PropertyDocsError
-from .prompt import PROMPT
+from ..errors import PropertyDocsError
+from ..run_dirs import ARTICLE_FILE, OUTPUT_FILE
+from .definition import AgentDefinition
+
+PROMPT = """You are a reviewer of a scientific article with respect to the academic quality property "{name}".
+Read the annotated article text from the file {run_dir}/{article}.
+Evaluate it according to the instructions and reference guide below.
+Write the result only to the file {run_dir}/{output}, strictly following the format specified in the IO-structure.md section.
+Do not create or modify any other files.
+
+# File IO-structure.md
+{io}
+
+# File instruction.md
+{instruction}
+
+# File reference.md
+{reference}
+"""
 
 
 class PromptBuilder:
@@ -22,6 +38,8 @@ class PromptBuilder:
         return PROMPT.format(
             name=agent.name,
             run_dir=run_dir.as_posix(),
+            article=ARTICLE_FILE,
+            output=OUTPUT_FILE.format(name=agent.name),
             io=self._read(agent.io_structure),
             instruction=self._read(agent.docs / "instruction.md"),
             reference=self._read(agent.docs / "reference.md"),

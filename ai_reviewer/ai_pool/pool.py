@@ -2,13 +2,17 @@ from concurrent.futures import ThreadPoolExecutor
 from functools import partial
 from pathlib import Path
 
-from .agent_registry import AgentRegistry
-from .agent_runner import AgentRunner
-from .cursor_agent_factory import CursorAgentFactory
-from .cursor_bridge import CursorBridge
-from .entities import AgentDefinition, AgentRunContext, AgentStatus, PoolResult
+from .agent import (
+    AgentDefinition,
+    AgentRegistry,
+    AgentRunContext,
+    AgentRunner,
+    AgentStatus,
+)
+from .cursor import CursorAgentFactory, CursorBridge
 from .errors import NoAgentsError
-from .run_directory_manager import RunDirectoryManager
+from .result import PoolResult
+from .run_dirs import RunDirs
 
 
 class AIPool:
@@ -18,7 +22,7 @@ class AIPool:
         self,
         model: str = "composer-2.5",
         registry: AgentRegistry | None = None,
-        run_dirs: RunDirectoryManager | None = None,
+        run_dirs: RunDirs | None = None,
         factory: CursorAgentFactory | None = None,
         bridge: CursorBridge | None = None,
         runner: AgentRunner | None = None,
@@ -29,13 +33,13 @@ class AIPool:
         :param model: Cursor model id every agent runs on; ignored when
             ``factory`` is given
         :param registry: agent registry; default one when omitted
-        :param run_dirs: run dir manager; default one when omitted
+        :param run_dirs: run dirs; default one when omitted
         :param factory: agent options factory; default one when omitted
         :param bridge: Cursor bridge; default one when omitted
         :param runner: agent runner; default one with ``factory`` when omitted
         """
         self._registry = registry or AgentRegistry()
-        self._run_dirs = run_dirs or RunDirectoryManager()
+        self._run_dirs = run_dirs or RunDirs()
         self._factory = factory or CursorAgentFactory(model)
         self._bridge = bridge or CursorBridge()
         self._runner = runner or AgentRunner(self._factory)

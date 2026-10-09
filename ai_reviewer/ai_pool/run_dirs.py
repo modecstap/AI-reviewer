@@ -6,8 +6,11 @@ from .errors import RunDirError
 
 logger = logging.getLogger(__name__)
 
+ARTICLE_FILE = "article.txt"
+OUTPUT_FILE = "{name}.json"
 
-class RunDirectoryManager:
+
+class RunDirs:
     """Picks, creates and removes the numbered run dirs of an output dir."""
 
     def next_run_dir(self, output_dir: Path) -> Path:
@@ -47,7 +50,7 @@ class RunDirectoryManager:
             run_dir.mkdir(parents=True)
         except OSError as error:
             raise RunDirError(f"cannot create {run_dir}: {error}") from error
-        article = run_dir / "article.txt"
+        article = run_dir / ARTICLE_FILE
         try:
             article.write_text(text, encoding="utf-8", newline="")
         except OSError as error:

@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from .entities import AgentDefinition
-from .errors import DuplicateAgentError, OutputDirMismatchError
+from ..errors import DuplicateAgentError, OutputDirMismatchError
+from .definition import AgentDefinition
 
 
 class AgentRegistry:

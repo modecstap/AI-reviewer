@@ -4,7 +4,7 @@ from pathlib import Path
 
 from cursor_sdk import AgentOptions, LocalAgentOptions
 
-from .errors import MissingApiKeyError
+from ..errors import MissingApiKeyError
 
 
 class CursorAgentFactory:

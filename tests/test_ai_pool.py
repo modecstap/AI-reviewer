@@ -8,7 +8,8 @@ import pytest
 from cursor_sdk import CursorAgentError
 
 from ai_reviewer.ai_pool import AIPool, PoolStartError
-from ai_reviewer.ai_pool import agent_runner, cursor_bridge
+from ai_reviewer.ai_pool.agent import runner as agent_runner
+from ai_reviewer.ai_pool.cursor import bridge as cursor_bridge
 
 TEXT = "Первый абзац.\nВторой абзац.\n"
 
