@@ -185,11 +185,28 @@
   padding-left: .2cm;
 }
 
+/* A table row, not a grid: WeasyPrint shifts a split grid row's right cell
+   above the page content area. */
 .ai-reviewer-report .paragraph {
-  column-gap: 1cm;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: table;
   margin-bottom: 1cm;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.ai-reviewer-report .paragraph-text,
+.ai-reviewer-report .claims {
+  display: table-cell;
+  vertical-align: top;
+  width: 50%;
+}
+
+.ai-reviewer-report .paragraph-text {
+  padding-right: .5cm;
+}
+
+.ai-reviewer-report .claims {
+  padding-left: .5cm;
 }
 
 .ai-reviewer-report .paragraph-text .text {
