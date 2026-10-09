@@ -45,23 +45,19 @@ class AIPool:
         self._runner = runner or AgentRunner(self._factory)
 
     def add_agent(
-        self, IO: str, docs: str, name: str, output_dir: str
+        self, definition: AgentDefinition, output_dir: Path
     ) -> None:
         """
         Register the review agent of one property.
 
-        :param IO: path to ``IO-structure.md`` with the output format
-        :param docs: property dir with ``instruction.md`` and ``reference.md``
-        :param name: property id; the agent writes ``{name}.json``
+        :param definition: agent definition to register
         :param output_dir: dir of numbered run dirs, shared by all agents
 
         :raises DuplicateAgentError: when ``name`` is already registered
         :raises OutputDirMismatchError: when ``output_dir`` differs from the
             output dir of the agents added before
         """
-        self._registry.add(
-            AgentDefinition(Path(IO), Path(docs), name), Path(output_dir)
-        )
+        self._registry.add(definition, output_dir)
 
     def execute(self, text: str) -> PoolResult:
         """
