@@ -13,7 +13,6 @@ if __name__ == "__main__":
             ModelParameterValue(id="fast", value="false"),
         ),
     )
-
     ai_pool = AIPool(model=model)
 
     descriptions = [
@@ -21,7 +20,42 @@ if __name__ == "__main__":
             io_structure=Path("./properties/IO-structure.md"),
             docs=Path("./properties/caution"),
             name="Caution"
-        )
+        ),
+        AgentDefinition(
+            io_structure=Path("./properties/IO-structure.md"),
+            docs=Path("./properties/conciseness"),
+            name="Conciseness"
+        ),
+        AgentDefinition(
+            io_structure=Path("./properties/IO-structure.md"),
+            docs=Path("./properties/consistency"),
+            name="Consistency"
+        ),
+        AgentDefinition(
+            io_structure=Path("./properties/IO-structure.md"),
+            docs=Path("./properties/correctness"),
+            name="Correctness"
+        ),
+        AgentDefinition(
+            io_structure=Path("./properties/IO-structure.md"),
+            docs=Path("./properties/impersonality"),
+            name="Impersonality"
+        ),
+        AgentDefinition(
+            io_structure=Path("./properties/IO-structure.md"),
+            docs=Path("./properties/literacy"),
+            name="Literacy"
+        ),
+        AgentDefinition(
+            io_structure=Path("./properties/IO-structure.md"),
+            docs=Path("./properties/objectivity"),
+            name="Objectivity"
+        ),
+        AgentDefinition(
+            io_structure=Path("./properties/IO-structure.md"),
+            docs=Path("./properties/structure"),
+            name="Structure"
+        ),
     ]
     output_dir = Path("./tests/temp_output")
     article_path = "./tests/data/test_article.docx"
