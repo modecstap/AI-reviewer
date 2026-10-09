@@ -1,5 +1,5 @@
 from collections.abc import Iterator
-from contextlib import ExitStack, contextmanager
+from contextlib import contextmanager
 from pathlib import Path
 
 from cursor_sdk import CursorAgentError, CursorClient
@@ -21,13 +21,11 @@ class CursorBridge:
 
         :return: client connected to the bridge; the bridge closes on exit
         """
-        with ExitStack() as stack:
-            try:
-                client = stack.enter_context(
-                    CursorClient.launch_bridge(workspace=str(run_dir))
-                )
-            except (CursorAgentError, OSError) as error:
-                raise BridgeLaunchError(
-                    f"cannot launch Cursor bridge: {error}"
-                ) from error
+        try:
+            bridge = CursorClient.launch_bridge(workspace=str(run_dir))
+        except (CursorAgentError, OSError) as error:
+            raise BridgeLaunchError(
+                f"cannot launch Cursor bridge: {error}"
+            ) from error
+        with bridge as client:
             yield client
