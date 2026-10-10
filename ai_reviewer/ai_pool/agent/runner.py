@@ -1,13 +1,10 @@
 import logging
 from pathlib import Path
 
-from cursor_sdk import Agent, CursorAgentError
+from ai_reviewer.properties import AgentDefinition
 
-from ..cursor import CursorAgentFactory
-from ..errors import PropertyDocsError
-from ..run_dirs import OUTPUT_FILE
 from .context import AgentRunContext
-from .definition import AgentDefinition
+from .errors import AgentRunError, PropertyDocsError
 from .output_validator import AgentOutputValidator
 from .prompt import PromptBuilder
 from .status import AgentStatus
@@ -20,18 +17,15 @@ class AgentRunner:
 
     def __init__(
         self,
-        factory: CursorAgentFactory,
         prompts: PromptBuilder | None = None,
         validator: AgentOutputValidator | None = None,
     ) -> None:
         """
         Set up the runner.
 
-        :param factory: factory of the agent options
         :param prompts: review prompt builder; default one when omitted
         :param validator: agent output validator; default one when omitted
         """
-        self._factory = factory
         self._prompts = prompts or PromptBuilder()
         self._validator = validator or AgentOutputValidator()
 
@@ -44,67 +38,53 @@ class AgentRunner:
         Called in parallel from many threads, so it keeps no state.
 
         :param agent: agent to run
-        :param context: run dir, API key and bridge client of the run
+        :param context: article, output file and session of the agent
 
         :return: ok status, or failed status with the reason
         """
-        output = context.run_dir / OUTPUT_FILE.format(name=agent.name)
         reason = self._prompt_agent(agent, context)
         if reason is None:
-            reason = self._validator.check(output)
+            reason = self._validator.check(context.output)
         if reason is None:
             return AgentStatus(ok=True)
-        logger.warning("agent %s failed: %s", agent.name, reason)
-        self._remove_output(agent.name, output)
+        logger.warning("agent %s failed: %s", agent.id, reason)
+        self._remove_output(agent.id, context.output)
         return AgentStatus(ok=False, reason=reason)
 
     def _prompt_agent(
         self, agent: AgentDefinition, context: AgentRunContext
     ) -> str | None:
         """
-        Send the review prompt to a new Cursor agent and wait for its run.
+        Send the review prompt through the session and wait for the run.
 
         :param agent: agent to prompt
-        :param context: run dir, API key and bridge client of the run
+        :param context: article, output file and session of the agent
 
         :return: why the run failed, or ``None`` when it finished
         """
         try:
-            prompt = self._prompts.build(agent, context.run_dir)
+            prompt = self._prompts.build(agent, context)
         except PropertyDocsError as error:
             return f"cannot read property docs: {error}"
-        options = self._factory.options(context.run_dir, context.api_key)
-        agent_id = options.agent_id
-        logger.info("agent %s starting, agent_id=%s", agent.name, agent_id)
         try:
-            result = Agent.prompt(prompt, options, client=context.client)
-        except CursorAgentError as error:
-            logger.warning(
-                "agent %s (agent_id=%s) raised %s, request_id=%s",
-                agent.name, agent_id, error, error.request_id,
-            )
-            return f"prompt failed: {type(error).__name__}: {error}"
-        logger.info(
-            "agent %s done, agent_id=%s, run_id=%s, status=%s",
-            agent.name, agent_id, result.id, result.status,
-        )
-        if result.status != "finished":
-            return f"run status: {result.status}"
+            context.session.prompt(agent.id, prompt)
+        except AgentRunError as error:
+            return str(error)
         return None
 
     @staticmethod
-    def _remove_output(agent_name: str, output: Path) -> None:
+    def _remove_output(property_id: str, output: Path) -> None:
         """
         Remove the output of a failed agent; only log if removal fails.
 
         One failed removal must not stop the other agents.
 
-        :param agent_name: name of the failed agent
+        :param property_id: property of the failed agent
         :param output: agent output file
         """
         try:
             output.unlink(missing_ok=True)
         except OSError as error:
             logger.warning(
-                "agent %s: cannot remove %s: %s", agent_name, output, error
+                "agent %s: cannot remove %s: %s", property_id, output, error
             )

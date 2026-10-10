@@ -1,71 +1,51 @@
-import logging
-import shutil
 from pathlib import Path
-
-from .errors import RunDirError
-
-logger = logging.getLogger(__name__)
-
-ARTICLE_FILE = "article.txt"
-OUTPUT_FILE = "{name}.json"
+from typing import Protocol
 
 
-class RunDirs:
-    """Picks, creates and removes the numbered run dirs of an output dir."""
+class RunDirLayout(Protocol):
+    """Creates, removes and names the files of numbered run dirs."""
 
-    def next_run_dir(self, output_dir: Path) -> Path:
+    def create(self, output_dir: Path, article: str) -> Path:
         """
-        Pick the run dir after the highest numbered one in the output dir.
+        Create the next numbered run dir with the article file.
+
+        A partly created run dir is removed before raising.
 
         :param output_dir: dir of numbered run dirs
+        :param article: marked-up article text the agents review
 
-        :raises RunDirError: when the output dir cannot be listed
+        :raises OSError: when the run dir or the article file cannot be
+            written
 
-        :return: ``{output_dir}/{max N + 1}``; ``1`` for the first run
+        :return: the new run dir ``<output_dir>/<N>/``
         """
-        output_dir = output_dir.resolve()
-        if not output_dir.is_dir():
-            return output_dir / "1"
-        try:
-            names = [
-                path.name for path in output_dir.iterdir() if path.is_dir()
-            ]
-        except OSError as error:
-            raise RunDirError(f"cannot list {output_dir}: {error}") from error
-        numbers = [
-            int(name) for name in names if name.isascii() and name.isdigit()
-        ]
-        return output_dir / str(max(numbers, default=0) + 1)
-
-    def create(self, run_dir: Path, text: str) -> None:
-        """
-        Create the run dir with ``article.txt``; remove it if writing fails.
-
-        :param run_dir: run dir to create; must not exist
-        :param text: article text to write into ``article.txt``
-
-        :raises RunDirError: when the dir or ``article.txt`` cannot be written
-        """
-        try:
-            run_dir.mkdir(parents=True)
-        except OSError as error:
-            raise RunDirError(f"cannot create {run_dir}: {error}") from error
-        article = run_dir / ARTICLE_FILE
-        try:
-            article.write_text(text, encoding="utf-8", newline="")
-        except OSError as error:
-            self.remove(run_dir)
-            raise RunDirError(f"cannot write {article}: {error}") from error
+        ...
 
     def remove(self, run_dir: Path) -> None:
         """
-        Remove the run dir of a failed run; only log if removal fails.
-
-        The caller re-raises the original error, which must not be replaced.
+        Remove the run dir of a failed run; never raise, only log.
 
         :param run_dir: run dir to remove
         """
-        try:
-            shutil.rmtree(run_dir)
-        except OSError as error:
-            logger.warning("cannot remove run dir %s: %s", run_dir, error)
+        ...
+
+    def article_file(self, run_dir: Path) -> Path:
+        """
+        Name the article file of a run dir.
+
+        :param run_dir: run dir
+
+        :return: path of the article file
+        """
+        ...
+
+    def property_file(self, run_dir: Path, property_id: str) -> Path:
+        """
+        Name the file an agent writes its claims to.
+
+        :param run_dir: run dir
+        :param property_id: property the agent reviews
+
+        :return: path of the property file
+        """
+        ...

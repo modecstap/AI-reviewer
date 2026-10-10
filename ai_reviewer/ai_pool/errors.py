@@ -1,9 +1,5 @@
 class DuplicateAgentError(ValueError):
-    """An agent with this name is already registered."""
-
-
-class OutputDirMismatchError(ValueError):
-    """The output dir differs from the one of the agents added before."""
+    """An agent with this property id is already registered."""
 
 
 class PoolStartError(Exception):
@@ -15,7 +11,7 @@ class NoAgentsError(PoolStartError):
 
 
 class MissingApiKeyError(PoolStartError):
-    """``CURSOR_API_KEY`` is not set."""
+    """The API key of the agent backend is not set."""
 
 
 class RunDirError(PoolStartError):
@@ -23,8 +19,4 @@ class RunDirError(PoolStartError):
 
 
 class BridgeLaunchError(PoolStartError):
-    """The Cursor bridge cannot be launched."""
-
-
-class PropertyDocsError(Exception):
-    """A property docs file cannot be read."""
+    """The agent backend cannot be launched."""

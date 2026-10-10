@@ -1,13 +1,13 @@
 from dataclasses import dataclass
 from pathlib import Path
 
-from cursor_sdk import CursorClient
+from .session import AgentSession
 
 
 @dataclass(frozen=True)
 class AgentRunContext:
-    """Run dir, API key and bridge client shared by the agents of one run."""
+    """Article, output file and session of one agent in one run."""
 
-    run_dir: Path
-    api_key: str
-    client: CursorClient
+    article: Path
+    output: Path
+    session: AgentSession

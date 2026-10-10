@@ -1,34 +1,33 @@
-"""Run one Cursor SDK agent per academic-writing property in parallel.
-
-Each ``AIPool.execute`` writes into a new run dir ``{output_dir}/{N}/``:
-``article.txt`` plus ``{name}.json`` of every agent that succeeded.
+"""Run one review agent per property in parallel in a new run dir
+``<output_dir>/<N>/``.
 """
 
-from .agent import AgentStatus, AgentDefinition
+from .agent import AgentRunError, AgentSession, AgentStatus
 from .errors import (
     BridgeLaunchError,
     DuplicateAgentError,
     MissingApiKeyError,
     NoAgentsError,
-    OutputDirMismatchError,
     PoolStartError,
     RunDirError,
 )
+from .launcher import AgentLauncher
 from .pool import AIPool
 from .result import PoolResult
-from .run_dirs import ARTICLE_FILE
+from .run_dirs import RunDirLayout
 
 __all__ = [
-    "ARTICLE_FILE",
     "AIPool",
+    "AgentLauncher",
+    "AgentRunError",
+    "AgentSession",
     "AgentStatus",
-    "AgentDefinition",
     "BridgeLaunchError",
     "DuplicateAgentError",
     "MissingApiKeyError",
     "NoAgentsError",
-    "OutputDirMismatchError",
     "PoolResult",
     "PoolStartError",
     "RunDirError",
+    "RunDirLayout",
 ]
