@@ -21,3 +21,5 @@ __pycache__/
 .idea/vcs.xml
 .idea/inspectionProfiles/profiles_settings.xml
 .idea/inspectionProfiles/Project_Default.xml
+tests/data/
+tests/temp_output/

@@ -52,33 +52,31 @@ class TitlePageRenderer:
 
         :param chapters: chapters of the report
 
-        :return: claim counts by property name, sorted by name, without zeros
+        :return: claim counts by property name, without zeros
         """
         counts: dict[str, int] = {}
         for chapter in chapters:
             for paragraph in chapter.paragraphs:
                 for name, claims in paragraph.claims.items():
                     counts[name] = counts.get(name, 0) + len(claims)
-        return {name: counts[name] for name in sorted(counts) if counts[name]}
+        return {name: count for name, count in counts.items() if count}
 
     @staticmethod
     def _property_list(counts: dict[str, int], labels: ReportLabels) -> str:
         """
-        Render the claim counts per property.
+        Render the claim counts per property, sorted by the printed name.
 
         :param counts: claim counts by property name
         :param labels: fixed labels in the report language
 
-        :return: the heading and list HTML, or an empty string without counts
+        :return: the list HTML, or an empty string without counts
         """
         if not counts:
             return ""
+        names = {name: labels.property_name(name) for name in counts}
         items = "".join(
-            f'<li><span class="property">{escape(name)}</span> '
-            f'<span class="count">{count}</span></li>\n'
-            for name, count in counts.items()
+            f'<li><span class="property">{escape(names[name])}</span> '
+            f'<span class="count">{counts[name]}</span></li>\n'
+            for name in sorted(counts, key=names.__getitem__)
         )
-        return (
-            f"<h3>{escape(labels.claims_by_property)}</h3>\n"
-            f"<ul>\n{items}</ul>\n"
-        )
+        return f"<ul>\n{items}</ul>\n"

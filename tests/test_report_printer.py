@@ -1,6 +1,7 @@
 import json
 import re
 from datetime import date
+from html import escape
 
 import pytest
 
@@ -13,7 +14,7 @@ from ai_reviewer.report import (
     RunDirReadError,
 )
 from ai_reviewer.report.printer.claim_pages import ClaimPagesRenderer
-from ai_reviewer.report.printer.entities import Claim, PrintedChapter, PrintedParagraph
+from ai_reviewer.report.printer.entities import Claim, ClaimType, PrintedChapter, PrintedParagraph
 from ai_reviewer.report.printer.labels import RUSSIAN_LABELS
 from ai_reviewer.report.printer.page_breaks import ParagraphPageBreaks
 from ai_reviewer.report.printer.pdf import PdfRenderer
@@ -54,11 +55,12 @@ def test_content_order_and_escaping(tmp_path):
     assert all(absent not in html for absent in ["p2", "Пусто", NO_HEADING])
     assert html.index("c1 quote") < html.index("c2 quote") < html.index("s1 &lt;i&gt;")
     assert re.findall(r'class="ordinal">(\d+)<', html) == ["1", "2", "1"]
-    assert '<span class="property">Caution</span> <span class="count">2</span>' in html
-    assert '<span class="property">Structure</span> <span class="count">1</span>' in html
+    assert '<span class="property">Осторожность выводов</span> <span class="count">2</span>' in html
+    assert '<span class="property">Структура</span> <span class="count">1</span>' in html
+    assert "Caution" not in html and "Structure" not in html and "Претензии по свойствам" not in html
     assert "<strong>3</strong>" in html
     assert "09.10.2026" in html and "Проблема" in html
-    assert "<li>1. Hedging</li>" in html and "<li>Order</li>" in html
+    assert "<li>1. Гипотеза подана как установленный факт</li>" in html and "<li>Order</li>" in html
     assert html.count("Корректировки") == 2 and html.count("Типы") == 2
 
 
@@ -66,8 +68,42 @@ def test_english_labels_keep_data(tmp_path):
     html = printer.html(make_sample_run_dir(tmp_path), ENGLISH_LABELS)
 
     assert 'lang="en"' in html and "October 9, 2026" in html and "Problem" in html
-    assert "Проблема" not in html
+    assert "Проблема" not in html and "Claims by property" not in html
     assert "Введение" in html and "&lt;b&gt;" in html and "c1 problem" in html
+    assert '<span class="property">Caution</span>' in html and "<li>1. Hedging</li>" in html
+
+
+def render_paragraph(text, claims, labels=RUSSIAN_LABELS):
+    return ClaimPagesRenderer().render([PrintedChapter("A", [PrintedParagraph(1, text, claims)])], labels)
+
+
+@pytest.mark.parametrize("labels, expected", [
+    (RUSSIAN_LABELS, ["<li>2. Нарушение управления</li>", "<li>99. Odd</li>", "<li>Bare</li>",
+                      'class="property">Грамотность<', 'class="property">Unknown<']),
+    (ENGLISH_LABELS, ["<li>2. Incorrect government</li>", 'class="property">Literacy<']),
+])
+def test_names_fallback(labels, expected):
+    types = [ClaimType("2", "Incorrect government"), ClaimType("99", "Odd"), ClaimType(None, "Bare")]
+    claims = {"Literacy": [Claim(None, None, types)], "Unknown": [Claim(None, None)]}
+
+    html = render_paragraph("t", claims, labels)
+
+    assert all(part in html for part in expected)
+
+
+def test_quote_highlights():
+    text = "a <b> & c d e"
+    claims = {
+        "Caution": [Claim("<b> &", None), Claim("b", None), Claim("zzz", None)],
+        "Literacy": [Claim("& c", None), Claim("e", None), Claim(None, "p")],
+    }
+
+    html = render_paragraph(text, claims)
+    paragraph_text = re.search(r'<p class="text">(.*?)</p>', html).group(1)
+
+    assert 'a <mark>&lt;b&gt; &amp; c</mark> d <mark>e</mark><span id="paragraph-1-1-text-end"></span>' in html
+    assert html.count("<mark>") == 2 and re.sub(r"<[^>]+>", "", paragraph_text) == escape(text)
+    assert '<blockquote class="quote">&lt;b&gt; &amp;</blockquote>' in html
 
 
 def test_empty_report(tmp_path):
@@ -100,7 +136,7 @@ def test_errors(tmp_path, case, error_type):
 def test_css():
     css = printer.css()
 
-    assert "#fbc847" in css and "#393939" in css and "string(heading)" in css
+    assert "#fbc847" in css and "#393939" in css and "string(heading)" in css and "•" not in css
     fonts = re.findall(r"url\((fonts/[^)]+)\)", css)
     assert fonts and all((STYLESHEET.parent / font).is_file() for font in fonts)
 
@@ -114,7 +150,7 @@ def test_pdf(tmp_path):
 def make_chapter(name, sizes):
     return PrintedChapter(name, [PrintedParagraph(
         n, "\n".join(f"line {n}.{i}" for i in range(lines)),
-        {"Caution": [Claim(quote="q", problem=f"problem {n}.{i} " * 6) for i in range(claims)]},
+        {"Caution": [Claim(quote=f"line {n}.0", problem=f"problem {n}.{i} " * 6) for i in range(claims)]},
     ) for n, (lines, claims) in enumerate(sizes, start=1)])
 
 

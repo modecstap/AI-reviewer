@@ -68,7 +68,7 @@ class ClaimPagesRenderer:
         :return: the paragraph block HTML
         """
         claims = "".join(
-            self._claim(escape(name), ordinal, claim, labels)
+            self._claim(name, ordinal, claim, labels)
             for name, items in paragraph.claims.items()
             for ordinal, claim in enumerate(items, start=1)
         )
@@ -76,28 +76,72 @@ class ClaimPagesRenderer:
             f'<div class="paragraph" id="{block_id}">\n'
             '<div class="paragraph-text"><p class="paragraph-caption">'
             f"{escape(labels.paragraph)} {paragraph.number}</p>"
-            f'<p class="text">{escape(paragraph.text)}'
+            f'<p class="text">{self._highlighted_text(paragraph)}'
             f'<span id="{text_end_id}"></span></p></div>\n'
             f'<div class="claims">\n{claims}</div>\n'
             "</div>\n"
         )
 
+    def _highlighted_text(self, paragraph: PrintedParagraph) -> str:
+        """
+        Escape the paragraph text and mark the quotes of its claims.
+
+        :param paragraph: paragraph to render
+
+        :return: the escaped text with ``<mark>`` around every found quote
+        """
+        text = paragraph.text
+        parts: list[str] = []
+        position = 0
+        for start, end in self._quote_ranges(paragraph):
+            parts.append(escape(text[position:start]))
+            parts.append(f"<mark>{escape(text[start:end])}</mark>")
+            position = end
+        parts.append(escape(text[position:]))
+        return "".join(parts)
+
+    @staticmethod
+    def _quote_ranges(paragraph: PrintedParagraph) -> list[tuple[int, int]]:
+        """
+        Find the first occurrence of every claim quote in the paragraph text.
+
+        :param paragraph: paragraph whose claim quotes to find
+
+        :return: disjoint ``(start, end)`` ranges in ascending order; quotes
+            not found in the text are skipped, overlapping ranges are merged
+        """
+        found: list[tuple[int, int]] = []
+        for claims in paragraph.claims.values():
+            for claim in claims:
+                quote = claim.quote or ""
+                start = paragraph.text.find(quote) if quote else -1
+                if start >= 0:
+                    found.append((start, start + len(quote)))
+        ranges: list[tuple[int, int]] = []
+        for start, end in sorted(found):
+            if ranges and start <= ranges[-1][1]:
+                ranges[-1] = (ranges[-1][0], max(ranges[-1][1], end))
+            else:
+                ranges.append((start, end))
+        return ranges
+
     def _claim(
-        self, property_html: str, ordinal: int, claim: Claim,
+        self, property_name: str, ordinal: int, claim: Claim,
         labels: ReportLabels,
     ) -> str:
         """
         Render one claim with its heading and non-empty blocks.
 
-        :param property_html: escaped property name
+        :param property_name: property name as in ``report.json``
         :param ordinal: number of the claim within its property, from 1
         :param claim: claim to render
         :param labels: fixed labels in the report language
 
         :return: the claim article HTML
         """
+        heading = escape(labels.property_name(property_name))
         blocks = [
-            f'<h4><span class="property">{property_html}</span> '
+            f'<h4><span class="property">{heading}</span> '
             f'<span class="ordinal">{ordinal}</span></h4>\n'
         ]
         if claim.problem is not None:
@@ -105,7 +149,7 @@ class ClaimPagesRenderer:
             blocks.append(self._labelled(
                 labels.problem, f'<p class="problem">{problem}</p>'
             ))
-        blocks.append(self._types(claim.types, labels))
+        blocks.append(self._types(property_name, claim.types, labels))
         if claim.quote is not None:
             quote = escape(claim.quote)
             blocks.append(self._labelled(
@@ -114,10 +158,14 @@ class ClaimPagesRenderer:
         blocks.append(self._corrections(claim.corrections, labels))
         return f'<article class="claim">\n{"".join(blocks)}</article>\n'
 
-    def _types(self, types: list[ClaimType], labels: ReportLabels) -> str:
+    def _types(
+        self, property_name: str, types: list[ClaimType],
+        labels: ReportLabels,
+    ) -> str:
         """
         Render the types block of a claim.
 
+        :param property_name: property name as in ``report.json``
         :param types: claim types
         :param labels: fixed labels in the report language
 
@@ -125,7 +173,10 @@ class ClaimPagesRenderer:
             a number or a name
         """
         texts = [
-            ". ".join(filter(None, (claim_type.number, claim_type.name)))
+            ". ".join(filter(None, (
+                claim_type.number,
+                labels.type_name(property_name, claim_type),
+            )))
             for claim_type in types
         ]
         items = "".join(f"<li>{escape(text)}</li>" for text in texts if text)

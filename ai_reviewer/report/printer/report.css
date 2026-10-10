@@ -90,14 +90,9 @@
 }
 
 .ai-reviewer-report h2,
-.ai-reviewer-report h3,
 .ai-reviewer-report h4 {
   color: black;
   font-weight: 400;
-}
-.ai-reviewer-report h3 {
-  font-size: 15pt;
-  font-weight: 300;
 }
 .ai-reviewer-report h4 {
   font-size: 13pt;
@@ -126,18 +121,6 @@
   font-weight: 400;
 }
 
-.ai-reviewer-report .summary h3 {
-  margin: 2em 0 1em;
-}
-.ai-reviewer-report .summary h3::before {
-  background: var(--orange);
-  content: '';
-  display: block;
-  height: .08cm;
-  margin-bottom: .25cm;
-  width: 2cm;
-}
-
 .ai-reviewer-report .summary ul {
   list-style: none;
   padding-left: 0;
@@ -149,10 +132,7 @@
 }
 .ai-reviewer-report .summary li::before {
   color: var(--orange);
-  content: '• ';
-  font-size: 40pt;
-  line-height: 16pt;
-  vertical-align: bottom;
+  content: '– ';
 }
 .ai-reviewer-report .summary .count {
   color: var(--orange);
@@ -215,6 +195,12 @@
   white-space: pre-wrap;
 }
 
+/* WeasyPrint has no color-mix(): a faded --orange is spelled out. */
+.ai-reviewer-report .paragraph-text mark {
+  background: rgba(251, 200, 71, .5);
+  color: inherit;
+}
+
 .ai-reviewer-report .claim {
   border-top: .25pt solid #c1c1c1;
   margin-bottom: .5cm;
@@ -240,6 +226,7 @@
 
 .ai-reviewer-report .claim .types,
 .ai-reviewer-report .claim .corrections {
+  list-style-type: '– ';
   margin: 0 0 .25cm;
   padding-left: .5cm;
 }
