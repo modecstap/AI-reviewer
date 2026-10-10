@@ -2,7 +2,7 @@
 
 Criterion handbook. Assessment procedure: see `instruction.md`.
 
-The sample corrections below show which function fits which section. Take the task, procedure, and data for a correction of the article under review only from that article.
+The sample corrections below show which function fits which section. In the fix hint in `problem` for the article under review, take the task, procedure, and data only from that article.
 
 ## Definition
 
@@ -55,7 +55,7 @@ Correction:
 
 > At the end of the introduction it says: "Below, the checklist is compared with the final comment by the share of uncorrected factual errors." The values themselves and the conclusion about whether replacement is possible are given in the results and in the conclusion.
 
-Rule: in the introduction, keep the announcement of what is being compared. In the problem, move the evidential status and the prescription to the results and conclusions. Do not copy into the correction of the introduction values that should not be in the introduction.
+Rule: in the introduction, keep the announcement of what is being compared. In the problem, move the evidential status and the prescription to the results and conclusions. The fix hint for the introduction brings in no values that should not be in the introduction.
 
 ### 3. Method after interpretation
 
@@ -71,7 +71,7 @@ Correction:
 
 > The composition of the groups, the type of assignment, and the error-counting rule are presented before the results. The discussion begins after these rules and the obtained values are already known to the reader.
 
-Rule: place the basis for interpretation before the conclusion. Do not add new counting rules. If the rules are in the article but come late, indicate the relocation in the problem, and do not change their content in the correction.
+Rule: place the basis for interpretation before the conclusion. Do not add new counting rules. If the rules are in the article but come late, indicate the relocation in the problem, and do not suggest changing their content.
 
 ### 4. Others' and own work not separated
 

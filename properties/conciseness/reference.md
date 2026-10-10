@@ -2,7 +2,7 @@
 
 Criterion handbook. Assessment procedure: see `instruction.md`.
 
-The sample corrections below show which words go and which information stays. In a correction to the article under review, take numbers, conditions, and limits only from that article.
+The sample corrections below show which words go and which information stays. In the fix hint in `problem` for the article under review, take numbers, conditions, and limits only from that article.
 
 ## Definition
 

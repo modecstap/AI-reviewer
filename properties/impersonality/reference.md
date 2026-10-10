@@ -2,7 +2,7 @@
 
 Criterion handbook. Assessment procedure: see `instruction.md`.
 
-The sample corrections below show the required focus of the sentence. In a correction for the article under review, take numbers and comparisons only from that article.
+The sample corrections below show the required focus of the sentence. In the fix hint in `problem` for the article under review, take numbers and comparisons only from that article.
 
 ## Definition
 

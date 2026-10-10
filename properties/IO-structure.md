@@ -52,10 +52,7 @@ Format:
         "name": "string"
       }
     ],
-    "problem": "string",
-    "corrections": [
-      "string"
-    ]
+    "problem": "string"
   }
 ]
 ```
@@ -90,15 +87,11 @@ If one quote contains several violation types, all of them are listed in a singl
 
 #### `problem`
 One human-readable description of the problem found in the given quote.
+It states what violates the norm and then says in words what must change to fix it: the fix hint.
+The fix hint names the change. It does not give a ready replacement wording of the quote.
 If the quote contains several violation types, all the issues with it are combined into a single `problem` value.
 
-#### `corrections`
-An array of possible corrections of the source quote.
-* Each string must contain a separate wording that can replace `quote`.
-* The options must be ordered from the best to the least good.
-* Several correction options are allowed.
-* If no suitable correction exists, the array may be empty.
-All content string values (`quote`, `problem`, `corrections`) must be written in the language of the corresponding article fragment.
+All content string values (`quote`, `problem`) must be written in the language of the corresponding article fragment.
 
 ### Grouping rules
 If the same quote contains several violations, **one object** is created, and all violation types are listed in its `types` field.
@@ -115,8 +108,7 @@ Each result object must contain only the following fields:
 * `place`;
 * `quote`;
 * `types`;
-* `problem`;
-* `corrections`.
+* `problem`.
 Inside `place`, only the following are allowed:
 * `chapter`;
 * `paragraph`.

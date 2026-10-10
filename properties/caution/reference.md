@@ -2,7 +2,7 @@
 
 Criterion handbook. Assessment procedure: see `instruction.md`.
 
-The sample corrections below show the required status of the wording. Take numbers, alternatives and limitations for a correction of the article under review only from that article.
+The sample corrections below show the required status of the wording. In the fix hint in `problem` for the article under review, take numbers, alternatives and limitations only from that article.
 
 ## Definition
 
@@ -151,7 +151,7 @@ Correction:
 
 > In the abstract, as in the conclusion: "The difference did not reach the level of significance. The data obtained only allow us to hypothesize an advantage of the method and require repeated testing."
 
-Rule: the brief genre of the abstract keeps the epistemic status set by the results. In the list of places, quote the strengthened fragment. The correction brings it to the status of the more cautious place in the same article.
+Rule: the brief genre of the abstract keeps the epistemic status set by the results. In the list of places, quote the strengthened fragment. The fix hint brings it to the status of the more cautious place in the same article.
 
 ## Acceptable conclusion
 

@@ -1,6 +1,6 @@
 # How to assess an article for correctness
 
-Assess the article against `reference.md`. Return a list of places and corrections. Name each type as in the handbook. Do not rewrite the whole article.
+Assess the article against `reference.md`. Return a list of places with their problems. Name each type as in the handbook. Do not rewrite the whole article.
 
 ## Where to look
 
@@ -19,10 +19,10 @@ An at-risk term is a word that, in this article, names a method, construct, samp
 1. Find an at-risk term or a wording from which the subject, measure, or scope cannot be established.
 2. Answer the questions from the "Assessment questions" section of the handbook. A violation is an answer that matches the "Violation if" column.
 3. The handbook markers only show where to look. A single word by itself is not a violation.
-4. If there is a violation, record the place. Take the correction rule from the corresponding type.
-5. In the correction, restore to the word the meaning that is already distinguishable from the text of the article. Keep the needed term. Replace an everyday word with the term that the article already uses for the same concept. Remove a rare word that carries no distinct concept. Leave one object one name from the objective to the conclusions.
+4. If there is a violation, record the place. In the problem, name the violation and say in words how to fix it by the rule of the corresponding type: the fix hint. Do not write a ready replacement of the quote. The steps below say what the fix hint advises.
+5. In the fix hint, restore to the word the meaning that is already distinguishable from the text of the article. Keep the needed term. Replace an everyday word with the term that the article already uses for the same concept. Remove a rare word that carries no distinct concept. Leave one object one name from the objective to the conclusions.
 6. Replace an evaluation of degree with a quantity, criterion, or comparison that is already in the article. Specify the scope with the sources, periods, and objects that the article has already named.
-7. Do not add a field-specific term that is not in the article and does not follow from the text. Do not add percentages, thresholds, periods, or authors that are not in the article. If the meaning is ambiguous and the author has not fixed it, fix it in the correction with words that the article already uses, or write in the problem which meaning needs to be defined. If there is no measure, remove the evaluation and write in the problem which quantity is missing.
+7. Do not add a field-specific term that is not in the article and does not follow from the text. Do not add percentages, thresholds, periods, or authors that are not in the article. If the meaning is ambiguous and the author has not fixed it, name in the fix hint the words of the article that fix it, or write in the problem which meaning needs to be defined. If there is no measure, remove the evaluation and write in the problem which quantity is missing.
 8. Do not re-explain a term generally accepted by the publication's audience in every paragraph. Explain a narrow term once if the subsequent conclusion rests on it and the publication is not specialized in this procedure. Take the degree of explanation from the genre, if the genre is known.
 9. Keep "significantly" if it is accompanied by both the magnitude of the difference and the basis for this word. Do not mix statistical significance and the size of a difference in one word.
 
@@ -46,6 +46,6 @@ Samples of an appropriate term and a verifiable wording are in the "Acceptable u
 
 - The quote appears verbatim in the article.
 - The fragment violates the handbook and does not fall under "What to keep".
-- The correction preserves the concept that the text already distinguishes and does not insert a term that the article does not provide.
-- The correction makes the claim verifiable with information already in the article and adds nothing new.
+- The fix hint preserves the concept that the text already distinguishes and does not insert a term that the article does not provide.
+- The fix hint makes the claim verifiable with information already in the article and adds nothing new.
 - The type is taken from the handbook.

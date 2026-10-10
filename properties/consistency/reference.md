@@ -2,7 +2,7 @@
 
 Criterion handbook. Assessment procedure: see `instruction.md`.
 
-The sample corrections below show how the connection between steps is restored. In a correction to the article under review, take the missing link, measurement, and cause only from that article.
+The sample corrections below show how the connection between steps is restored. In the fix hint in `problem` for the article under review, take the missing link, measurement, and cause only from that article.
 
 ## Definition
 

@@ -1,6 +1,6 @@
 # How to assess an article for conciseness
 
-Assess the article against `reference.md`. Return a list of places and corrections. Name each type as in the handbook. Do not rewrite the whole article.
+Assess the article against `reference.md`. Return a list of places with their problems. Name each type as in the handbook. Do not rewrite the whole article.
 
 ## Where to look
 
@@ -13,8 +13,8 @@ A sentence without increment is a sentence after which the reader learns no new 
 1. Find a sentence or a pair of adjacent fragments with one and the same message.
 2. Answer the questions from the "Assessment questions" section of the handbook. A violation is an answer that matches the "Violation if" column.
 3. The handbook markers only show where to look. A single word by itself is not a violation.
-4. If there is a violation, record the place. Take the correction rule from the corresponding type.
-5. In the correction, remove the words that carry no new content. Keep the number, the name of the concept, the condition, and the limit of the conclusion.
+4. If there is a violation, record the place. In the problem, name the violation and say in words how to fix it by the rule of the corresponding type: the fix hint. Do not write a ready replacement of the quote. The steps below say what the fix hint advises.
+5. In the fix hint, remove the words that carry no new content. Keep the number, the name of the concept, the condition, and the limit of the conclusion.
 6. Do not add values, conditions, or boundaries that are not in the article. If no information remains after the empty words are removed, state in the problem which value or condition is missing, and do not supply them yourself.
 7. Do not shorten a sentence in which each part delimits the object, names a measure, or separates fact from interpretation. Keep a repetition if it is a brief reference followed by a new comparison.
 
@@ -35,5 +35,5 @@ A sample sentence proportionate to its content is in the "Acceptable detail" sec
 
 - The quote appears verbatim in the article.
 - The fragment violates the handbook and does not fall under "What to keep".
-- The correction is shorter only by dropping words without new information, and it keeps the number, condition, concept name, and limit of the conclusion that were already in the quote.
+- The fix hint drops only words without new information and keeps the number, condition, concept name, and limit of the conclusion that were already in the quote.
 - The type is taken from the handbook.

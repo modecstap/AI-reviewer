@@ -1,6 +1,6 @@
 # How to assess an article for literacy
 
-Assess the article against `reference.md`. Return a list of places and corrections. Name each type as in the handbook. Do not rewrite the whole article.
+Assess the article against `reference.md`. Return a list of places with their problems. Name each type as in the handbook. Do not rewrite the whole article.
 
 ## Where to look
 
@@ -13,8 +13,8 @@ The norm here is the grammar, syntax, spelling, punctuation, and collocation of 
 1. Find a place where the norm gives a second, erroneous reading or prevents linking the words.
 2. Answer the questions in the handbook section "Assessment questions". A violation is an answer that matches the "Violation if" column.
 3. The handbook markers only show where to look. A single word by itself is not a violation.
-4. If there is a violation, record the place. Take the correction rule from the corresponding type.
-5. In the correction, fix the norm and keep the meaning, the strength of the conclusion, and the set of information.
+4. If there is a violation, record the place. In the problem, name the violation and say in words how to fix it by the rule of the corresponding type: the fix hint. Do not write a ready replacement of the quote. The steps below say what the fix hint advises.
+5. In the fix hint, fix the norm and keep the meaning, the strength of the conclusion, and the set of information.
 6. Do not change a term, an indicator, or the status of a claim for the sake of smoothness. If two variants are standard, choose the one that keeps the intent of the sentence according to the neighbouring text. If the intent is ambiguous, write both readings in the problem.
 7. Split a long sentence only when the reader loses the link between the subject and the predicate or the boundary of a clause. Do not split a sentence with clear links between words.
 
@@ -33,5 +33,5 @@ A sample standard sentence is in the handbook section "Acceptable sentence".
 
 - The quote appears verbatim in the article.
 - The fragment violates the handbook and does not fall under "What to keep".
-- The correction removes the obstacle to meaning and does not change the set of information.
+- The fix hint removes the obstacle to meaning and does not change the set of information.
 - The type is taken from the handbook.

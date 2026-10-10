@@ -52,10 +52,6 @@ problems - папка с подпапками прогонов ревью. ка�
             ...
         ],
         problem: string
-        corrections: [
-            string,
-            ...
-        ]
     },
 ]
 
@@ -67,7 +63,7 @@ report.json - итоговый документ прогона в `problems/<N>/
             {
                 "paragraph": num,
                 "<property>": [
-                    {quote: string, types: [{number: num, name: string}, ...], problem: string, corrections: [string, ...]},
+                    {quote: string, types: [{number: num, name: string}, ...], problem: string},
                     ...
                 ],
                 ...

@@ -1,6 +1,6 @@
 # How to assess an article for consistency
 
-Assess the article against `reference.md`. Return a list of places and corrections. Name each type as in the handbook. Do not rewrite the whole article.
+Assess the article against `reference.md`. Return a list of places with their problems. Name each type as in the handbook. Do not rewrite the whole article.
 
 ## Where to look
 
@@ -13,10 +13,10 @@ A statement in the chain is a claim that must follow from the previous one, answ
 1. Find a place where the next step cannot be reconstructed from the previous one.
 2. Answer the questions from the "Assessment questions" section of the handbook. A violation is an answer that matches the "Violation if" column.
 3. The handbook's markers only show where to look. A single word by itself is not a violation.
-4. If there is a violation, record the place. Take the correction rule from the corresponding type.
-5. In the correction, restore the connection using words already in the article: which question the result answers, why the stated conclusion does not follow from this premise, where the parts diverge.
+4. If there is a violation, record the place. In the problem, name the violation and say in words how to fix it by the rule of the corresponding type: the fix hint. Do not write a ready replacement of the quote. The steps below say what the fix hint advises.
+5. In the fix hint, restore the connection using words already in the article: which question the result answers, why the stated conclusion does not follow from this premise, where the parts diverge.
 6. Do not add new argumentation, measurements, or causes. If the link is not in the article, remove the conclusion that rests on it, and in the problem write which link is missing.
-7. Genre may change the order of sections. A violation exists when the line of reasoning cannot be traced, not when the set of headings differs from the scheme "problem, review, method, results, conclusions". If a claim is not in its proper place, give in the correction the wording for the place where it should be, and in the problem write where to remove it from.
+7. Genre may change the order of sections. A violation exists when the line of reasoning cannot be traced, not when the set of headings differs from the scheme "problem, review, method, results, conclusions". If a claim is not in its proper place, write in the problem where to remove it from and where it should be.
 
 ## What to keep
 
@@ -33,5 +33,5 @@ A sample of a traceable step is in the "Acceptable progression" section of the h
 
 - The quote appears verbatim in the article.
 - The fragment violates the handbook and does not fall under "What to keep".
-- The correction restores the connection from propositions already in the article and does not add a new topic.
+- The fix hint restores the connection from propositions already in the article and does not add a new topic.
 - The type is taken from the handbook.

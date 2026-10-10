@@ -2,7 +2,7 @@
 
 Criterion handbook. Assessment procedure: see `instruction.md`.
 
-The sample corrections below show the required strength of wording. Take numbers, comparisons and limitations in a correction only from the article under review.
+The sample corrections below show the required strength of wording. In the fix hint in `problem`, take numbers, comparisons and limitations only from the article under review.
 
 ## Definition
 

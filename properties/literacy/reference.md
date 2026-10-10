@@ -2,7 +2,7 @@
 
 Criterion handbook. Assessment procedure: see `instruction.md`.
 
-The sample corrections below show the standard variant with the same set of information. In a correction, do not change the meaning, the strength of the conclusion, or the terms of the article under review.
+The sample corrections below show the standard variant with the same set of information. In the fix hint in `problem`, do not change the meaning, the strength of the conclusion, or the terms of the article under review.
 
 ## Definition
 

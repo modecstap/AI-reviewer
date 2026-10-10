@@ -2,7 +2,7 @@
 
 Criterion handbook. Assessment procedure: see `instruction.md`.
 
-The sample corrections below show the required match between word and concept and a verifiable wording. Take the term, quantity, period, source, and object name in a correction for the article under review only from that article. Do not add to the correction anything that is not in the article and does not follow from the text.
+The sample corrections below show the required match between word and concept and a verifiable wording. In the fix hint in `problem` for the article under review, take the term, quantity, period, source, and object name only from that article. Do not add to the fix hint anything that is not in the article and does not follow from the text.
 
 ## Definition
 
