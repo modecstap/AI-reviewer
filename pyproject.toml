@@ -14,12 +14,19 @@ dev = ["pytest>=8"]
 [tool.setuptools]
 packages = [
     "ai_reviewer",
+    "ai_reviewer.article",
+    "ai_reviewer.splitter",
+    "ai_reviewer.properties",
+    "ai_reviewer.claims",
     "ai_reviewer.ai_pool",
     "ai_reviewer.ai_pool.agent",
     "ai_reviewer.ai_pool.cursor",
     "ai_reviewer.report",
     "ai_reviewer.report.printer",
-    "ai_reviewer.splitter",
+    "ai_reviewer.report.printer.labels",
+    "ai_reviewer.report.printer.statistics",
+    "ai_reviewer.report.printer.pdf",
+    "ai_reviewer.run_dir",
 ]
 
 [tool.setuptools.package-data]
