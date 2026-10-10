@@ -1,9 +1,10 @@
-class RefineError(Exception):
-    """Base of every expected splitter failure."""
-
-
-class ArticleReadError(RefineError):
+class ArticleReadError(Exception):
     """The article cannot be read."""
 
-class OutputWriteError(RefineError):
-    """The chapters cannot be written to the output folder."""
+
+class ArticleNotFoundError(ArticleReadError):
+    """The article path does not point to an existing file."""
+
+
+class InvalidArticleError(ArticleReadError):
+    """The article file exists but is not a valid .docx package."""

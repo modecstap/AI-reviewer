@@ -1,21 +1,13 @@
-import json
-import subprocess
-import sys
-from pathlib import Path
-
+import pytest
 from docx import Document
 from docx.oxml import parse_xml
 from docx.oxml.ns import nsdecls
 
-from ai_reviewer.splitter import NO_HEADING, ArticleParser, ArticleRefiner, ArticleWriter, Chapter
+from ai_reviewer.article import ArticleText, Chapter
+from ai_reviewer.splitter import NO_HEADING, ArticleParser, ArticleReadError
 
 parse_article = ArticleParser().parse
-refine_article = ArticleRefiner().refine
-article_text = ArticleWriter().write
-
-ROOT = Path(__file__).resolve().parent.parent
-ARTICLE = ROOT / "tests" / "data" / "test_article.docx"
-TITLE = "Пространственно-сакральный аспект топографии курганных могильников на примере Подмосковья"
+article_text = ArticleText().write
 
 
 def save(doc, tmp_path, name="a.docx"):
@@ -27,9 +19,6 @@ def save(doc, tmp_path, name="a.docx"):
 def chapters_of(path):
     return [(ch.name, ch.paragraphs) for ch in parse_article(path)]
 
-
-def read(path):
-    return path.read_text(encoding="utf-8")
 
 def test_styles_beat_heuristics(tmp_path):
     doc = Document()
@@ -48,14 +37,22 @@ def test_no_headings(tmp_path):
     assert chapters_of(save(doc, tmp_path)) == [(NO_HEADING, ["Первый абзац.", "Второй абзац.", "Третий."])]
 
 
-def test_folder_names(tmp_path):
+def test_chapter_ids(tmp_path):
     doc = Document()
-    for title in ['A/B:C*?"<>|D', "д" * 150, "Итоги", "итоги", "Итоги"]:
+    for title in ['A/B:C*?"<>|D', "CON", "д" * 150, "Итоги", "итоги", "Итоги"]:
         doc.add_heading(title, 1)
 
     names = [name for name, _ in chapters_of(save(doc, tmp_path))]
 
-    assert names == ["A_B_C______D", "д" * 100, "Итоги", "итоги (2)", "Итоги (3)"]
+    assert names == ['A/B:C*?"<>|D', "CON", "д" * 150, "Итоги", "итоги", "Итоги (2)"]
+
+
+def test_unreadable_article(tmp_path):
+    (tmp_path / "a.docx").write_bytes(b"not a zip")
+
+    for path in (tmp_path / "missing.docx", tmp_path / "a.docx"):
+        with pytest.raises(ArticleReadError):
+            parse_article(path)
 
 
 def test_table_and_list(tmp_path):
@@ -91,19 +88,21 @@ def test_exclusions_and_tracked_changes(tmp_path):
 
 
 def test_article_text_format():
-    chapters = [Chapter("A", "A", ["p1", "p2"]), Chapter("B", "B", ["q1"])]
+    chapters = [Chapter("A", ["p1", "p2"]), Chapter("B", ["q1"])]
+    text = article_text(chapters)
 
-    assert article_text(chapters) == (
+    assert text == (
         "!! chapter: A\n!! paragraph: 1\np1\n\n!! paragraph: 2\np2\n\n!! chapter: B\n!! paragraph: 1\nq1\n"
     )
+    assert ArticleText().read(text).paragraph_text("A", 2) == "p2"
 
 
 def test_article_text_name_verbatim_and_empty_chapter():
     chapters = [
-        Chapter(NO_HEADING, None, ["Г.\xa0А.\xa0Шебанин"]),
-        Chapter("A_B", "A/B", ["a\nb\tc"]),
-        Chapter("Пусто", "Пусто"),
-        Chapter("C", "C", ["d"]),
+        Chapter(NO_HEADING, ["Г.\xa0А.\xa0Шебанин"]),
+        Chapter("A_B", ["a\nb\tc"]),
+        Chapter("Пусто"),
+        Chapter("C", ["d"]),
     ]
 
     assert article_text(chapters) == (
@@ -116,4 +115,4 @@ def test_article_text_name_verbatim_and_empty_chapter():
 
 def test_article_text_edges():
     assert article_text([]) == ""
-    assert article_text([Chapter("A", "A", ["p"]), Chapter("B", "B")]).endswith("p\n\n!! chapter: B\n")
+    assert article_text([Chapter("A", ["p"]), Chapter("B")]).endswith("p\n\n!! chapter: B\n")

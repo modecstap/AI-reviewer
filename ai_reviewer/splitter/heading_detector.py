@@ -7,7 +7,7 @@ from docx.text.paragraph import Paragraph
 from docx.text.run import Run
 from lxml.etree import _Element as XmlElement
 
-from ai_reviewer.splitter.parsers.docx_xml import DocxXml
+from .docx_xml import DocxXml
 
 
 class HeadingDetector:

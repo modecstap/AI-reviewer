@@ -8,12 +8,14 @@ from docx.opc.exceptions import PackageNotFoundError
 from docx.text.paragraph import Paragraph
 from lxml.etree import _Element as XmlElement
 
-from ai_reviewer.splitter.parsers.chapter_namer import ChapterNamer
-from ai_reviewer.splitter.parsers.docx_xml import DocxXml
-from ai_reviewer.splitter.parsers.errors import ArticleNotFoundError, InvalidArticleError, ArticleReadError
-from ai_reviewer.splitter.parsers.heading_detector import HeadingDetector
-from ai_reviewer.splitter.entities.block import Block
-from ai_reviewer.splitter.entities.chapter import Chapter, NO_HEADING
+from ai_reviewer.article import Chapter
+
+from .block import Block
+from .docx_xml import DocxXml
+from .errors import ArticleNotFoundError, ArticleReadError, InvalidArticleError
+from .heading_detector import HeadingDetector
+
+NO_HEADING = "Без заголовка"
 
 
 class ArticleParser:
@@ -23,19 +25,13 @@ class ArticleParser:
         PackageNotFoundError, ValueError, KeyError, zipfile.BadZipFile
     )
 
-    def __init__(
-        self,
-        detector: HeadingDetector | None = None,
-        namer: ChapterNamer | None = None,
-    ) -> None:
+    def __init__(self, detector: HeadingDetector | None = None) -> None:
         """
         Set up the parser.
 
         :param detector: heading detector; default one when omitted
-        :param namer: folder namer; default one when omitted
         """
         self._detector = detector or HeadingDetector()
-        self._namer = namer or ChapterNamer()
 
     def parse(self, docx_path: str | Path) -> list[Chapter]:
         """
@@ -43,19 +39,14 @@ class ArticleParser:
 
         :param docx_path: path to the article .docx
 
-        :raises ArticleNotFoundError:
-        :raises InvalidArticleError:
-        :raises ArticleReadError:
+        :raises ArticleNotFoundError: the path is not an existing file
+        :raises InvalidArticleError: the file is not a valid .docx package
+        :raises ArticleReadError: an I/O failure while reading
 
-        :return: chapters in document order with unique folder names
+        :return: chapters in document order with unique ids
         """
         document = self._open(Path(docx_path))
-        chapters = self._group(self._blocks(document))
-        names = self._namer.unique_names([each.name for each in chapters])
-        return [
-            replace(chapter, name=name)
-            for chapter, name in zip(chapters, names)
-        ]
+        return self._unique(self._group(self._blocks(document)))
 
     @classmethod
     def _open(cls, path: Path) -> WordDocument:
@@ -147,7 +138,7 @@ class ArticleParser:
 
         :param blocks: blocks in document order
 
-        :return: chapters, names not yet unique
+        :return: chapters, ids not yet unique
         """
         by_style = any(block.is_style_heading for block in blocks)
         chapters: list[Chapter] = []
@@ -157,19 +148,41 @@ class ArticleParser:
                 chapters.append(self._chapter(self._normalize(block.text)))
                 continue
             if not chapters:
-                chapters.append(Chapter(name=NO_HEADING, title=None))
+                chapters.append(Chapter(name=NO_HEADING))
             chapters[-1].paragraphs.append(block.text)
         return chapters
 
-    def _chapter(self, title: str) -> Chapter:
+    @staticmethod
+    def _chapter(title: str) -> Chapter:
         """
         Create an empty chapter for a heading.
 
         :param title: whitespace-normalized heading text
 
-        :return: chapter without paragraphs
+        :return: chapter without paragraphs, its id is the title
         """
-        return Chapter(name=self._namer.folder_name(title), title=title)
+        return Chapter(name=title or NO_HEADING)
+
+    @staticmethod
+    def _unique(chapters: list[Chapter]) -> list[Chapter]:
+        """
+        Suffix repeated chapter ids with ` (2)`, ` (3)`, ...
+
+        Comparison is exact and case-sensitive.
+
+        :param chapters: chapters in document order
+
+        :return: the same chapters with unique ids
+        """
+        used: set[str] = set()
+        unique = []
+        for chapter in chapters:
+            candidate, number = chapter.name, 2
+            while candidate in used:
+                candidate, number = f"{chapter.name} ({number})", number + 1
+            used.add(candidate)
+            unique.append(replace(chapter, name=candidate))
+        return unique
 
     @staticmethod
     def _normalize(text: str) -> str:
