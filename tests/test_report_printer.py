@@ -24,12 +24,12 @@ from ai_reviewer.splitter import NO_HEADING, ArticleWriter, Chapter
 
 printer = ReportPrinter(title_page=TitlePageRenderer(today=lambda: date(2026, 10, 9)))
 
-FULL = {"quote": "c1 quote", "problem": "c1 problem", "types": [{"number": 1, "name": "Hedging"}], "corrections": ["fix c1"]}
+FULL = {"quote": "c1 quote", "problem": "c1 problem", "types": [{"number": 1, "name": "Hedging"}], "extra": ["fix c1"]}
 SAMPLE_REPORT = [{"chapter": "Введение", "claims": [
     {"paragraph": 1},
     {"paragraph": 3,
      "Caution": [FULL, {"quote": "c2 quote", "problem": "c2 problem"}],
-     "Structure": [{"quote": "s1 <i>", "problem": "s1 & problem", "types": [{"name": "Order"}], "corrections": ["fix s1"]}]},
+     "Structure": [{"quote": "s1 <i>", "problem": "s1 & problem", "types": [{"name": "Order"}]}]},
 ]}]
 
 
@@ -61,7 +61,7 @@ def test_content_order_and_escaping(tmp_path):
     assert "<strong>3</strong>" in html
     assert "09.10.2026" in html and "Проблема" in html
     assert "<li>1. Гипотеза подана как установленный факт</li>" in html and "<li>Order</li>" in html
-    assert html.count("Корректировки") == 2 and html.count("Типы") == 2
+    assert html.count("Типы") == 2 and "Корректировки" not in html and "fix c1" not in html
 
 
 def test_english_labels_keep_data(tmp_path):

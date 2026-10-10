@@ -16,7 +16,6 @@ class Claim:
     quote: str | None
     problem: str | None
     types: list[ClaimType] = field(default_factory=list)
-    corrections: list[str] = field(default_factory=list)
 
 
 @dataclass(frozen=True)

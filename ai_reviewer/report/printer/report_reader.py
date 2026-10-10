@@ -155,8 +155,6 @@ class ReportReader:
         """
         types = item.get("types")
         types = types if isinstance(types, list) else []
-        corrections = item.get("corrections")
-        corrections = corrections if isinstance(corrections, list) else []
         return Claim(
             quote=self._text_of(item.get("quote")),
             problem=self._text_of(item.get("problem")),
@@ -164,9 +162,6 @@ class ReportReader:
                 self._type_of(entry)
                 for entry in types
                 if isinstance(entry, dict)
-            ],
-            corrections=[
-                entry for entry in corrections if isinstance(entry, str)
             ],
         )
 

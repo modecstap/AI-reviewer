@@ -224,8 +224,7 @@
   margin: 0 0 .25cm;
 }
 
-.ai-reviewer-report .claim .types,
-.ai-reviewer-report .claim .corrections {
+.ai-reviewer-report .claim .types {
   list-style-type: '– ';
   margin: 0 0 .25cm;
   padding-left: .5cm;

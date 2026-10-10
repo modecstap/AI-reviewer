@@ -16,7 +16,6 @@ class ReportLabels:
     problem: str
     types: str
     quote: str
-    corrections: str
     months: tuple[str, ...]
     date_pattern: str
     property_names: dict[str, str] = field(default_factory=dict)
@@ -74,7 +73,6 @@ RUSSIAN_LABELS = ReportLabels(
     problem="Проблема",
     types="Типы",
     quote="Цитата",
-    corrections="Корректировки",
     months=(
         "января",
         "февраля",
@@ -199,7 +197,6 @@ ENGLISH_LABELS = ReportLabels(
     problem="Problem",
     types="Types",
     quote="Quote",
-    corrections="Corrections",
     months=(
         "January",
         "February",

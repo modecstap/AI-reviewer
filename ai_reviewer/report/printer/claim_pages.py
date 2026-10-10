@@ -155,7 +155,6 @@ class ClaimPagesRenderer:
             blocks.append(self._labelled(
                 labels.quote, f'<blockquote class="quote">{quote}</blockquote>'
             ))
-        blocks.append(self._corrections(claim.corrections, labels))
         return f'<article class="claim">\n{"".join(blocks)}</article>\n'
 
     def _types(
@@ -183,26 +182,6 @@ class ClaimPagesRenderer:
         if not items:
             return ""
         return self._labelled(labels.types, f'<ul class="types">{items}</ul>')
-
-    def _corrections(
-        self, corrections: list[str], labels: ReportLabels
-    ) -> str:
-        """
-        Render the corrections block of a claim.
-
-        :param corrections: suggested corrections
-        :param labels: fixed labels in the report language
-
-        :return: the labelled list HTML, or an empty string without corrections
-        """
-        if not corrections:
-            return ""
-        items = "".join(
-            f"<li>{escape(correction)}</li>" for correction in corrections
-        )
-        return self._labelled(
-            labels.corrections, f'<ul class="corrections">{items}</ul>'
-        )
 
     @staticmethod
     def _labelled(label: str, content: str) -> str:
