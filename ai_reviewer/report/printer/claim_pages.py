@@ -1,15 +1,17 @@
 from html import escape
 
-from .entities import Claim, ClaimType, PrintedChapter, PrintedParagraph
+from ai_reviewer.claims import Claim, ClaimType
+
+from .. import ReportChapter, ReportParagraph
 from .labels import ReportLabels
-from .page_breaks import ParagraphPageBreaks
+from .pdf import ParagraphPageBreaks
 
 
 class ClaimPagesRenderer:
     """Renders the chapters of the printed report with their claims as HTML."""
 
     def render(
-        self, chapters: list[PrintedChapter], labels: ReportLabels
+        self, chapters: list[ReportChapter], labels: ReportLabels
     ) -> str:
         """
         Render one section per chapter, in the given order.
@@ -25,7 +27,7 @@ class ClaimPagesRenderer:
         )
 
     def _chapter(
-        self, chapter: PrintedChapter, position: int, labels: ReportLabels
+        self, chapter: ReportChapter, position: int, labels: ReportLabels
     ) -> str:
         """
         Render one chapter with its paragraphs.
@@ -54,7 +56,7 @@ class ClaimPagesRenderer:
         )
 
     def _paragraph(
-        self, paragraph: PrintedParagraph, block_id: str, text_end_id: str,
+        self, paragraph: ReportParagraph, block_id: str, text_end_id: str,
         labels: ReportLabels,
     ) -> str:
         """
@@ -82,7 +84,7 @@ class ClaimPagesRenderer:
             "</div>\n"
         )
 
-    def _highlighted_text(self, paragraph: PrintedParagraph) -> str:
+    def _highlighted_text(self, paragraph: ReportParagraph) -> str:
         """
         Escape the paragraph text and mark the quotes of its claims.
 
@@ -101,7 +103,7 @@ class ClaimPagesRenderer:
         return "".join(parts)
 
     @staticmethod
-    def _quote_ranges(paragraph: PrintedParagraph) -> list[tuple[int, int]]:
+    def _quote_ranges(paragraph: ReportParagraph) -> list[tuple[int, int]]:
         """
         Find the first occurrence of every claim quote in the paragraph text.
 
@@ -126,20 +128,20 @@ class ClaimPagesRenderer:
         return ranges
 
     def _claim(
-        self, property_name: str, ordinal: int, claim: Claim,
+        self, property_id: str, ordinal: int, claim: Claim,
         labels: ReportLabels,
     ) -> str:
         """
         Render one claim with its heading and non-empty blocks.
 
-        :param property_name: property name as in ``report.json``
+        :param property_id: property id as in ``report.json``
         :param ordinal: number of the claim within its property, from 1
         :param claim: claim to render
         :param labels: fixed labels in the report language
 
         :return: the claim article HTML
         """
-        heading = escape(labels.property_name(property_name))
+        heading = escape(labels.property_name(property_id))
         blocks = [
             f'<h4><span class="property">{heading}</span> '
             f'<span class="ordinal">{ordinal}</span></h4>\n'
@@ -149,7 +151,7 @@ class ClaimPagesRenderer:
             blocks.append(self._labelled(
                 labels.problem, f'<p class="problem">{problem}</p>'
             ))
-        blocks.append(self._types(property_name, claim.types, labels))
+        blocks.append(self._types(property_id, claim.types, labels))
         if claim.quote is not None:
             quote = escape(claim.quote)
             blocks.append(self._labelled(
@@ -158,13 +160,13 @@ class ClaimPagesRenderer:
         return f'<article class="claim">\n{"".join(blocks)}</article>\n'
 
     def _types(
-        self, property_name: str, types: list[ClaimType],
+        self, property_id: str, types: list[ClaimType],
         labels: ReportLabels,
     ) -> str:
         """
         Render the types block of a claim.
 
-        :param property_name: property name as in ``report.json``
+        :param property_id: property id as in ``report.json``
         :param types: claim types
         :param labels: fixed labels in the report language
 
@@ -172,10 +174,7 @@ class ClaimPagesRenderer:
             a number or a name
         """
         texts = [
-            ". ".join(filter(None, (
-                claim_type.number,
-                labels.type_name(property_name, claim_type),
-            )))
+            labels.type_caption(property_id, claim_type)
             for claim_type in types
         ]
         items = "".join(f"<li>{escape(text)}</li>" for text in texts if text)

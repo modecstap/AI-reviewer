@@ -1,34 +1,17 @@
-"""Build ``report.json`` of one run dir ``problems/<N>/``.
-
-Claims of every property file are grouped by chapter, paragraph and property.
-The report is printed as an HTML fragment, a CSS stylesheet and a PDF.
+"""Build the report of one run dir: claims of every property grouped by
+chapter, paragraph and property; the ``report.json`` format.
 """
 
-from .errors import ReportError, ReportWriteError, RunDirReadError
-from .writer import REPORT_FILE, ReportWriter
-from .printer import (
-    ENGLISH_LABELS,
-    RUSSIAN_LABELS,
-    PdfRenderError,
-    ReportFormatError,
-    ReportLabels,
-    ReportPrinter,
-    ReportPrintError,
-    StylesheetReadError,
-)
+from .builder import ReportBuilder
+from .entities import ReportChapter, ReportParagraph
+from .errors import ReportError, ReportFormatError
+from .json_format import ReportJson
 
 __all__ = [
-    "ENGLISH_LABELS",
-    "PdfRenderError",
-    "REPORT_FILE",
-    "RUSSIAN_LABELS",
+    "ReportBuilder",
+    "ReportChapter",
     "ReportError",
     "ReportFormatError",
-    "ReportLabels",
-    "ReportPrintError",
-    "ReportPrinter",
-    "ReportWriteError",
-    "ReportWriter",
-    "RunDirReadError",
-    "StylesheetReadError",
+    "ReportJson",
+    "ReportParagraph",
 ]

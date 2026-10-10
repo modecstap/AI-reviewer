@@ -2,26 +2,27 @@ import json
 import re
 from datetime import date
 from html import escape
+from pathlib import Path
 
 import pytest
 
-from ai_reviewer.printed_report_writer import PrintedReportWriter
-from ai_reviewer.report import (
-    ENGLISH_LABELS,
-    ReportError,
-    ReportFormatError,
-    ReportPrinter,
-    RunDirReadError,
-)
+from ai_reviewer.article import ArticleText, Chapter
+from ai_reviewer.claims import Claim, Place
+from ai_reviewer.properties import PropertyCatalog
+from ai_reviewer.report import ReportChapter, ReportFormatError, ReportParagraph
+from ai_reviewer.report.printer import ENGLISH_LABELS, RUSSIAN_LABELS, ReportPrinter
 from ai_reviewer.report.printer.claim_pages import ClaimPagesRenderer
-from ai_reviewer.report.printer.entities import Claim, ClaimType, PrintedChapter, PrintedParagraph
-from ai_reviewer.report.printer.labels import RUSSIAN_LABELS
-from ai_reviewer.report.printer.page_breaks import ParagraphPageBreaks
-from ai_reviewer.report.printer.pdf import PdfRenderer
+from ai_reviewer.report.printer.pdf import ParagraphPageBreaks, PdfRenderer
 from ai_reviewer.report.printer.printer import STYLESHEET
-from ai_reviewer.report.printer.statistics_page import StatisticsPageRenderer
+from ai_reviewer.report.printer.statistics import StatisticsPageRenderer
 from ai_reviewer.report.printer.title_page import TitlePageRenderer
-from ai_reviewer.splitter import NO_HEADING, ArticleWriter, Chapter
+from ai_reviewer.run_dir import PrintedReport, RunDirReadError, RunDirReader, RunDirWriter
+from ai_reviewer.splitter import NO_HEADING
+
+ROOT = Path(__file__).resolve().parent.parent
+CATALOG = PropertyCatalog(ROOT / "properties")
+RU = RUSSIAN_LABELS.with_names(CATALOG.names("ru"))
+EN = ENGLISH_LABELS.with_names(CATALOG.names("en"))
 
 printer = ReportPrinter(title_page=TitlePageRenderer(today=lambda: date(2026, 10, 9)))
 
@@ -29,27 +30,31 @@ FULL = {"quote": "c1 quote", "problem": "c1 problem", "types": [{"number": 1, "n
 SAMPLE_REPORT = [{"chapter": "Введение", "claims": [
     {"paragraph": 1},
     {"paragraph": 3,
-     "Caution": [FULL, {"quote": "c2 quote", "problem": "c2 problem"}],
-     "Structure": [{"quote": "s1 <i>", "problem": "s1 & problem", "types": [{"name": "Order"}]}]},
+     "caution": [FULL, {"quote": "c2 quote", "problem": "c2 problem"}],
+     "structure": [{"quote": "s1 <i>", "problem": "s1 & problem", "types": [{"name": "Order"}]}]},
 ]}]
+
+
+def claim(**fields):
+    return Claim(Place("A", 1), fields)
 
 
 def make_run_dir(tmp_path, chapters, report):
     run_dir = tmp_path / "1"
     run_dir.mkdir()
-    article = ArticleWriter().write([Chapter(name, name, paragraphs) for name, paragraphs in chapters])
+    article = ArticleText().write([Chapter(name, paragraphs) for name, paragraphs in chapters])
     (run_dir / "article.txt").write_text(article, encoding="utf-8", newline="")
     (run_dir / "report.json").write_text(json.dumps(report, ensure_ascii=False), encoding="utf-8")
     return run_dir
 
 
-def make_sample_run_dir(tmp_path):
+def sample_report(tmp_path):
     chapters = [(NO_HEADING, ["n"]), ("Введение", ["p1 <b> & x\nline2", "p2", "p3"]), ("Пусто", ["e"])]
-    return make_run_dir(tmp_path, chapters, SAMPLE_REPORT)
+    return RunDirReader().read_report(make_run_dir(tmp_path, chapters, SAMPLE_REPORT))
 
 
 def test_content_order_and_escaping(tmp_path):
-    html = printer.html(make_sample_run_dir(tmp_path))
+    html = printer.html(sample_report(tmp_path), RU)
     title_end, chapter_start = html.index('class="statistics"'), html.index('class="chapter"')
     title, statistics, chapters = html[:title_end], html[title_end:chapter_start], html[chapter_start:]
 
@@ -62,34 +67,34 @@ def test_content_order_and_escaping(tmp_path):
     assert all(part in title for part in ["VSRT", "AI-Reviewer", "09.10.2026"])
     assert "<strong>" not in title and "Всего претензий" not in title
     assert "Всего претензий" in statistics and "<strong>3</strong>" in statistics
-    assert "Caution" not in html and "Structure" not in html and "Претензии по свойствам" not in html
+    assert "caution" not in html and "structure" not in html and "Претензии по свойствам" not in html
     assert "Проблема" in html
     assert "<li>1. Гипотеза подана как установленный факт</li>" in chapters and "<li>Order</li>" in chapters
     assert html.count("Типы") == 2 and "Корректировки" not in html and "fix c1" not in html
 
 
 def test_english_labels_keep_data(tmp_path):
-    html = printer.html(make_sample_run_dir(tmp_path), ENGLISH_LABELS)
+    html = printer.html(sample_report(tmp_path), EN)
 
     assert 'lang="en"' in html and "October 9, 2026" in html and "Problem" in html
     assert "Проблема" not in html and "Claims by property" not in html
     assert "Введение" in html and "&lt;b&gt;" in html and "c1 problem" in html
-    assert '<span class="property">Caution</span>' in html and "<li>1. Hedging</li>" in html
+    assert '<span class="property">caution</span>' in html and "<li>1. Hedging</li>" in html
     assert "Statistics" in html and ">Total<" in html
 
 
-def render_paragraph(text, claims, labels=RUSSIAN_LABELS):
-    return ClaimPagesRenderer().render([PrintedChapter("A", [PrintedParagraph(1, text, claims)])], labels)
+def render_paragraph(text, claims, labels=RU):
+    return ClaimPagesRenderer().render([ReportChapter("A", [ReportParagraph(1, text, claims)])], labels)
 
 
 @pytest.mark.parametrize("labels, expected", [
-    (RUSSIAN_LABELS, ["<li>2. Нарушение управления</li>", "<li>99. Odd</li>", "<li>Bare</li>",
-                      'class="property">Грамотность<', 'class="property">Unknown<']),
-    (ENGLISH_LABELS, ["<li>2. Incorrect government</li>", 'class="property">Literacy<']),
+    (RU, ["<li>2. Нарушение управления</li>", "<li>99. Odd</li>", "<li>Bare</li>",
+          'class="property">Грамотность<', 'class="property">unknown<']),
+    (EN, ["<li>2. Incorrect government</li>", 'class="property">literacy<']),
 ])
 def test_names_fallback(labels, expected):
-    types = [ClaimType("2", "Incorrect government"), ClaimType("99", "Odd"), ClaimType(None, "Bare")]
-    claims = {"Literacy": [Claim(None, None, types)], "Unknown": [Claim(None, None)]}
+    types = [{"number": 2, "name": "Incorrect government"}, {"number": "99", "name": "Odd"}, {"name": "Bare"}]
+    claims = {"literacy": [claim(types=types)], "unknown": [claim()]}
 
     html = render_paragraph("t", claims, labels)
 
@@ -99,8 +104,8 @@ def test_names_fallback(labels, expected):
 def test_quote_highlights():
     text = "a <b> & c d e"
     claims = {
-        "Caution": [Claim("<b> &", None), Claim("b", None), Claim("zzz", None)],
-        "Literacy": [Claim("& c", None), Claim("e", None), Claim(None, "p")],
+        "caution": [claim(quote="<b> &"), claim(quote="b"), claim(quote="zzz")],
+        "literacy": [claim(quote="& c"), claim(quote="e"), claim(problem="p")],
     }
 
     html = render_paragraph(text, claims)
@@ -112,7 +117,7 @@ def test_quote_highlights():
 
 
 def test_empty_report(tmp_path):
-    html = printer.html(make_run_dir(tmp_path, [("A", ["a"])], []))
+    html = printer.html(RunDirReader().read_report(make_run_dir(tmp_path, [("A", ["a"])], [])), RU)
 
     assert "<strong>0</strong>" in html
     assert 'class="chapter"' not in html and "Претензии по свойствам" not in html
@@ -121,13 +126,12 @@ def test_empty_report(tmp_path):
 
 
 def test_statistics_grid():
-    caution = [Claim(None, None, [ClaimType("1", None), ClaimType("2", None)]),
-               Claim(None, None, [ClaimType("1", None), ClaimType(None, "Bare")]), Claim(None, None)]
-    odd = [Claim(None, None, [ClaimType("15", "Fifteen <b>"), ClaimType("x", None)])]
-    chapters = [PrintedChapter("A", [PrintedParagraph(1, "t", {"Caution": caution[:2]})]),
-                PrintedChapter("B", [PrintedParagraph(2, "t", {"Caution": caution[2:], "Odd<x>": odd})])]
+    caution = [claim(types=[{"number": "1"}, {"number": "2"}]), claim(types=[{"number": "1"}, {"name": "Bare"}]), claim()]
+    odd = [claim(types=[{"number": "15", "name": "Fifteen <b>"}, {"number": "x"}])]
+    chapters = [ReportChapter("A", [ReportParagraph(1, "t", {"caution": caution[:2]})]),
+                ReportChapter("B", [ReportParagraph(2, "t", {"caution": caution[2:], "Odd<x>": odd})])]
 
-    html = StatisticsPageRenderer().render(chapters, RUSSIAN_LABELS)
+    html = StatisticsPageRenderer().render(chapters, RU)
 
     def cells(name):
         row = re.search(rf'scope="row">{name}</th>(.*?)</tr>', html).group(1)
@@ -145,13 +149,14 @@ def test_statistics_grid():
 
 
 def test_statistics_page_layout():
-    claims = {name: [Claim(None, None, [ClaimType(number, None) for number in types])] * 100
-              for name, types in RUSSIAN_LABELS.type_names.items()}
-    chapters = [PrintedChapter("A", [PrintedParagraph(1, "t", claims)])]
-    html = ('<div class="ai-reviewer-report">' + TitlePageRenderer().render(chapters, RUSSIAN_LABELS)
-            + StatisticsPageRenderer().render(chapters, RUSSIAN_LABELS) + "</div>")
+    names = CATALOG.names("ru")
+    claims = {id: [claim(types=[{"number": number} for number in names.numbers(id)])] * 100
+              for id in names.property_ids()}
+    chapters = [ReportChapter("A", [ReportParagraph(1, "t", claims)])]
+    html = ('<div class="ai-reviewer-report">' + TitlePageRenderer().render(chapters, RU)
+            + StatisticsPageRenderer().render(chapters, RU) + "</div>")
 
-    pages = PdfRenderer().document(html, printer.css()).pages
+    pages = PdfRenderer(STYLESHEET).document(html, printer.css()).pages
     texts = [box.text for box in pages[-1]._page_box.descendants() if hasattr(box, "text")]
 
     assert len(pages) == 2 and texts.count("Статистика") == 2 and "14. Неясная отсылка" in texts
@@ -171,10 +176,8 @@ def test_errors(tmp_path, case, error_type):
     else:
         (run_dir / "report.json").write_text(json.dumps([{"chapter": "A", "claims": [{"paragraph": 2}]}]), encoding="utf-8")
 
-    with pytest.raises(error_type) as caught:
-        printer.html(run_dir)
-
-    assert isinstance(caught.value, ReportError)
+    with pytest.raises(error_type):
+        RunDirReader().read_report(run_dir)
 
 
 def test_css():
@@ -186,23 +189,23 @@ def test_css():
 
 
 def test_pdf(tmp_path):
-    html = printer.html(make_sample_run_dir(tmp_path))
+    html = printer.html(sample_report(tmp_path), RU)
 
     assert printer.pdf(html, printer.css()).startswith(b"%PDF-")
 
 
 def make_chapter(name, sizes):
-    return PrintedChapter(name, [PrintedParagraph(
+    return ReportChapter(name, [ReportParagraph(
         n, "\n".join(f"line {n}.{i}" for i in range(lines)),
-        {"Caution": [Claim(quote=f"line {n}.0", problem=f"problem {n}.{i} " * 6) for i in range(claims)]},
+        {"caution": [claim(quote=f"line {n}.0", problem=f"problem {n}.{i} " * 6) for i in range(claims)]},
     ) for n, (lines, claims) in enumerate(sizes, start=1)])
 
 
 def test_paragraph_page_breaks():
     chapters = [make_chapter("A", [(10, 1), (20, 1), (30, 1), (3, 15), (80, 1)]), make_chapter("B", [(80, 1)])]
-    html = '<div class="ai-reviewer-report">' + ClaimPagesRenderer().render(chapters, RUSSIAN_LABELS) + "</div>"
+    html = '<div class="ai-reviewer-report">' + ClaimPagesRenderer().render(chapters, RU) + "</div>"
     anchors = {}
-    for index, page in enumerate(PdfRenderer().document(html, printer.css()).pages):
+    for index, page in enumerate(PdfRenderer(STYLESHEET).document(html, printer.css()).pages):
         for name, box in page.anchors.items():
             anchors.setdefault(name, (index, box[1]))
 
@@ -218,23 +221,9 @@ def test_paragraph_page_breaks():
     assert start(2, 1)[1] > start(1, 3)[1] and end_page(2, 1) > start(2, 1)[0]
 
 
-class StubPrinter:
-    def __init__(self, mark):
-        self.mark = mark
-
-    def html(self, run_dir, labels):
-        return f"<p>{self.mark} ж</p>"
-
-    def css(self):
-        return f"/* {self.mark} */"
-
-    def pdf(self, html, css):
-        return f"%PDF-{self.mark}".encode()
-
-
 def test_writer_saves_and_overwrites(tmp_path):
     for mark in ["old", "new"]:
-        PrintedReportWriter(printer=StubPrinter(mark)).write(tmp_path)
+        RunDirWriter().write_printed(tmp_path, PrintedReport(f"<p>{mark} ж</p>", f"/* {mark} */", f"%PDF-{mark}".encode()))
 
     assert (tmp_path / "report.html").read_text(encoding="utf-8") == "<p>new ж</p>"
     assert (tmp_path / "report.css").read_text(encoding="utf-8") == "/* new */"

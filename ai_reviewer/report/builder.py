@@ -1,10 +1,12 @@
 import logging
 
-from .marked_article import MarkedArticle
+from ai_reviewer.article import MarkedArticle
+from ai_reviewer.claims import Claim, Place
+
+from .entities import ReportChapter, ReportParagraph
 
 logger = logging.getLogger(__name__)
 
-type Claim = dict[str, object]
 type Grouped = dict[str, dict[int, dict[str, list[Claim]]]]
 
 
@@ -12,92 +14,69 @@ class ReportBuilder:
     """Groups property claims by chapter, paragraph and property."""
 
     def build(
-        self, article: MarkedArticle, claims: dict[str, list[object]]
-    ) -> list[dict[str, object]]:
+        self, article: MarkedArticle, claims: dict[str, list[Claim]]
+    ) -> list[ReportChapter]:
         """
-        Build the ``report.json`` content; skip claims with an invalid place.
+        Build the report; skip claims whose place is not in the article.
 
         :param article: marked-up article, chapters in document order
-        :param claims: raw claim array by property name
+        :param claims: claims by property id
 
         :return: chapters with claims in document order; ``[]`` for no claims
         """
         grouped: Grouped = {chapter: {} for chapter in article.chapters()}
-        for property_name, items in claims.items():
-            for item in items:
-                self._add(grouped, property_name, item, article)
-        return self._render(grouped)
-
-    def _add(
-        self,
-        grouped: Grouped,
-        property_name: str,
-        item: object,
-        article: MarkedArticle,
-    ) -> None:
-        """
-        Add one claim under its place, or log why it is skipped.
-
-        :param grouped: claims grouped so far; updated in place
-        :param property_name: property the claim belongs to
-        :param item: raw claim from the property file
-        :param article: marked-up article
-        """
-        place = self._place_of(item, article)
-        if isinstance(place, str):
-            logger.warning("%s: skip claim: %s", property_name, place)
-            return
-        chapter, paragraph = place
-        claim = {key: value for key, value in item.items() if key != "place"}
-        by_property = grouped[chapter].setdefault(paragraph, {})
-        by_property.setdefault(property_name, []).append(claim)
+        for property_id, items in claims.items():
+            for claim in items:
+                reason = self._skip_reason(claim.place, article)
+                if reason is not None:
+                    logger.warning("%s: skip claim: %s", property_id, reason)
+                    continue
+                place = claim.place
+                by_property = grouped[place.chapter].setdefault(
+                    place.paragraph, {}
+                )
+                by_property.setdefault(property_id, []).append(claim)
+        return self._chapters(grouped, article)
 
     @staticmethod
-    def _place_of(
-        item: object, article: MarkedArticle
-    ) -> tuple[str, int] | str:
+    def _skip_reason(place: Place, article: MarkedArticle) -> str | None:
         """
         Check the place of a claim against the article.
 
-        :param item: raw claim from the property file
+        :param place: place of the claim
         :param article: marked-up article
 
-        :return: chapter and paragraph, or why the claim is skipped
+        :return: why the claim is skipped, or None when the place exists
         """
-        if not isinstance(item, dict):
-            return "claim is not an object"
-        place = item.get("place")
-        if not isinstance(place, dict):
-            return "no place"
-        chapter = place.get("chapter")
-        if not isinstance(chapter, str) or not article.has_chapter(chapter):
+        chapter, paragraph = place.chapter, place.paragraph
+        if not article.has_chapter(chapter):
             return f"unknown chapter {chapter!r}"
-        paragraph = place.get("paragraph")
-        # bool and float pass `in` checks: True in {1}, 3.0 in {3}.
-        if type(paragraph) is not int or not article.has_paragraph(
-            chapter, paragraph
-        ):
+        if not article.has_paragraph(chapter, paragraph):
             return f"unknown paragraph {paragraph!r} in chapter {chapter!r}"
-        return chapter, paragraph
+        return None
 
     @staticmethod
-    def _render(grouped: Grouped) -> list[dict[str, object]]:
+    def _chapters(
+        grouped: Grouped, article: MarkedArticle
+    ) -> list[ReportChapter]:
         """
-        Render grouped claims; drop chapters without claims, sort the rest.
+        Turn grouped claims into chapters; drop chapters without claims.
 
         :param grouped: claims by chapter, paragraph and property
+        :param article: marked-up article with paragraph texts
 
         :return: chapters in document order, paragraphs ascending,
-            property keys sorted by name
+            property ids sorted
         """
         return [
-            {
-                "chapter": chapter,
-                "claims": [
-                    {"paragraph": number, **dict(sorted(by_property.items()))}
-                    for number, by_property in sorted(paragraphs.items())
-                ],
-            }
+            ReportChapter(chapter, [
+                ReportParagraph(
+                    number,
+                    article.paragraph_text(chapter, number),
+                    dict(sorted(by_property.items())),
+                )
+                for number, by_property in sorted(paragraphs.items())
+            ])
             for chapter, paragraphs in grouped.items()
             if paragraphs
         ]

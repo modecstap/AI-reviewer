@@ -1,10 +1,9 @@
 class ReportError(Exception):
-    """The report of a run dir cannot be built."""
+    """The report cannot be built or printed."""
 
 
-class RunDirReadError(ReportError):
-    """The run dir or its ``article.txt`` cannot be read."""
-
-
-class ReportWriteError(ReportError):
-    """``report.json`` cannot be written."""
+class ReportFormatError(ReportError):
+    """
+    ``report.json`` has an unexpected shape, or names a paragraph missing
+    from the article.
+    """

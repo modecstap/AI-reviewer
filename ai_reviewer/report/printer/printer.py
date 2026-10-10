@@ -1,23 +1,22 @@
 from html import escape
 from pathlib import Path
 
+from .. import ReportChapter
 from .claim_pages import ClaimPagesRenderer
 from .errors import StylesheetReadError
-from .labels import RUSSIAN_LABELS, ReportLabels
+from .labels import ReportLabels
 from .pdf import PdfRenderer
-from .report_reader import ReportReader
-from .statistics_page import StatisticsPageRenderer
+from .statistics import StatisticsPageRenderer
 from .title_page import TitlePageRenderer
 
 STYLESHEET = Path(__file__).with_name("report.css")
 
 
 class ReportPrinter:
-    """Prints the report of a run dir as HTML, CSS and PDF; writes no files."""
+    """Prints the report as HTML, CSS and PDF; reads and writes no files."""
 
     def __init__(
         self,
-        reader: ReportReader | None = None,
         title_page: TitlePageRenderer | None = None,
         statistics_page: StatisticsPageRenderer | None = None,
         claim_pages: ClaimPagesRenderer | None = None,
@@ -26,37 +25,27 @@ class ReportPrinter:
         """
         Set up the printer.
 
-        :param reader: run dir report reader; default one when omitted
         :param title_page: title page renderer; default one when omitted
         :param statistics_page: statistics page renderer; default one when
             omitted
         :param claim_pages: claim pages renderer; default one when omitted
-        :param pdf_renderer: PDF renderer; default one when omitted
+        :param pdf_renderer: PDF renderer; default one with the bundled
+            stylesheet when omitted
         """
-        self._reader = reader or ReportReader()
         self._title_page = title_page or TitlePageRenderer()
         self._statistics_page = statistics_page or StatisticsPageRenderer()
         self._claim_pages = claim_pages or ClaimPagesRenderer()
-        self._pdf_renderer = pdf_renderer or PdfRenderer()
+        self._pdf_renderer = pdf_renderer or PdfRenderer(STYLESHEET)
 
-    def html(
-        self, run_dir: Path, labels: ReportLabels = RUSSIAN_LABELS
-    ) -> str:
+    def html(self, chapters: list[ReportChapter], labels: ReportLabels) -> str:
         """
-        Render the report of the run dir as an HTML fragment.
+        Render the report as an HTML fragment.
 
-        :param run_dir: run dir ``problems/<N>/`` with ``report.json`` and
-            ``article.txt``
-        :param labels: fixed labels in the report language
-
-        :raises RunDirReadError: when the run dir, ``report.json`` or
-            ``article.txt`` cannot be read
-        :raises ReportFormatError: when ``report.json`` is invalid or does not
-            match ``article.txt``
+        :param chapters: chapters of the report
+        :param labels: labels in the report language with the catalog names
 
         :return: the ``<div class="ai-reviewer-report">`` fragment
         """
-        chapters = self._reader.read(run_dir)
         language = escape(labels.language, quote=True)
         return (
             f'<div class="ai-reviewer-report" lang="{language}">\n'

@@ -2,7 +2,7 @@ from collections.abc import Callable
 from datetime import date
 from html import escape
 
-from .entities import PrintedChapter
+from .. import ReportChapter
 from .labels import ReportLabels
 
 
@@ -18,7 +18,7 @@ class TitlePageRenderer:
         self._today = today or date.today
 
     def render(
-        self, chapters: list[PrintedChapter], labels: ReportLabels
+        self, chapters: list[ReportChapter], labels: ReportLabels
     ) -> str:
         """
         Render the title page with the creation date.

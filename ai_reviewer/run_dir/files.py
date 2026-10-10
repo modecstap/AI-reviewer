@@ -1,0 +1,6 @@
+ARTICLE_FILE = "article.txt"
+PROPERTY_FILE = "{property_id}.json"
+REPORT_FILE = "report.json"
+HTML_FILE = "report.html"
+CSS_FILE = "report.css"
+PDF_FILE = "report.pdf"

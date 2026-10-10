@@ -8,7 +8,6 @@ from .page_breaks import ParagraphPageBreaks
 if TYPE_CHECKING:
     from weasyprint import Document
 
-BASE_URL = str(Path(__file__).with_name("report.css"))
 PANGO_HINT = (
     "on Windows install MSYS2, run "
     "'pacman -S mingw-w64-ucrt-x86_64-pango' in the UCRT64 shell and set "
@@ -19,13 +18,18 @@ PANGO_HINT = (
 class PdfRenderer:
     """Renders the printed report as a PDF with WeasyPrint."""
 
-    def __init__(self, page_breaks: ParagraphPageBreaks | None = None) -> None:
+    def __init__(
+        self, stylesheet: Path, page_breaks: ParagraphPageBreaks | None = None
+    ) -> None:
         """
         Set up the renderer.
 
+        :param stylesheet: path of the report stylesheet; relative URLs of
+            the HTML and CSS resolve against it
         :param page_breaks: paragraph page break chooser; default one when
             omitted
         """
+        self._base_url = str(stylesheet)
         self._page_breaks = page_breaks or ParagraphPageBreaks()
 
     def render(self, html: str, css: str) -> bytes:
@@ -37,7 +41,7 @@ class PdfRenderer:
 
         :param html: HTML fragment of the report
         :param css: stylesheet of the report; ``url(fonts/...)`` resolves
-            against the package directory
+            against the stylesheet path
 
         :raises PdfRenderError: when WeasyPrint or Pango cannot be loaded, or
             the PDF cannot be rendered
@@ -56,7 +60,7 @@ class PdfRenderer:
 
         :param html: HTML fragment of the report
         :param css: stylesheet of the report; ``url(fonts/...)`` resolves
-            against the package directory
+            against the stylesheet path
 
         :raises PdfRenderError: when WeasyPrint or Pango cannot be loaded, or
             the document cannot be laid out
@@ -74,8 +78,10 @@ class PdfRenderer:
             ) from error
         font_config = FontConfiguration()
         try:
-            main = CSS(string=css, base_url=BASE_URL, font_config=font_config)
-            source = HTML(string=html, base_url=BASE_URL)
+            main = CSS(
+                string=css, base_url=self._base_url, font_config=font_config
+            )
+            source = HTML(string=html, base_url=self._base_url)
             return self._lay_out(lambda breaks: source.render(
                 stylesheets=[main, CSS(string=breaks, font_config=font_config)],
                 font_config=font_config,
