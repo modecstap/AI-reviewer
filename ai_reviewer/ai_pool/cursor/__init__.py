@@ -1,6 +1,5 @@
-"""Cursor SDK access: agent options, API key and the bridge of a run."""
+"""Cursor SDK adapter of the agent launcher port."""
 
-from .agent_factory import CursorAgentFactory
-from .bridge import CursorBridge
+from .launcher import CursorAgentLauncher
 
-__all__ = ["CursorAgentFactory", "CursorBridge"]
+__all__ = ["CursorAgentLauncher"]

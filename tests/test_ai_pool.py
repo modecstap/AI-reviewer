@@ -3,6 +3,7 @@ import threading
 from types import SimpleNamespace
 
 import pytest
+from cursor_sdk import CursorAgentError
 
 from ai_reviewer.ai_pool import (
     AIPool,
@@ -12,6 +13,9 @@ from ai_reviewer.ai_pool import (
     MissingApiKeyError,
     PoolStartError,
 )
+from ai_reviewer.ai_pool.cursor import CursorAgentLauncher
+from ai_reviewer.ai_pool.cursor import launcher as launcher_module
+from ai_reviewer.ai_pool.cursor import session as session_module
 from ai_reviewer.properties import AgentDefinition
 from ai_reviewer.run_dir import RunDirs
 
@@ -147,6 +151,36 @@ def test_execute_start_errors(tmp_path, case):
         pool.execute(TEXT, tmp_path / "out")
     if case == "bridge fails":
         assert not (tmp_path / "out" / "1").exists()
+
+
+def test_cursor_launcher_adapter(tmp_path, monkeypatch):
+    calls, outcomes = [], iter(["finished", "error", CursorAgentError("boom", request_id="r1")])
+
+    def prompt(prompt, options, client):
+        calls.append(options)
+        outcome = next(outcomes)
+        if isinstance(outcome, Exception):
+            raise outcome
+        return SimpleNamespace(id="r", status=outcome)
+
+    bridge = SimpleNamespace(launch_bridge=lambda workspace: contextlib.nullcontext("client"))
+    monkeypatch.setattr(launcher_module, "CursorClient", bridge)
+    monkeypatch.setattr(session_module, "Agent", SimpleNamespace(prompt=prompt))
+    monkeypatch.setenv("CURSOR_API_KEY", "key")
+    launcher = CursorAgentLauncher("model")
+
+    with launcher.connect(tmp_path) as session:
+        session.prompt("alpha", "p")
+        with pytest.raises(AgentRunError, match="^run status: error$"):
+            session.prompt("alpha", "p")
+        with pytest.raises(AgentRunError, match="^prompt failed: CursorAgentError"):
+            session.prompt("alpha", "p")
+    options = calls[0]
+    assert (options.model, options.api_key, options.local.cwd) == ("model", "key", str(tmp_path))
+    assert options.agent_id.startswith("agent-") and options.agent_id != calls[1].agent_id
+    monkeypatch.setenv("CURSOR_API_KEY", " ")
+    with pytest.raises(MissingApiKeyError):
+        launcher.check()
 
 
 def test_add_agent_rejects_duplicate_id(tmp_path):
