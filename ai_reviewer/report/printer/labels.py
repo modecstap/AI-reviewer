@@ -11,6 +11,8 @@ class ReportLabels:
     language: str
     created: str
     total_claims: str
+    statistics: str
+    total: str
     chapter: str
     paragraph: str
     problem: str
@@ -68,6 +70,8 @@ RUSSIAN_LABELS = ReportLabels(
     language="ru",
     created="Дата создания",
     total_claims="Всего претензий",
+    statistics="Статистика",
+    total="Всего",
     chapter="Глава",
     paragraph="Параграф",
     problem="Проблема",
@@ -192,6 +196,8 @@ ENGLISH_LABELS = ReportLabels(
     language="en",
     created="Created",
     total_claims="Total claims",
+    statistics="Statistics",
+    total="Total",
     chapter="Chapter",
     paragraph="Paragraph",
     problem="Problem",

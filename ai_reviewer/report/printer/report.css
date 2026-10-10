@@ -121,23 +121,62 @@
   font-weight: 400;
 }
 
-.ai-reviewer-report .summary ul {
+
+/* Statistics page */
+
+.ai-reviewer-report .statistics {
+  break-before: page;
+}
+
+.ai-reviewer-report .statistics .label {
+  font-weight: 400;
+}
+
+.ai-reviewer-report .types-table {
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin: .3cm 0;
+  width: 100%;
+}
+.ai-reviewer-report .types-table th,
+.ai-reviewer-report .types-table td {
+  border: .25pt solid #c1c1c1;
+  padding: .05cm .1cm;
+  text-align: center;
+}
+.ai-reviewer-report .types-table th {
+  font-weight: 400;
+}
+.ai-reviewer-report .types-table tbody th {
+  text-align: left;
+}
+.ai-reviewer-report .types-table .total {
+  font-weight: 400;
+}
+.ai-reviewer-report .types-table .zero {
+  color: #c1c1c1;
+}
+.ai-reviewer-report .types-table .absent {
+  background: #eeeeee;
+}
+
+.ai-reviewer-report .legend {
+  column-gap: .6cm;
+  columns: 2;
+  font-size: 7pt;
+  line-height: 1.25;
+}
+.ai-reviewer-report .legend-property {
+  break-inside: avoid;
+}
+.ai-reviewer-report .legend .property {
+  font-weight: 400;
+  margin: 0;
+}
+.ai-reviewer-report .legend ul {
   list-style: none;
-  padding-left: 0;
-}
-.ai-reviewer-report .summary li {
-  border-top: .25pt solid #c1c1c1;
-  margin: .25cm 0;
-  padding-top: .25cm;
-}
-.ai-reviewer-report .summary li::before {
-  color: var(--orange);
-  content: '– ';
-}
-.ai-reviewer-report .summary .count {
-  color: var(--orange);
-  float: right;
-  font-weight: 700;
+  margin: 0 0 .15cm;
+  padding: 0;
 }
 
 
@@ -147,7 +186,8 @@
   break-before: page;
 }
 
-.ai-reviewer-report .chapter h2 {
+.ai-reviewer-report .chapter h2,
+.ai-reviewer-report .statistics h2 {
   color: black;
   font-size: 28pt;
   font-weight: 400;

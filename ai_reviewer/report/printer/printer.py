@@ -6,6 +6,7 @@ from .errors import StylesheetReadError
 from .labels import RUSSIAN_LABELS, ReportLabels
 from .pdf import PdfRenderer
 from .report_reader import ReportReader
+from .statistics_page import StatisticsPageRenderer
 from .title_page import TitlePageRenderer
 
 STYLESHEET = Path(__file__).with_name("report.css")
@@ -18,6 +19,7 @@ class ReportPrinter:
         self,
         reader: ReportReader | None = None,
         title_page: TitlePageRenderer | None = None,
+        statistics_page: StatisticsPageRenderer | None = None,
         claim_pages: ClaimPagesRenderer | None = None,
         pdf_renderer: PdfRenderer | None = None,
     ) -> None:
@@ -26,11 +28,14 @@ class ReportPrinter:
 
         :param reader: run dir report reader; default one when omitted
         :param title_page: title page renderer; default one when omitted
+        :param statistics_page: statistics page renderer; default one when
+            omitted
         :param claim_pages: claim pages renderer; default one when omitted
         :param pdf_renderer: PDF renderer; default one when omitted
         """
         self._reader = reader or ReportReader()
         self._title_page = title_page or TitlePageRenderer()
+        self._statistics_page = statistics_page or StatisticsPageRenderer()
         self._claim_pages = claim_pages or ClaimPagesRenderer()
         self._pdf_renderer = pdf_renderer or PdfRenderer()
 
@@ -56,6 +61,7 @@ class ReportPrinter:
         return (
             f'<div class="ai-reviewer-report" lang="{language}">\n'
             f"{self._title_page.render(chapters, labels)}"
+            f"{self._statistics_page.render(chapters, labels)}"
             f"{self._claim_pages.render(chapters, labels)}"
             "</div>\n"
         )

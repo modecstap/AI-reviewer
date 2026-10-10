@@ -19,6 +19,7 @@ from ai_reviewer.report.printer.labels import RUSSIAN_LABELS
 from ai_reviewer.report.printer.page_breaks import ParagraphPageBreaks
 from ai_reviewer.report.printer.pdf import PdfRenderer
 from ai_reviewer.report.printer.printer import STYLESHEET
+from ai_reviewer.report.printer.statistics_page import StatisticsPageRenderer
 from ai_reviewer.report.printer.title_page import TitlePageRenderer
 from ai_reviewer.splitter import NO_HEADING, ArticleWriter, Chapter
 
@@ -49,18 +50,21 @@ def make_sample_run_dir(tmp_path):
 
 def test_content_order_and_escaping(tmp_path):
     html = printer.html(make_sample_run_dir(tmp_path))
+    title_end, chapter_start = html.index('class="statistics"'), html.index('class="chapter"')
+    title, statistics, chapters = html[:title_end], html[title_end:chapter_start], html[chapter_start:]
 
+    assert html.index('class="title"') < title_end < chapter_start
     assert "&lt;b&gt; &amp; x\nline2" in html and "<b>" not in html
     assert "s1 &lt;i&gt;" in html and "s1 &amp; problem" in html
-    assert all(absent not in html for absent in ["p2", "Пусто", NO_HEADING])
+    assert all(absent not in chapters for absent in ["p2", "Пусто", NO_HEADING])
     assert html.index("c1 quote") < html.index("c2 quote") < html.index("s1 &lt;i&gt;")
     assert re.findall(r'class="ordinal">(\d+)<', html) == ["1", "2", "1"]
-    assert '<span class="property">Осторожность выводов</span> <span class="count">2</span>' in html
-    assert '<span class="property">Структура</span> <span class="count">1</span>' in html
+    assert all(part in title for part in ["VSRT", "AI-Reviewer", "09.10.2026"])
+    assert "<strong>" not in title and "Всего претензий" not in title
+    assert "Всего претензий" in statistics and "<strong>3</strong>" in statistics
     assert "Caution" not in html and "Structure" not in html and "Претензии по свойствам" not in html
-    assert "<strong>3</strong>" in html
-    assert "09.10.2026" in html and "Проблема" in html
-    assert "<li>1. Гипотеза подана как установленный факт</li>" in html and "<li>Order</li>" in html
+    assert "Проблема" in html
+    assert "<li>1. Гипотеза подана как установленный факт</li>" in chapters and "<li>Order</li>" in chapters
     assert html.count("Типы") == 2 and "Корректировки" not in html and "fix c1" not in html
 
 
@@ -71,6 +75,7 @@ def test_english_labels_keep_data(tmp_path):
     assert "Проблема" not in html and "Claims by property" not in html
     assert "Введение" in html and "&lt;b&gt;" in html and "c1 problem" in html
     assert '<span class="property">Caution</span>' in html and "<li>1. Hedging</li>" in html
+    assert "Statistics" in html and ">Total<" in html
 
 
 def render_paragraph(text, claims, labels=RUSSIAN_LABELS):
@@ -111,6 +116,45 @@ def test_empty_report(tmp_path):
 
     assert "<strong>0</strong>" in html
     assert 'class="chapter"' not in html and "Претензии по свойствам" not in html
+    assert html.count('class="zero"') == 70 and html.count('class="total zero"') == 8
+    assert html.count('class="absent"') == 42
+
+
+def test_statistics_grid():
+    caution = [Claim(None, None, [ClaimType("1", None), ClaimType("2", None)]),
+               Claim(None, None, [ClaimType("1", None), ClaimType(None, "Bare")]), Claim(None, None)]
+    odd = [Claim(None, None, [ClaimType("15", "Fifteen <b>"), ClaimType("x", None)])]
+    chapters = [PrintedChapter("A", [PrintedParagraph(1, "t", {"Caution": caution[:2]})]),
+                PrintedChapter("B", [PrintedParagraph(2, "t", {"Caution": caution[2:], "Odd<x>": odd})])]
+
+    html = StatisticsPageRenderer().render(chapters, RUSSIAN_LABELS)
+
+    def cells(name):
+        row = re.search(rf'scope="row">{name}</th>(.*?)</tr>', html).group(1)
+        return re.findall(r"<td[^>]*>\d*</td>", row)
+
+    caution_cells, odd_cells = cells("Осторожность выводов"), cells("Odd&lt;x&gt;")
+    header = re.search(r"<thead>(.*?)</thead>", html).group(1)
+    assert re.findall(r"<th>(\w*)</th>", header) == ["", *map(str, range(1, 16)), "x", "Всего"]
+    assert "<strong>4</strong>" in html and "Bare" not in html
+    assert caution_cells[:3] == ["<td>2</td>", "<td>1</td>", '<td class="zero">0</td>']
+    assert caution_cells[14:] == ['<td class="absent"></td>'] * 2 + ['<td class="total">3</td>']
+    assert odd_cells[0] == '<td class="absent"></td>'
+    assert odd_cells[14:] == ["<td>1</td>", "<td>1</td>", '<td class="total">1</td>']
+    assert "<li>15. Fifteen &lt;b&gt;</li>" in html and "<li>x</li>" in html
+
+
+def test_statistics_page_layout():
+    claims = {name: [Claim(None, None, [ClaimType(number, None) for number in types])] * 100
+              for name, types in RUSSIAN_LABELS.type_names.items()}
+    chapters = [PrintedChapter("A", [PrintedParagraph(1, "t", claims)])]
+    html = ('<div class="ai-reviewer-report">' + TitlePageRenderer().render(chapters, RUSSIAN_LABELS)
+            + StatisticsPageRenderer().render(chapters, RUSSIAN_LABELS) + "</div>")
+
+    pages = PdfRenderer().document(html, printer.css()).pages
+    texts = [box.text for box in pages[-1]._page_box.descendants() if hasattr(box, "text")]
+
+    assert len(pages) == 2 and texts.count("Статистика") == 2 and "14. Неясная отсылка" in texts
 
 
 @pytest.mark.parametrize("case, error_type", [
