@@ -10,6 +10,8 @@ The sample corrections below show the required status of the wording. In the fix
 
 The strength of the final statement matches the strength of its grounds. What is directly shown is reported as a result. What is only inferred from the data remains an interpretation. What the data merely permit remains a hypothesis.
 
+A conclusion does not extend the result to the whole phenomenon and does not declare a compared method unfit beyond the conditions of the study. A correlational design shows an association, not a cause.
+
 ## Assessment questions
 
 | Feature | Question | Violation if |
@@ -17,11 +19,13 @@ The strength of the final statement matches the strength of its grounds. What is
 | Status | Are fact, interpretation and hypothesis distinguished? | no |
 | Verb | Does "proven", "allows us to conclude" or "it can be hypothesized" match the strength of the grounds? | no |
 | Population | Are the group, the material and the condition named, beyond which the conclusion does not go? | no |
+| Scope | Does the conclusion extend the result to the whole phenomenon or declare a compared method unfit beyond the conditions of the study? | yes |
 | Alternative | Is a single cause chosen where the data are compatible with several? | yes |
+| Causality | Is an association from a correlational design stated as a cause? | yes |
 | Recommendation | Is the practical implication stronger than the result itself? | yes |
 | Quantifier | Are there "always", "never" and "all" without grounds covering such cases? | yes |
 | Prediction | Does the conclusion include a future consequence that was not measured? | yes |
-| Consistency | Do the abstract and the conclusion keep the status set by the results? | no |
+| Status agreement | Do the abstract and the conclusion keep the status set by the results? | no |
 
 ## Violation types
 
@@ -29,23 +33,23 @@ The strength of the final statement matches the strength of its grounds. What is
 
 Features: status, verb.
 
-Error: the verb "proves" and a new construct rest on an observation of a different indicator. The step from one to the other remains a hypothesis if the second construct was not measured.
+Error: a justified inference from the article's own data receives a verb of proof that the design does not provide.
 
 Violation:
 
-> The decrease in the share of errors proves that students have come to understand the factual material better.
+> In the experimental group, 11% of papers contained factual errors versus 18% in the control group; the difference was not tested statistically. This proves that the checklist reduces factual errors.
 
 Correction:
 
-> The share of factual errors decreased from 18% to 11%. It can be hypothesized that this decrease is related to a more accurate understanding of the material; however, understanding itself was not measured in the study.
+> In the experimental group, 11% of papers contained factual errors versus 18% in the control group. The difference was not tested statistically, so it can be hypothesized that the checklist reduces factual errors; the hypothesis requires a statistical test.
 
-Rule: separate fact and hypothesis. Keep a verb of proof only for what the study established. In the hypothesis, do not refer to a construct that is absent from the article as if it were measured; in the problem, state that there was no measurement.
+Rule: keep a verb of proof only for what the design has established. Use "indicates" or "allows us to conclude" for a justified inference. Use "it can be hypothesized" for what the data merely permit.
 
 ### 2. Conclusion broader than the data
 
-Features: population.
+Features: population, scope.
 
-Error: a single piece of material becomes the basis for a universal rule.
+Error: the conclusion goes beyond the group, the material and the conditions of the study. It may become a universal rule, a change in the understanding of the whole phenomenon, or the unfitness of a compared method in general.
 
 Violation:
 
@@ -55,7 +59,23 @@ Correction:
 
 > At one seminar, papers written with the checklist contained fewer uncorrected factual errors than papers written without it. The data obtained allow us to conclude this only for this task and this group.
 
-Rule: keep in the conclusion the group, the material and the condition that the article has already named.
+Violation:
+
+> This result completely changes the understanding of how students revise their texts.
+
+Correction:
+
+> In this group, students who revised with the checklist corrected more factual errors. The result adds to the description of revision in this type of task.
+
+Violation:
+
+> The traditional final comment is ineffective and no longer suitable for checking papers.
+
+Correction:
+
+> Under the conditions of this study, papers checked with the final comment kept more uncorrected factual errors than papers checked with the checklist.
+
+Rule: keep in the conclusion the group, the material and the condition that the article has already named. Keep the significance of the result within the phenomenon studied. Report what the compared method showed in this study.
 
 ### 3. Pilot presented as proof
 
@@ -109,17 +129,17 @@ Rule: give the recommendation the same limit as the result. Keep an obligation t
 
 Features: status, prediction.
 
-Error: an observation, an explanation and a prediction stand as one chain without a change of status.
+Error: an observation, its interpretation and a prediction stand in one chain with one status; the change of status is not marked.
 
 Violation:
 
-> Errors decreased by 7 points, which means growth in independence and, consequently, the future academic success of the participants.
+> Students in the checklist group reread their drafts 6 minutes longer and made 7 percentage points fewer factual errors; the longer rereading is the reason for the decrease, and the effect will persist next semester.
 
 Correction:
 
-> The share of factual errors decreased by 7 percentage points. This difference can be interpreted as a change in the accuracy of checklist-based revision. The link to independence and to subsequent academic success remains a hypothesis: neither was measured in the study.
+> Students in the checklist group reread their drafts 6 minutes longer and made 7 percentage points fewer factual errors. The longer rereading can be interpreted as one possible reason for the decrease. Whether the effect persists next semester remains a hypothesis: the following semester was not observed.
 
-Rule: separate the statuses. Leave a prediction as a hypothesis if the future consequence was not measured. Do not strengthen into a fact an interpretation for which the article does not even name a feature.
+Rule: mark the status of each link of the chain. Leave a prediction about an unobserved period as a hypothesis.
 
 ### 7. Universal quantifier in the conclusion
 
@@ -137,9 +157,9 @@ Correction:
 
 Rule: replace the quantifier with the number of observations that the article already contains. Leave the direction beyond these observations as a hypothesis. Do not conceal a contradicting observation that is present in the article.
 
-### 8. Abstract strengthens the conclusion
+### 8. Abstract or conclusion stronger than the results
 
-Features: consistency, verb.
+Features: status agreement, verb.
 
 Error: the abstract reports as proven what the results or the conclusion present as an assumption, or the conclusion is stronger than the results section.
 
@@ -151,7 +171,31 @@ Correction:
 
 > In the abstract, as in the conclusion: "The difference did not reach the level of significance. The data obtained only allow us to hypothesize an advantage of the method and require repeated testing."
 
+Violation:
+
+> The results section states that the differences between the groups did not reach statistical significance. The conclusions state: "The experiment confirmed the advantage of the experimental method."
+
+Correction:
+
+> In the conclusions, as in the results: "The differences between the groups did not reach statistical significance. The advantage of the experimental method remains a hypothesis for repeated testing."
+
 Rule: the brief genre of the abstract keeps the epistemic status set by the results. In the list of places, quote the strengthened fragment. The fix hint brings it to the status of the more cautious place in the same article.
+
+### 9. Correlation presented as causation
+
+Features: causality.
+
+Error: a correlational design shows an association; a causal verb ("leads to", "causes", "improves") asserts a cause that the design does not establish.
+
+Violation:
+
+> Among the 120 surveyed students, more hours on social networks were associated with lower grades (r = −0.32). Thus, time on social networks leads to lower academic performance.
+
+Correction:
+
+> Among the 120 surveyed students, more hours on social networks were associated with lower grades (r = −0.32). Whether time on social networks lowers academic performance requires a design that can establish a cause.
+
+Rule: with a correlational design, write about an association. Causal language is acceptable only if the design establishes a cause. Otherwise, keep it as an assumption and state that additional research is needed.
 
 ## Acceptable conclusion
 
@@ -175,5 +219,7 @@ Check these words first. A word by itself is not a violation: the questions and 
 
 - Too strong a verb: proves, proved, means, is the cause, precisely, consequently in a prediction.
 - Too broad a scope: always, never, all, must, universities, university students.
+- Too broad a significance or rejection: completely changes, is ineffective, is no longer suitable, in general.
+- Causal language with a correlational design: leads to, causes, is the cause of, influences.
 - Shift of status to a stronger one: abstract versus conclusion, conclusion versus a non-significant difference.
-- Usually keep: it can be hypothesized, allows us to conclude, only for this task and this group, compatible with, remains a hypothesis, was not measured.
+- Usually keep: it can be hypothesized, allows us to conclude, only for this task and this group, compatible with, remains a hypothesis, was not measured, was associated with, an association.

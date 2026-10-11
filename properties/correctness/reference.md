@@ -6,7 +6,7 @@ The sample corrections below show the required match between word and concept an
 
 ## Definition
 
-**Terminological correctness and precision of wording** — the use of specialized vocabulary in the meaning accepted in the relevant scientific field, and the consistent, verifiable use of words in a scientific text. A term is needed to distinguish concepts, keeps one meaning throughout the text, and is explained if, without an explanation, its meaning in the given text is ambiguous. The objective, method, results, and conclusions name the same objects in the same way. Evaluations of degree, scope, and obviousness are replaced by an indication of the subject, measure, condition, period, or source, and pronouns and short references have a clear antecedent.
+**Terminological correctness and precision of wording** — the use of specialized vocabulary in the meaning accepted in the relevant scientific field, and the consistent, verifiable use of words in a scientific text. A term is needed to distinguish concepts, keeps one meaning throughout the text, and is explained if, without an explanation, its meaning in the given text is ambiguous. The objective, method, results, and conclusions name the same objects in the same way. Evaluations of degree, vague quantities and "obviously" are replaced by an indication of the subject, measure, period, or source, and pronouns and short references have a clear antecedent.
 
 Excessive terminology, an everyday substitute for the needed term, and substitution of a closely related concept reduce precision equally. The academic quality of a text comes from the match between word and concept, not from the density of terms.
 
@@ -19,7 +19,7 @@ Precise wording does not have to contain every qualification in every sentence. 
 | Field | Is the accepted term in place of the specialized concept? | no |
 | Meaning | Is the term replaced by a neighboring concept? | yes |
 | Necessity | Does the rare word carry a distinct concept? | no |
-| Consistency | Does the key word keep one meaning throughout the text? | no |
+| Stable meaning | Does the key word keep one meaning throughout the text? | no |
 | Object name | Is one object called by one name from the objective to the conclusions, and different concepts by different names? | no |
 | Explanation | Is an ambiguous or narrow term defined at its first substantive use? | no |
 | Calque | Is it clear which procedure or scale is meant? | no |
@@ -27,9 +27,9 @@ Precise wording does not have to contain every qualification in every sentence. 
 | Method | Does the named method of analysis coincide with the one actually performed? | no |
 | Measure | Is the evaluation of degree replaced by a quantity, criterion, or basis of comparison? | no |
 | Comparison | Are the magnitude of a difference and statistical significance distinguished? | no |
-| Scope | Are the population, period, condition, and composition of objects named? | no |
+| Sources and quantity | Are the sources, indicators, period and quantity named instead of "a number of", "some", "in recent years"? | no |
 | Reference | Is it clear what "this", "the given", "the said" refer to? | no |
-| Obviousness | Does "obviously" replace a definition, argument, or citation? | yes |
+| Obviousness | Does "obviously" replace a definition, the justification of a choice, or a citation? | yes |
 | Verifiability | Can one tell from the wording what exactly is being claimed? | no |
 
 ## Violation types
@@ -116,7 +116,7 @@ Rule: fix the meaning with words that the rest of the article already allows you
 
 ### 6. Term shifts meaning
 
-Features: consistency.
+Features: stable meaning.
 
 Error: one word names different objects as the text proceeds. The reader cannot tell which of them is meant in the conclusion.
 
@@ -132,27 +132,19 @@ Rule: give each meaning back its own name. Take the names from how the article i
 
 ### 7. Different names for one object
 
-Features: object name, meaning.
+Features: object name.
 
-Error: the objective, method, results, and conclusions use different words for one measured indicator, or neighboring terms are used as interchangeable although they denote different objects. A sample is not the same as a general population. Answer accuracy is not the same as academic success unless the latter is defined exactly that way. A new name broadens the result without a new observation.
-
-Incorrect:
-
-> The objective concerns the accuracy of factual information. The method measures literacy. The results report on text quality. The conclusions draw a conclusion about academic success.
-
-Correction:
-
-> All sections concern one indicator: the proportion of factual errors in a written paper. Literacy, overall text quality, and academic success were not measured in this article.
+Error: the objective, method, results, and conclusions call one measured indicator by different words. The reader cannot tell whether the text speaks of one object or of several.
 
 Incorrect:
 
-> The sample of students showed an increase in accuracy. Consequently, this population is characterized by higher academic success.
+> The method counts factual errors in the paper. The results table is titled "Content inaccuracies". The conclusions speak of substantive defects of the text.
 
 Correction:
 
-> In the surveyed sample, the proportion of answers without factual errors increased. Extending this observation to a broader population and to academic success in general would require a separate definition and a different sampling frame.
+> The method, the results table, and the conclusions all speak of factual errors in the paper.
 
-Rule: keep one name from the objective to the conclusions. Take the name from the indicator that the article actually measured. Do not use different terms as names for one result: leave a transfer to another concept or a broader population only where the article provides a definition and a frame. If the measurements are different, do not merge them into one object: write in the problem that the names diverge and which observation stands behind which name.
+Rule: keep one name from the objective to the conclusions. Take the name from how the article defines the measured indicator. If different measurements stand behind these names, do not merge them: write in the problem which observation stands behind which name.
 
 ### 8. Inaccurate calque of a concept
 
@@ -227,9 +219,9 @@ Correction:
 
 Rule: separate the magnitude of the difference from statistical significance if the article reports both. If only one is reported, keep it and do not insert the other. If neither is reported, remove "significantly" and write in the problem which comparison is missing.
 
-### 12. Unspecified scope
+### 12. Unspecified sources, indicators or period
 
-Features: scope.
+Features: sources and quantity.
 
 Error: neither the set of sources, nor the list of indicators, nor the boundaries of the period, nor the quantity can be verified.
 
@@ -241,13 +233,13 @@ Correction:
 
 > Ivanov (2019) and Petrova (2021) record an increase in the proportion of independently completed assignments: from 38% in 2016 to 51% in 2020 in the student groups they surveyed. These works do not compare other indicators of success.
 
-Rule: name the sources, indicator, period, and limit of generalization that the article already contains. If they are absent, do not fill "a number of", "some", and "in recent years" with a guess. In the problem, write which part of the scope is missing.
+Rule: name the sources, indicator, period, and quantity that the article already contains. If they are absent, do not fill "a number of", "some", and "in recent years" with a guess. In the problem, write which of them is missing.
 
 ### 13. "Obviously" instead of grounds
 
 Features: obviousness.
 
-Error: "obviously" and the evaluative "optimal" close a question that requires grounds: why this threshold was chosen and with respect to what criterion it is optimal.
+Error: "obviously" and the evaluative "optimal" stand in place of a definition, the justification of a choice, or a citation: why this threshold was chosen and with respect to what criterion it is optimal.
 
 Incorrect:
 
@@ -257,7 +249,7 @@ Correction:
 
 > For testing statistical hypotheses, the work adopts a significance level of 0.05. This threshold is set as a decision condition and by itself does not describe the effect size.
 
-Rule: "obviously" does not replace a definition, argument, or citation. If the point is elementary and already justified in the article, keep the justification without the word "obviously". If there are no grounds, remove the word and write in the problem what is missing.
+Rule: "obviously" does not replace a definition, the justification of a choice, or a citation. If the point is elementary and already justified in the article, keep the justification without the word "obviously". If there are no grounds, remove the word and write in the problem what is missing.
 
 ### 14. Unclear reference
 
@@ -267,7 +259,7 @@ Error: "this" can be attributed to several preceding changes. It is not stated w
 
 Incorrect:
 
-> Teachers commented on spelling less often, and students revised paragraph composition more often. This confirms the effectiveness of the method.
+> Teachers commented on spelling less often, and students revised paragraph composition more often. This is consistent with the effectiveness of the method.
 
 Correction:
 
@@ -277,7 +269,7 @@ Rule: replace the reference with the named criterion if the article already spec
 
 ## Acceptable usage
 
-Keep the needed term and relate it to the concept once. Remove a word that carries no distinct meaning or stands in place of another, more precise one. Imprecision begins where a short word hides a different concept, a different measure, or a different scope. Do not add to the list a short term whose meaning has already been fixed.
+Keep the needed term and relate it to the concept once. Remove a word that carries no distinct meaning or stands in place of another, more precise one. Imprecision begins where a short word hides a different concept, a different measure, or an unnamed source. Do not add to the list a short term whose meaning has already been fixed.
 
 Incorrect:
 
@@ -307,11 +299,11 @@ Check these words first. A word by itself is not a violation: the questions and 
 
 - Everyday substitute: people, drifted apart, clicked, knowledge level — if the article already has a specialized concept.
 - String without action: operationalization, construct, paradigm, explication in a row without a description of the step.
-- Neighbor substitution: reliability instead of validity, correlation with a conclusion about regression, sample as population.
+- Neighbor substitution: reliability instead of validity, correlation with a conclusion about regression.
 - Name shift: one key word in the objective, another in the method, a third in the conclusions.
 - Calque: пре-тест ("pre-test"), пост-тест ("post-test"), форматирующее оценивание ("formative assessment") — if the procedure is not clear in Russian from the text.
-- Degree without measure: very, fairly, significantly, noticeably, important, large, effective, convenient, modern, optimal.
-- Unspecified scope: a number of, some, certain, in recent years, a number of authors.
+- Degree without measure: very, fairly, significantly, noticeably, important, large, effective, convenient, modern, optimal, simple, excellent.
+- Vague quantity or source: a number of, some, certain, in recent years, a number of authors.
 - False obviousness: obviously, clearly, undoubtedly.
 - Unclear reference: this, the given, the said — if there are several antecedents.
 - Usually keep: a term defined once, the name of a performed method, an explanation of the function of a narrow procedure, an everyday word without a specialized concept, a quantity next to an evaluation, a significance level separate from the size of the difference, one name of an indicator across all sections.

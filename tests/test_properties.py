@@ -6,7 +6,8 @@ from ai_reviewer.properties import PropertyCatalog, PropertyCatalogError
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = PropertyCatalog(ROOT / "properties")
-IDS = ["caution", "conciseness", "consistency", "correctness", "impersonality", "literacy", "objectivity", "structure"]
+TYPE_COUNTS = {"caution": 9, "conciseness": 7, "consistency": 6, "correctness": 14, "impersonality": 8, "literacy": 8, "structure": 8}
+IDS = list(TYPE_COUNTS)
 
 
 def make_property(root, name, files=("instruction.md", "reference.md")):
@@ -19,8 +20,7 @@ def test_repository_catalog():
     assert [agent.id for agent in CATALOG.agents()] == IDS
     names = CATALOG.names("ru")
     assert names.property_ids() == IDS
-    assert names.numbers("correctness") == tuple(str(number) for number in range(1, 15))
-    assert all(len(names.numbers(id)) == 8 for id in IDS if id != "correctness")
+    assert all(names.numbers(id) == tuple(str(n) for n in range(1, count + 1)) for id, count in TYPE_COUNTS.items())
     assert names.property_name("caution") == "Осторожность выводов"
     assert names.type_name("literacy", "2") == "Нарушение управления"
     assert all(set(names.type_translations[id]) == set(names.numbers(id)) for id in IDS)

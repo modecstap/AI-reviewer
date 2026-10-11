@@ -4,7 +4,7 @@ Assess the article against `reference.md`. Return a list of places with their pr
 
 ## Where to look
 
-Check the order of the problem, the review, the argumentation, the method, the results, and the conclusions. Check adjacent claims, whether the results match the question posed, and whether a new topic appears in the conclusion.
+Check adjacent claims and the grounds of each conclusion, whether the results answer the question posed, whether the literature review serves the task, contradictions between parts of the text, and the order of grounds inside one passage of reasoning.
 
 A statement in the chain is a claim that must follow from the previous one, answer the stated task, or prepare a conclusion.
 
@@ -16,16 +16,14 @@ A statement in the chain is a claim that must follow from the previous one, answ
 4. If there is a violation, record the place. In the problem, name the violation and say in words how to fix it by the rule of the corresponding type: the fix hint. Do not write a ready replacement of the quote. The steps below say what the fix hint advises.
 5. In the fix hint, restore the connection using words already in the article: which question the result answers, why the stated conclusion does not follow from this premise, where the parts diverge.
 6. Do not add new argumentation, measurements, or causes. If the link is not in the article, remove the conclusion that rests on it, and in the problem write which link is missing.
-7. Genre may change the order of sections. A violation exists when the line of reasoning cannot be traced, not when the set of headings differs from the scheme "problem, review, method, results, conclusions". If a claim is not in its proper place, write in the problem where to remove it from and where it should be.
+7. Check the order of grounds only inside one passage of reasoning: the grounds for a choice come before the choice and its result.
 
 ## What to keep
 
 Do not add to the list:
 
-- a different order of sections, if it is clear which question is being addressed at that point and how the step is connected to the previous one;
-- a review composition that differs from an experiment report, if the chain can be traced;
 - a discrepancy in results that is named and discussed;
-- a conclusion that the main body has already prepared.
+- a conclusion whose premise is stated earlier in the text.
 
 A sample of a traceable step is in the "Acceptable progression" section of the handbook.
 

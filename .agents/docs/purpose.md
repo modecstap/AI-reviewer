@@ -12,7 +12,6 @@
         - correctness.json
         - impersonality.json
         - literacy.json
-        - objectivity.json
         - structure.json
         - report.json
         - report.html

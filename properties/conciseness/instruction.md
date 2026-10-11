@@ -4,7 +4,7 @@ Assess the article against `reference.md`. Return a list of places with their pr
 
 ## Where to look
 
-Check openers, repetitions of a single result, chains of verbal nouns, rhetorical questions, degree intensifiers, and definitions that do not distinguish the object.
+Check openers, repetitions of a single result, chains of verbal nouns, rhetorical questions, intensifiers next to a stated value, and definitions that do not distinguish the object.
 
 A sentence without increment is a sentence after which the reader learns no new fact, boundary, condition, source, or consequence.
 
@@ -15,7 +15,7 @@ A sentence without increment is a sentence after which the reader learns no new 
 3. The handbook markers only show where to look. A single word by itself is not a violation.
 4. If there is a violation, record the place. In the problem, name the violation and say in words how to fix it by the rule of the corresponding type: the fix hint. Do not write a ready replacement of the quote. The steps below say what the fix hint advises.
 5. In the fix hint, remove the words that carry no new content. Keep the number, the name of the concept, the condition, and the limit of the conclusion.
-6. Do not add values, conditions, or boundaries that are not in the article. If no information remains after the empty words are removed, state in the problem which value or condition is missing, and do not supply them yourself.
+6. Do not add values, conditions, or boundaries that are not in the article. If nothing remains after the empty words are removed, advise removing the sentence.
 7. Do not shorten a sentence in which each part delimits the object, names a measure, or separates fact from interpretation. Keep a repetition if it is a brief reference followed by a new comparison.
 
 ## What to keep

@@ -1,4 +1,4 @@
-# Conciseness and informativeness
+# Conciseness
 
 Criterion handbook. Assessment procedure: see `instruction.md`.
 
@@ -6,7 +6,7 @@ The sample corrections below show which words go and which information stays. In
 
 ## Definition
 
-**Conciseness and informativeness** is maximum substance with minimum redundancy. The text retains no repetitions, officialese chains, rhetorical questions, or sentences without new information. Shortening does not remove a value, a condition, the name of a concept, or the limit of a conclusion: these elements make up the content, not verbal excess.
+**Conciseness** is the absence of redundancy: the text keeps no words or sentences that can be removed without losing information. Redundancy includes repetitions, officialese chains, rhetorical questions answered at once, empty openers, intensifiers next to a value that already shows the degree, and definitions that distinguish nothing. A value, a condition, the name of a concept or the limit of a conclusion is content, not redundancy.
 
 ## Assessment questions
 
@@ -14,12 +14,11 @@ The sample corrections below show which words go and which information stays. In
 | --- | --- | --- |
 | Increment | Does the sentence convey a new fact, boundary, condition, or source? | no |
 | Repetition | Is the same result restated without a new comparison? | yes |
-| Officialese | Can the chain of verbal nouns be replaced with a single action? | yes |
+| Officialese | Can a chain of verbal nouns be replaced with one verb? | yes |
 | Opener | Do "it should be noted", "at present", "as is known" carry separate information? | no |
-| Question | Does a rhetorical question replace a ready statement? | yes |
-| Intensifier | Is there an assessment of degree where a value is needed? | yes |
+| Question | Does the author ask a question and answer it at once, so that one statement would say the same? | yes |
+| Intensifier | Does an intensifier repeat a degree that the value next to it already shows? | yes |
 | Definition | Does the definition distinguish the object from others? | no |
-| Shortening | Are the number, condition, and limit of the conclusion preserved in the short sentence? | no |
 
 ## Violation types
 
@@ -31,7 +30,7 @@ Error: the introductory frames convey neither the time of measurement nor any sp
 
 Redundant:
 
-> It should be noted that at present it is necessary to emphasize the fact that the proportion of errors has decreased.
+> It should be noted that at present it is necessary to emphasize the fact that the proportion of errors has decreased from 18% to 11%.
 
 Correction:
 
@@ -43,7 +42,7 @@ Rule: remove the opener. Keep the values that are already in the article. Do not
 
 Features: officialese.
 
-Error: a series of verbal nouns describes one action in several steps and does not name which analysis exactly was performed.
+Error: a series of verbal nouns wraps one action in several words.
 
 Redundant:
 
@@ -51,35 +50,35 @@ Redundant:
 
 Correction:
 
-> The answers of the two groups were compared by the proportion of factual errors.
+> The data obtained were analysed.
 
-Rule: name the action, the object, and the measure using words the article already provides. If the text has no measure, remove only the officialese shell and in the problem state which analysis is not named.
+Rule: replace the chain with one verb and its object, in the words of the article.
 
 ### 3. Rhetorical question
 
 Features: question, increment.
 
-Error: the question opens no alternative and is immediately closed by an assessment. The evaluative words add no verifiable content.
+Error: the author asks a question and answers it at once; one statement would say the same.
 
 Redundant:
 
-> Can such a result be considered important? Undoubtedly it can, since it shows the benefit of the method.
+> Did the share of errors decrease? Yes, it decreased from 18% to 11%.
 
 Correction:
 
-> The difference concerns the proportion of factual errors in a single seminar assignment.
+> The share of errors decreased from 18% to 11%.
 
-Rule: keep the statement and the boundary of the result. Remove the assessment of importance. Do not repeat a value already given above if there is no new comparison.
+Rule: replace the question and its answer with one statement.
 
 ### 4. Triple restatement of one result
 
-Features: repetition, intensifier.
+Features: repetition.
 
-Error: several sentences report one observation. Only an indefinite degree is added.
+Error: several sentences report one observation; none adds a value, a condition, or a comparison.
 
 Redundant:
 
-> The proportion of errors decreased. The decrease in the proportion of errors was noticeable. Thus, one can see that errors became less frequent.
+> The proportion of errors decreased from 18% to 11%. Thus, errors became less frequent. In other words, the students made fewer errors.
 
 Correction:
 
@@ -91,7 +90,7 @@ Rule: report one result once. Keep the value if the article has it.
 
 Features: repetition.
 
-Error: the next paragraph again describes the same values and does not advance the argument. The reference "once again" is not a new basis.
+Error: the next paragraph again describes the same values and adds no new information. The reference "once again" is not a new basis.
 
 Redundant:
 
@@ -107,17 +106,17 @@ Rule: replace the repetition with a new boundary of the already stated differenc
 
 Features: intensifier.
 
-Error: the intensifiers modify a word that names no criterion. One cannot tell what exactly was assessed and relative to what.
+Error: intensifiers stand next to a value that already shows the degree and add nothing to it.
 
 Redundant:
 
-> The obtained result is extremely, highly, and quite indicative.
+> The share of errors decreased very substantially and markedly: from 18% to 11%.
 
 Correction:
 
-> In the experimental group, 11% of factual errors remained versus 18% in the control group.
+> The share of errors decreased from 18% to 11%.
 
-Rule: replace the intensifiers with values the article already reports. If there are no values, remove the intensifiers and in the problem state which measure is missing.
+Rule: remove the intensifiers; keep the value.
 
 ### 7. Redundant definition of a known step
 
@@ -135,22 +134,6 @@ Correction:
 
 Rule: state the content of the object directly. Do not invent content that the article does not name: in that case remove only the circular definition.
 
-### 8. Shortening that destroys information
-
-Features: shortening.
-
-Error: the condition, value, or caveat without which the observation cannot be verified has been removed from the sentence.
-
-Redundant:
-
-> Of the sentence "At one seminar, the proportion of factual errors was 11% with the checklist and 18% without it; other types of errors were not counted", only this is left: "There were fewer errors".
-
-Correction:
-
-> At one seminar, the checklist yielded 11% factual errors versus 18% without it. Other types of errors were not counted.
-
-Rule: restore the condition, values, and counting boundary that can still be found in the article. If they are no longer anywhere in the text, do not invent numbers: in the problem state what information is missing to verify the short conclusion.
-
 ## Acceptable detail
 
 Informative text may be detailed. Detail is justified when each added part delimits the object, names a measure, or separates fact from interpretation. Do not add such a fragment to the list.
@@ -158,10 +141,6 @@ Informative text may be detailed. Detail is justified when each added part delim
 Redundant:
 
 > One should note the fact that there were fewer errors.
-
-Insufficient:
-
-> There were fewer errors.
 
 Proportionate to content:
 
@@ -172,7 +151,7 @@ Proportionate to content:
 Check these words first. A word by itself is not a violation: the questions and the type decide.
 
 - Empty opener: it should be noted, it is necessary to emphasize, the fact that, at present, as is known, it is no secret, one can see.
-- Officialese: carrying out the conducting of, analytical consideration, in the course of the research — if the action is never named.
-- Empty degree: extremely, highly, quite, noticeable, important, undoubtedly — if there is no value or criterion.
+- Officialese: carrying out the conducting of, analytical consideration, in the course of the research — if one verb can replace the chain.
+- Repeated degree: very, substantially, markedly, extremely — next to a value that already shows the degree.
 - Empty repetition: once again confirms, thus with the same observation.
 - Usually keep: a number, a condition, the name of a concept, the counting limit, a brief reference before a new comparison.

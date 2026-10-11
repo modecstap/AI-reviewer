@@ -121,8 +121,8 @@ def test_empty_report(tmp_path):
 
     assert "<strong>0</strong>" in html
     assert 'class="chapter"' not in html and "Претензии по свойствам" not in html
-    assert html.count('class="zero"') == 70 and html.count('class="total zero"') == 8
-    assert html.count('class="absent"') == 42
+    assert html.count('class="zero"') == 60 and html.count('class="total zero"') == 7
+    assert html.count('class="absent"') == 38
 
 
 def test_statistics_grid():

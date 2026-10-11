@@ -157,11 +157,11 @@ Error: the subject is separated from the predicate by a long series of heterogen
 
 Non-standard:
 
-> The data obtained in the course of work conducted over one semester on the material of two academic groups with different experience of written assignments, which were collected after the participants had completed a draft and received comments of different types, show a reduction in errors.
+> The share of errors in two academic groups with different experience of written assignments, observed over one semester after the participants had completed a draft and received comments of two types, decreased.
 
 Correction:
 
-> The data were collected over one semester in two academic groups. The groups differed in their experience of written assignments. After the draft and the comments, the share of errors decreased.
+> The share of errors was observed over one semester in two academic groups. The groups differed in their experience of written assignments. After the participants had completed a draft and received comments of two types, the share of errors decreased.
 
 Rule: distribute the information across easily parsed sentences. Keep the conditions of observation. Do not add new conditions.
 
